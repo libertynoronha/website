@@ -1,0 +1,6 @@
+{
+  "name": "Pousada Liberty Noronha Sueste,
+  "description": "Um site moderno, minimalista e elegante para uma pousada de praia, com galeria de quartos, comodidades, simulador de reservas e contato via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
