@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { ArrowDown, MapPin, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { POUSADA_INFO } from "../data";
 import BookingBar from "./BookingBar";
@@ -20,9 +20,9 @@ export default function Hero({
 
   const heroImages = [
     "assets/images/hero_pousada.jpg",
-    "assets/images/hero_pousada_1782743369577.jpg",
-    "assets/images/pousada_pool_1782743412492.jpg",
-    "assets/images/suite_master_1782743385717.jpg"
+    "assets/images/deck.jpg",
+    "assets/images/breakfast.jpg",
+    "assets/images/breakfast2.jpg",
   ];
 
   useEffect(() => {

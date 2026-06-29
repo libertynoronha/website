@@ -100,7 +100,7 @@ export default function RoomGallery({
                       Tarifa média
                     </p>
                     <div className="flex items-baseline gap-0.5">
-                      <span className="text-xl font-serif font-bold">R$ {room.pricePerNight}</span>
+                      <span className="text-xl font-serif font-bold">A partir de R$ {room.pricePerNight}</span>
                       <span className="text-xs text-stone-200 font-mono">/ noite</span>
                     </div>
                   </div>
@@ -146,7 +146,7 @@ export default function RoomGallery({
                               Estimativa p/ {stayCalculation.nights} {stayCalculation.nights === 1 ? "noite" : "noites"}
                             </span>
                             <span className="text-lg font-serif font-bold text-brand-blue block mt-0.5">
-                              R$ {stayCalculation.totalPrice}*
+                              A partir de R$ {stayCalculation.totalPrice}*
                             </span>
                           </div>
                           <span className="inline-flex items-center gap-1 bg-brand-blue/10 text-brand-blue text-[10px] font-mono font-bold uppercase py-1 px-2.5 rounded-full">

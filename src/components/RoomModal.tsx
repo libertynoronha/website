@@ -235,7 +235,7 @@ export default function RoomModal({
                 <div>
                   <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-widest">Diária média regular</span>
                   <div className="flex items-baseline gap-1 mt-0.5">
-                    <span className="text-2xl font-serif font-bold text-stone-900">R$ {room.pricePerNight}</span>
+                    <span className="text-2xl font-serif font-bold text-stone-900">A partir de R$ {room.pricePerNight}</span>
                     <span className="text-xs text-stone-500 font-mono">/ noite</span>
                   </div>
                 </div>

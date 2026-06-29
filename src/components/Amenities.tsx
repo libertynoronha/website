@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Coffee, Wifi, Waves, Sun, ShieldCheck, Compass } from "lucide-react";
 import { AMENITIES_DATA } from "../data";
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { MessageSquare, X } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface WhatsAppFABProps {
   onClick: () => void;
