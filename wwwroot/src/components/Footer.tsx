@@ -31,7 +31,7 @@ export default function Footer() {
               className="flex items-center gap-2 group text-left focus:outline-none"
             >
               <img
-                src="/src/assets/images/logo_2025.jpg"
+                src="/assets/images/logo_2025.jpg"
                 alt="Pousada Liberty Noronha Sueste"
                 className="w-8 h-8 rounded-full object-cover border border-brand-yellow/60 transition-transform duration-300 group-hover:scale-110"
                 referrerPolicy="no-referrer"
