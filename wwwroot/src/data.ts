@@ -28,11 +28,11 @@ export const ROOMS_DATA: Room[] = [
     size: "15 m²",
     view: "Jardim",
     amenities: ["Ar-condicionado Split", "Cama King Size", "Wi-Fi Starlink", "Smart TV 43\"", "Frigobar", "Secador de Cabelo", "Armário", "Chuveiro com Aquecimento Solar", "Roupões de Banho"],
-    imageUrl: "/src/assets/images/suite_double.jpg",
+    imageUrl: "/assets/images/suite_double.jpg",
     images: [
-      "/src/assets/images/suite_double.jpg",
-      "/src/assets/images/suite_master_1782743385717.jpg",
-      "/src/assets/images/suite_familia_1782743400126.jpg"
+      "/assets/images/suite_double.jpg",
+      "/assets/images/suite_master_1782743385717.jpg",
+      "/assets/images/suite_familia_1782743400126.jpg"
     ],
     tag: "Mais Reservada",
   },
@@ -47,11 +47,11 @@ export const ROOMS_DATA: Room[] = [
     size: "18 m²",
     view: "Jardim e Piscina",
     amenities: ["Ar-condicionado Split", "Varanda com Rede", "Wi-Fi Starlink", "Smart TV 43\"", "Frigobar", "Secador de Cabelo", "Armário", "Chuveiro com Aquecimento Solar", "Roupões de Banho"],
-    imageUrl: "/src/assets/images/suite_triple.jpg",
+    imageUrl: "/assets/images/suite_triple.jpg",
     images: [
-      "/src/assets/images/suite_triple.jpg",
-      "/src/assets/images/suite_double.jpg",
-      "/src/assets/images/suite_master_1782743385717.jpg"
+      "/assets/images/suite_triple.jpg",
+      "/assets/images/suite_double.jpg",
+      "/assets/images/suite_master_1782743385717.jpg"
     ],
     tag: "Amigos",
   },
@@ -66,11 +66,11 @@ export const ROOMS_DATA: Room[] = [
     size: "20 m²",
     view: "Piscina e Jardim",
     amenities: ["Ar-condicionado Split", "Acesso Direto à Piscina", "Wi-Fi Starlink", "Smart TV 43\"", "Frigobar", "Armário", "Secador de Cabelo", "Roupões de Banho", "Chuveiro com Aquecimento Solar", "Amenities de Capim-Limão"],
-    imageUrl: "/src/assets/images/suite_quadruple.jpg",
+    imageUrl: "/assets/images/suite_quadruple.jpg",
     images: [
-      "/src/assets/images/suite_quadruple.jpg",
-      "/src/assets/images/pousada_pool_1782743412492.jpg",
-      "/src/assets/images/suite_familia_1782743400126.jpg"
+      "/assets/images/suite_quadruple.jpg",
+      "/assets/images/pousada_pool_1782743412492.jpg",
+      "/assets/images/suite_familia_1782743400126.jpg"
     ],
     tag: "Espaçosa",
   }

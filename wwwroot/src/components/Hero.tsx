@@ -19,10 +19,10 @@ export default function Hero({
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
 
   const heroImages = [
-    "/src/assets/images/hero_pousada.jpg",
-    "/src/assets/images/hero_pousada_1782743369577.jpg",
-    "/src/assets/images/pousada_pool_1782743412492.jpg",
-    "/src/assets/images/suite_master_1782743385717.jpg"
+    "/assets/images/hero_pousada.jpg",
+    "/assets/images/hero_pousada_1782743369577.jpg",
+    "/assets/images/pousada_pool_1782743412492.jpg",
+    "/assets/images/suite_master_1782743385717.jpg"
   ];
 
   useEffect(() => {
@@ -205,7 +205,7 @@ export default function Hero({
                   <p className="text-sm font-serif font-medium">Sofisticação e conexão nativa</p>
                 </div>
                 <img
-                  src="/src/assets/images/logo_2025.jpg"
+                  src="/assets/images/logo_2025.jpg"
                   alt="Logo"
                   className="w-8 h-8 rounded-full object-cover border border-brand-yellow/60"
                   referrerPolicy="no-referrer"
