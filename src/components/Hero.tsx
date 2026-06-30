@@ -182,6 +182,9 @@ export default function Hero({
                   <img
                     src={slide.src}
                     alt={slide.alt}
+                    fetchPriority={index === 0 ? "high" : undefined}
+                    loading={index === 0 ? "eager" : undefined}
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-10000 ease-out scale-100 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
