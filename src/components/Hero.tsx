@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, MapPin, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { POUSADA_INFO } from "../data";
@@ -22,29 +22,41 @@ export default function Hero({
   onClearSimulation,
 }: HeroProps) {
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const heroImages = [
-    heroPousadaImg,
-    deckImg,
-    breakfastImg,
-    breakfast2Img,
+  const heroSlides = [
+    { type: "image" as const, src: heroPousadaImg, alt: "Hero pousada Noronha" },
+    { type: "image" as const, src: deckImg, alt: "Deck da pousada" },
+    { type: "video" as const, src: "/assets/videos/hero_video.mp4", alt: "Tour em vídeo da pousada" },
+    { type: "image" as const, src: breakfastImg, alt: "Café da manhã da pousada" },
+    { type: "image" as const, src: breakfast2Img, alt: "Café da manhã servido na pousada" },
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentHeroIndex((prev) => (prev + 1) % heroImages.length);
+      setCurrentHeroIndex((prev) => (prev + 1) % heroSlides.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, [heroImages.length]);
+  }, [heroSlides.length]);
+
+  useEffect(() => {
+    if (heroSlides[currentHeroIndex].type === "video") {
+      videoRef.current?.play().catch(() => {
+        // ignore autoplay block
+      });
+    } else {
+      videoRef.current?.pause();
+    }
+  }, [currentHeroIndex, heroSlides]);
 
   const handlePrevHero = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setCurrentHeroIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+    setCurrentHeroIndex((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
   };
 
   const handleNextHero = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setCurrentHeroIndex((prev) => (prev + 1) % heroImages.length);
+    setCurrentHeroIndex((prev) => (prev + 1) % heroSlides.length);
   };
 
   const scrollToAcomodacoes = () => {
@@ -156,19 +168,30 @@ export default function Hero({
               transition={{ duration: 0.8 }}
               className="relative w-full h-full overflow-hidden rounded-[32px] bg-stone-200 shadow-2xl group border-4 border-white"
             >
-              {heroImages.map((imgUrl, index) => (
+              {heroSlides.map((slide, index) => (
                 <div
                   key={index}
                   className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
                     index === currentHeroIndex ? "opacity-100 z-10" : "opacity-0 z-0"
                   }`}
                 >
-                  <img
-                    src={imgUrl}
-                    alt={`Pousada Liberty Noronha Sueste - Vista ${index + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-10000 ease-out scale-100 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
+                  {slide.type === "image" ? (
+                    <img
+                      src={slide.src}
+                      alt={slide.alt}
+                      className="w-full h-full object-cover transition-transform duration-10000 ease-out scale-100 group-hover:scale-105"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <video
+                      ref={videoRef}
+                      src={slide.src}
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  )}
                 </div>
               ))}
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 via-stone-900/10 to-transparent z-20"></div>
@@ -191,7 +214,7 @@ export default function Hero({
 
               {/* Dot Indicators */}
               <div className="absolute bottom-24 left-0 right-0 z-30 flex justify-center gap-1.5">
-                {heroImages.map((_, index) => (
+                {heroSlides.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentHeroIndex(index)}

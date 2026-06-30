@@ -2,6 +2,7 @@ import { Room, Amenity, Testimonial, FAQItem } from "./types";
 import suiteDoubleImg from "./assets/images/suite_double.jpg";
 import suiteDouble2Img from "./assets/images/suite_double_2.jpeg";
 import suiteDouble3Img from "./assets/images/suite_double_3.jpeg";
+import suiteDouble4Img from "./assets/images/suite_double_4.jpeg";
 import suiteTripleImg from "./assets/images/suite_triple.jpg";
 import suiteTriple2Img from "./assets/images/suite_triple_2.jpg";
 import suiteTriple3Img from "./assets/images/suite_triple_3.jpg";
@@ -42,6 +43,7 @@ export const ROOMS_DATA: Room[] = [
       suiteDoubleImg,
       suiteDouble2Img,
       suiteDouble3Img,
+      suiteDouble4Img,
     ],
     tag: "Mais Reservada",
   },
