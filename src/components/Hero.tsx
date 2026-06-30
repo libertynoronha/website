@@ -56,7 +56,7 @@ export default function Hero({
   };
 
   return (
-    <section id="hero" className="relative bg-stone-50 overflow-hidden pt-28 pb-16 md:py-36">
+    <section id="hero" className="relative bg-stone-50 overflow-hidden pt-28 pb-8 md:pt-36 md:pb-12">
       {/* Background Accent Gradients */}
       <div className="absolute top-0 right-0 w-1/3 h-2/3 bg-brand-blue/5 rounded-bl-[100px] -z-10 blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-stone-100 -z-10 rounded-tr-[100px]"></div>

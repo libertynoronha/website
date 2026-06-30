@@ -29,7 +29,7 @@ export default function RoomGallery({
   };
 
   return (
-    <section id="acomodacoes" className="py-24 bg-white relative">
+    <section id="acomodacoes" className="pt-12 pb-24 md:pt-16 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
@@ -100,7 +100,7 @@ export default function RoomGallery({
                       Tarifa média
                     </p>
                     <div className="flex items-baseline gap-0.5">
-                      <span className="text-xl font-serif font-bold">A partir de R$ {room.pricePerNight}</span>
+                      <span className="text-xl font-serif font-bold">R$ {room.pricePerNight}</span>
                       <span className="text-xs text-stone-200 font-mono">/ noite</span>
                     </div>
                   </div>
@@ -146,7 +146,7 @@ export default function RoomGallery({
                               Estimativa p/ {stayCalculation.nights} {stayCalculation.nights === 1 ? "noite" : "noites"}
                             </span>
                             <span className="text-lg font-serif font-bold text-brand-blue block mt-0.5">
-                              A partir de R$ {stayCalculation.totalPrice}*
+                              R$ {stayCalculation.totalPrice}*
                             </span>
                           </div>
                           <span className="inline-flex items-center gap-1 bg-brand-blue/10 text-brand-blue text-[10px] font-mono font-bold uppercase py-1 px-2.5 rounded-full">

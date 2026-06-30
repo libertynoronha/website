@@ -27,7 +27,7 @@ export const ROOMS_DATA: Room[] = [
     beds: "1 Cama de Casal King Size ou 2 camas de solteiro",
     size: "9 m²",
     view: "Jardim",
-    amenities: ["Ar-condicionado Split", "Cama King Size", "Wi-Fi Starlink", "Smart TV 43\"", "Frigobar", "Secador de Cabelo", "Armário", "Chuveiro com Aquecimento Solar", "Roupões de Banho"],
+    amenities: ["Ar-condicionado Split", "Cama King Size ou solteiros", "Wi-Fi Starlink", "Smart TV 32\"", "Frigobar", "Secador de Cabelo", "Armário", "Chuveiro com Aquecimento Solar", "Roupões de Banho"],
     imageUrl: "assets/images/suite_double.jpg",
     images: [
       "assets/images/suite_double.jpg",
@@ -46,7 +46,7 @@ export const ROOMS_DATA: Room[] = [
     beds: "1 Cama Queen Size + 1 Cama de Solteiro",
     size: "11 m²",
     view: "Jardim e Piscina",
-    amenities: ["Ar-condicionado Split", "Varanda com Rede", "Wi-Fi Starlink", "Smart TV 43\"", "Frigobar", "Secador de Cabelo", "Armário", "Chuveiro com Aquecimento Solar", "Roupões de Banho"],
+    amenities: ["Ar-condicionado Split", "Cama King Size ou solteiros", "Wi-Fi Starlink", "Smart TV 32\"", "Frigobar", "Secador de Cabelo", "Armário", "Chuveiro com Aquecimento Solar", "Roupões de Banho"],
     imageUrl: "assets/images/suite_triple.jpg",
     images: [
       "assets/images/suite_triple.jpg",
@@ -65,7 +65,7 @@ export const ROOMS_DATA: Room[] = [
     beds: "2 Cama Queen Size",
     size: "15 m²",
     view: "Piscina e Jardim",
-    amenities: ["Ar-condicionado Split", "Acesso Direto à Piscina", "Wi-Fi Starlink", "Smart TV 43\"", "Frigobar", "Armário", "Secador de Cabelo", "Roupões de Banho", "Chuveiro com Aquecimento Solar", "Amenities de Capim-Limão"],
+    amenities: ["Ar-condicionado Split", "Cama King Size ou solteiros", "Wi-Fi Starlink", "Smart TV 32\"", "Frigobar", "Armário", "Secador de Cabelo", "Roupões de Banho", "Chuveiro com Aquecimento Solar"],
     imageUrl: "assets/images/suite_quadruple.jpg",
     images: [
       "assets/images/suite_quadruple.jpg",
