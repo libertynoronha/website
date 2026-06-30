@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BedDouble, Expand, Users, Sparkles, Star, ChevronRight } from "lucide-react";
+import { BedDouble, Expand, Users, ChevronRight } from "lucide-react";
 import { ROOMS_DATA } from "../data";
 import { Room, BookingSimulation } from "../types";
 import RoomModal from "./RoomModal";

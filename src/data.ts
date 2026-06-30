@@ -1,8 +1,8 @@
 import { Room, Amenity, Testimonial, FAQItem } from "./types";
 import suiteDoubleImg from "./assets/images/suite_double.jpg";
-import suiteDouble2Img from "./assets/images/suite_double_2.jpeg";
-import suiteDouble3Img from "./assets/images/suite_double_3.jpeg";
-import suiteDouble4Img from "./assets/images/suite_double_4.jpeg";
+import suiteDouble2Img from "./assets/images/suite_double_2.jpg";
+import suiteDouble3Img from "./assets/images/suite_double_3.jpg";
+import suiteDouble4Img from "./assets/images/suite_double_4.jpg";
 import suiteTripleImg from "./assets/images/suite_triple.jpg";
 import suiteTriple2Img from "./assets/images/suite_triple_2.jpg";
 import suiteTriple3Img from "./assets/images/suite_triple_3.jpg";
