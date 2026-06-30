@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, MapPin, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { POUSADA_INFO } from "../data";
@@ -22,41 +22,45 @@ export default function Hero({
   onClearSimulation,
 }: HeroProps) {
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const heroSlides = [
-    { type: "image" as const, src: heroPousadaImg, alt: "Hero pousada Noronha" },
-    { type: "image" as const, src: deckImg, alt: "Deck da pousada" },
-    { type: "video" as const, src: "/assets/videos/hero_video.mp4", alt: "Tour em vídeo da pousada" },
-    { type: "image" as const, src: breakfastImg, alt: "Café da manhã da pousada" },
-    { type: "image" as const, src: breakfast2Img, alt: "Café da manhã servido na pousada" },
+  const heroImages = [
+    {
+      src: heroPousadaImg,
+      alt: "Vista aérea da pousada Liberty com área externa e entrada",
+      description: "Bem-vindo à Pousada Liberty Noronha Sueste: charme, conforto e natureza ao seu redor.",
+    },
+    {
+      src: deckImg,
+      alt: "Deck elegante com espreguiçadeiras e paisagem tropical",
+      description: "Relaxar no deck com vista para o jardim e o clima tropical de Noronha.",
+    },
+    {
+      src: breakfastImg,
+      alt: "Café da manhã servido com frutas, pães e bebidas naturais",
+      description: "Café da manhã artesanal incluso, preparado com frutas da estação e sabores locais.",
+    },
+    {
+      src: breakfast2Img,
+      alt: "Mesa de café da manhã com croissants, sucos e frutas",
+      description: "Comece o dia com uma refeição leve e deliciosa, pensada especialmente para você.",
+    },
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentHeroIndex((prev) => (prev + 1) % heroSlides.length);
+      setCurrentHeroIndex((prev) => (prev + 1) % heroImages.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, [heroSlides.length]);
-
-  useEffect(() => {
-    if (heroSlides[currentHeroIndex].type === "video") {
-      videoRef.current?.play().catch(() => {
-        // ignore autoplay block
-      });
-    } else {
-      videoRef.current?.pause();
-    }
-  }, [currentHeroIndex, heroSlides]);
+  }, [heroImages.length]);
 
   const handlePrevHero = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setCurrentHeroIndex((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+    setCurrentHeroIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length);
   };
 
   const handleNextHero = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setCurrentHeroIndex((prev) => (prev + 1) % heroSlides.length);
+    setCurrentHeroIndex((prev) => (prev + 1) % heroImages.length);
   };
 
   const scrollToAcomodacoes = () => {
@@ -168,29 +172,28 @@ export default function Hero({
               transition={{ duration: 0.8 }}
               className="relative w-full h-full overflow-hidden rounded-[32px] bg-stone-200 shadow-2xl group border-4 border-white"
             >
-              {heroSlides.map((slide, index) => (
+              {heroImages.map((slide, index) => (
                 <div
                   key={index}
                   className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
                     index === currentHeroIndex ? "opacity-100 z-10" : "opacity-0 z-0"
                   }`}
                 >
-                  {slide.type === "image" ? (
-                    <img
-                      src={slide.src}
-                      alt={slide.alt}
-                      className="w-full h-full object-cover transition-transform duration-10000 ease-out scale-100 group-hover:scale-105"
-                      referrerPolicy="no-referrer"
-                    />
-                  ) : (
-                    <video
-                      ref={videoRef}
-                      src={slide.src}
-                      muted
-                      loop
-                      playsInline
-                      className="w-full h-full object-cover"
-                    />
+                  <img
+                    src={slide.src}
+                    alt={slide.alt}
+                    className="w-full h-full object-cover transition-transform duration-10000 ease-out scale-100 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                  {index === currentHeroIndex && (
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 sm:p-6 backdrop-blur-md">
+                      <p className="text-xs uppercase tracking-[0.24em] text-brand-yellow font-bold mb-1">
+                        Imagem {index + 1} de {heroImages.length}
+                      </p>
+                      <p className="text-sm sm:text-base leading-relaxed">
+                        {slide.description}
+                      </p>
+                    </div>
                   )}
                 </div>
               ))}
@@ -214,7 +217,7 @@ export default function Hero({
 
               {/* Dot Indicators */}
               <div className="absolute bottom-24 left-0 right-0 z-30 flex justify-center gap-1.5">
-                {heroSlides.map((_, index) => (
+                {heroImages.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentHeroIndex(index)}
