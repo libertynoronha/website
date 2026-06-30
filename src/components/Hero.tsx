@@ -4,6 +4,11 @@ import { ArrowDown, MapPin, Star, ChevronLeft, ChevronRight } from "lucide-react
 import { POUSADA_INFO } from "../data";
 import BookingBar from "./BookingBar";
 import { BookingSimulation } from "../types";
+import heroPousadaImg from "../assets/images/hero_pousada.jpg";
+import deckImg from "../assets/images/deck.jpg";
+import breakfastImg from "../assets/images/breakfast.jpg";
+import breakfast2Img from "../assets/images/breakfast_2.jpg";
+import logoImage from "../assets/images/logo_2025.jpg";
 
 interface HeroProps {
   onSimulate: (simulation: BookingSimulation) => void;
@@ -19,10 +24,10 @@ export default function Hero({
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
 
   const heroImages = [
-    "assets/images/hero_pousada.jpg",
-    "assets/images/deck.jpg",
-    "assets/images/breakfast.jpg",
-    "assets/images/breakfast2.jpg",
+    heroPousadaImg,
+    deckImg,
+    breakfastImg,
+    breakfast2Img,
   ];
 
   useEffect(() => {
@@ -205,7 +210,7 @@ export default function Hero({
                   <p className="text-sm font-serif font-medium">Sofisticação e conexão nativa</p>
                 </div>
                 <img
-                  src="assets/images/logo_2025.jpg"
+                  src={logoImage}
                   alt="Logo"
                   className="w-8 h-8 rounded-full object-cover border border-brand-yellow/60"
                   referrerPolicy="no-referrer"

@@ -1,4 +1,13 @@
 import { Room, Amenity, Testimonial, FAQItem } from "./types";
+import suiteDoubleImg from "./assets/images/suite_double.jpg";
+import suiteDouble2Img from "./assets/images/suite_double_2.jpg";
+import suiteDouble3Img from "./assets/images/suite_double_3.jpg";
+import suiteTripleImg from "./assets/images/suite_triple.jpg";
+import suiteTriple2Img from "./assets/images/suite_triple_2.jpg";
+import suiteTriple3Img from "./assets/images/suite_triple_3.jpg";
+import suiteQuadrupleImg from "./assets/images/suite_quadruple.jpg";
+import suiteQuadruple2Img from "./assets/images/suite_quadruple_2.jpg";
+import suiteQuadruple3Img from "./assets/images/suite_quadruple_3.jpg";
 
 export const POUSADA_INFO = {
   name: "Pousada Liberty Noronha Sueste",
@@ -28,11 +37,11 @@ export const ROOMS_DATA: Room[] = [
     size: "9 m²",
     view: "Jardim",
     amenities: ["Ar-condicionado Split", "Cama King Size ou solteiros", "Wi-Fi Starlink", "Smart TV 32\"", "Frigobar", "Secador de Cabelo", "Armário", "Chuveiro com Aquecimento Solar", "Roupões de Banho"],
-    imageUrl: "assets/images/suite_double.jpg",
+    imageUrl: suiteDoubleImg,
     images: [
-      "assets/images/suite_double.jpg",
-      "assets/images/suite_double_2.jpg",
-      "assets/images/suite_double_3.jpg"
+      suiteDoubleImg,
+      suiteDouble2Img,
+      suiteDouble3Img,
     ],
     tag: "Mais Reservada",
   },
@@ -47,11 +56,11 @@ export const ROOMS_DATA: Room[] = [
     size: "11 m²",
     view: "Jardim e Piscina",
     amenities: ["Ar-condicionado Split", "Cama King Size ou solteiros", "Wi-Fi Starlink", "Smart TV 32\"", "Frigobar", "Secador de Cabelo", "Armário", "Chuveiro com Aquecimento Solar", "Roupões de Banho"],
-    imageUrl: "assets/images/suite_triple.jpg",
+    imageUrl: suiteTripleImg,
     images: [
-      "assets/images/suite_triple.jpg",
-      "assets/images/suite_triple_2.jpg",
-      "assets/images/suite_triple_3.jpg"
+      suiteTripleImg,
+      suiteTriple2Img,
+      suiteTriple3Img,
     ],
     tag: "Amigos",
   },
@@ -66,11 +75,11 @@ export const ROOMS_DATA: Room[] = [
     size: "15 m²",
     view: "Piscina e Jardim",
     amenities: ["Ar-condicionado Split", "Cama King Size ou solteiros", "Wi-Fi Starlink", "Smart TV 32\"", "Frigobar", "Armário", "Secador de Cabelo", "Roupões de Banho", "Chuveiro com Aquecimento Solar"],
-    imageUrl: "assets/images/suite_quadruple.jpg",
+    imageUrl: suiteQuadrupleImg,
     images: [
-      "assets/images/suite_quadruple.jpg",
-      "assets/images/suite_quadruple_2.jpg",
-      "assets/images/suite_quadruple_3.jpg"
+      suiteQuadrupleImg,
+      suiteQuadruple2Img,
+      suiteQuadruple3Img,
     ],
     tag: "Espaçosa",
   }
@@ -121,7 +130,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
   {
     id: "2",
     author: "Antonia Leonete",
-    city: "Góias - GO",
+    city: "Goiânia - GO",
     rating: 5,
     text: "Minha estadia na pousada foi super confortável a Katia, Maria, Gil e Jonas foram sempre muito atenciosos, prestativos. O cafe da manhã sempre fazendo o que a gente desejava deixando vontade de voltar e com certeza indicarei para meus amigos, família e clientes de Goiânia. E acima de tudo, são muito honestos e cuidadosos.",
     date: "Maio de 2026",

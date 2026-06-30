@@ -3,6 +3,7 @@ import { Instagram, Facebook, Compass, Mail, Phone, MapPin } from "lucide-react"
 import { POUSADA_INFO } from "../data";
 import PrivacyModal from "./PrivacyModal";
 import TermsModal from "./TermsModal";
+import logoImage from "../assets/images/logo_2025.jpg";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -31,7 +32,7 @@ export default function Footer() {
               className="flex items-center gap-2 group text-left focus:outline-none"
             >
               <img
-                src="assets/images/logo_2025.jpg"
+                src={logoImage}
                 alt="Pousada Liberty Noronha Sueste"
                 className="w-8 h-8 rounded-full object-cover border border-brand-yellow/60 transition-transform duration-300 group-hover:scale-110"
                 referrerPolicy="no-referrer"
