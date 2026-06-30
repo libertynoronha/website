@@ -46,12 +46,21 @@ export default function Hero({
     },
   ];
 
+  const currentHero = heroImages[currentHeroIndex];
+  const nextHeroSrc = heroImages[(currentHeroIndex + 1) % heroImages.length].src;
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentHeroIndex((prev) => (prev + 1) % heroImages.length);
     }, 6000);
+
     return () => clearInterval(timer);
   }, [heroImages.length]);
+
+  useEffect(() => {
+    const preloaded = new Image();
+    preloaded.src = nextHeroSrc;
+  }, [nextHeroSrc]);
 
   const handlePrevHero = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -65,15 +74,19 @@ export default function Hero({
 
   const scrollToAcomodacoes = () => {
     const el = document.getElementById("acomodacoes");
-    if (el) {
-      const offset = 80;
-      const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
+    if (!el) {
+      return;
+    }
+
+    const offset = 80;
+    const elementPosition = el.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+    requestAnimationFrame(() => {
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
       });
-    }
+    });
   };
 
   return (
@@ -172,34 +185,23 @@ export default function Hero({
               transition={{ duration: 0.8 }}
               className="relative w-full h-full overflow-hidden rounded-[32px] bg-stone-200 shadow-2xl group border-4 border-white"
             >
-              {heroImages.map((slide, index) => (
-                <div
-                  key={index}
-                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                    index === currentHeroIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-                  }`}
-                >
-                  <img
-                    src={slide.src}
-                    alt={slide.alt}
-                    fetchPriority={index === 0 ? "high" : undefined}
-                    loading={index === 0 ? "eager" : undefined}
-                    decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-10000 ease-out scale-100 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                  {index === currentHeroIndex && (
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 sm:p-6 backdrop-blur-md">
-                      <p className="text-xs uppercase tracking-[0.24em] text-brand-yellow font-bold mb-1">
-                        Imagem {index + 1} de {heroImages.length}
-                      </p>
-                      <p className="text-sm sm:text-base leading-relaxed">
-                        {slide.description}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              ))}
+              <img
+                src={currentHero.src}
+                alt={currentHero.alt}
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
+                className="w-full h-full object-cover transition-transform duration-10000 ease-out scale-100 group-hover:scale-105"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 sm:p-6 backdrop-blur-md">
+                <p className="text-xs uppercase tracking-[0.24em] text-brand-yellow font-bold mb-1">
+                  Imagem {currentHeroIndex + 1} de {heroImages.length}
+                </p>
+                <p className="text-sm sm:text-base leading-relaxed">
+                  {currentHero.description}
+                </p>
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 via-stone-900/10 to-transparent z-20"></div>
 
               {/* Navigation controls */}
@@ -234,19 +236,6 @@ export default function Hero({
                 ))}
               </div>
 
-              {/* Float Badge */}
-              <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white bg-stone-950/45 backdrop-blur-md px-5 py-3.5 rounded-2xl border border-white/10 z-30">
-                <div>
-                  <p className="text-[10px] font-mono tracking-widest text-stone-300 uppercase">Estilo de Vida</p>
-                  <p className="text-sm font-serif font-medium">Sofisticação e conexão nativa</p>
-                </div>
-                <img
-                  src={logoImage}
-                  alt="Logo"
-                  className="w-8 h-8 rounded-full object-cover border border-brand-yellow/60"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
             </motion.div>
           </div>
         </div>

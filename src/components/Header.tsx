@@ -24,17 +24,23 @@ export default function Header({ onOpenBooking }: HeaderProps) {
   }, []);
 
   const scrollToSection = (id: string) => {
-    setIsMobileMenuOpen(false);
     const element = document.getElementById(id);
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    if (!element) {
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
+    const headerOffset = 80;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    setIsMobileMenuOpen(false);
+    requestAnimationFrame(() => {
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
       });
-    }
+    });
   };
 
   return (

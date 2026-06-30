@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { X, Check, BedDouble, Expand, Eye, Users, ChevronLeft, ChevronRight } from "lucide-react";
 import { Room, BookingSimulation } from "../types";
 
@@ -41,6 +41,17 @@ export default function RoomModal({
 
   const details = calculateDetails();
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
   const handleBookClick = () => {
     let customMessage = "";
     if (bookingSimulation) {
@@ -71,6 +82,9 @@ export default function RoomModal({
     >
       <div
         id={`room-modal-content-${room.id}`}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={`room-modal-title-${room.id}`}
         className="bg-white rounded-3xl overflow-hidden max-w-4xl w-full shadow-2xl relative animate-in zoom-in-95 duration-200 flex flex-col md:flex-row max-h-[90vh] md:max-h-[85vh]"
         onClick={(e) => e.stopPropagation()}
       >
@@ -87,21 +101,14 @@ export default function RoomModal({
         {/* Left: Image & Quick Specs */}
         <div className="w-full md:w-1/2 relative h-[280px] md:h-auto bg-stone-100 flex flex-col">
           <div className="relative flex-1 h-full min-h-[240px] overflow-hidden group">
-            {images.map((imgUrl, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-                  index === currentImgIdx ? "opacity-100 z-10" : "opacity-0 z-0"
-                }`}
-              >
-                <img
-                  src={imgUrl}
-                  alt={`${room.name} - Imagem ${index + 1}`}
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            ))}
+            <img
+              src={images[currentImgIdx]}
+              alt={`${room.name} - Imagem ${currentImgIdx + 1}`}
+              loading="eager"
+              decoding="async"
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
 
             {room.tag && (
               <span className="absolute top-4 left-4 bg-brand-blue text-stone-50 text-[10px] font-bold tracking-widest uppercase py-1 px-3.5 rounded-full shadow-sm z-20">
@@ -253,6 +260,13 @@ export default function RoomModal({
                 <path d="M12 2C6.477 2 2 6.477 2 12c0 2.03.6 3.91 1.63 5.49L2 22l4.63-1.6c1.51.91 3.27 1.45 5.17 1.45 5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.63 0-3.15-.46-4.44-1.27l-.32-.19-2.61.9.91-2.67-.2-.32C4.48 15.22 4 13.67 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z" />
               </svg>
               Consultar Disponibilidade no WhatsApp
+            </button>
+
+            <button
+              onClick={onClose}
+              className="mt-3 md:hidden w-full text-center bg-stone-200 hover:bg-stone-300 text-stone-900 text-xs font-bold tracking-wider uppercase py-4 rounded-xl transition-all shadow-sm hover:shadow active:scale-[0.98]"
+            >
+              Fechar
             </button>
           </div>
         </div>

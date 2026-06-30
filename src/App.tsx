@@ -22,14 +22,18 @@ export default function App() {
     // Scroll smoothly to accommodations section so they see live room pricing
     setTimeout(() => {
       const el = document.getElementById("acomodacoes");
-      if (el) {
-        const offset = 80;
-        const pos = el.getBoundingClientRect().top + window.pageYOffset - offset;
+      if (!el) {
+        return;
+      }
+
+      const offset = 80;
+      const pos = el.getBoundingClientRect().top + window.pageYOffset - offset;
+      requestAnimationFrame(() => {
         window.scrollTo({
           top: pos,
           behavior: "smooth",
         });
-      }
+      });
     }, 100);
   };
 

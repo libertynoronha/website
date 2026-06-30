@@ -69,11 +69,15 @@ export default function Footer() {
                   <button
                     onClick={() => {
                       const el = document.getElementById(link.id);
-                      if (el) {
-                        const offset = 80;
-                        const pos = el.getBoundingClientRect().top + window.pageYOffset - offset;
-                        window.scrollTo({ top: pos, behavior: "smooth" });
+                      if (!el) {
+                        return;
                       }
+
+                      const offset = 80;
+                      const pos = el.getBoundingClientRect().top + window.pageYOffset - offset;
+                      requestAnimationFrame(() => {
+                        window.scrollTo({ top: pos, behavior: "smooth" });
+                      });
                     }}
                     className="hover:text-brand-yellow transition-colors text-stone-300 focus:outline-none cursor-pointer"
                   >
