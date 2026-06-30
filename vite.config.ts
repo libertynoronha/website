@@ -7,6 +7,12 @@ export default defineConfig(() => {
   return {
     base: './',
     plugins: [react(), tailwindcss()],
+    build: {
+      // Prevent Vite from injecting modulepreload links for dynamic imports.
+      // This reduces the length of the critical network dependency chain
+      // at the expense of slightly delayed dynamic-import fetches.
+      polyfillModulePreload: false,
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
