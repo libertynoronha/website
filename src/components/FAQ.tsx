@@ -43,7 +43,7 @@ export default function FAQ() {
                   className="w-full py-5 px-6 sm:px-8 text-left flex items-center justify-between gap-4 font-serif font-bold text-stone-800 hover:text-brand-blue transition-colors focus:outline-none"
                 >
                   <span className="text-base sm:text-lg">{faq.question}</span>
-                  <div className="flex-shrink-0 p-1 bg-stone-50 rounded-full text-stone-500">
+                  <div className="flex-shrink-0 p-1 bg-stone-50 rounded-full text-stone-700">
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                   </div>
                 </button>
@@ -53,7 +53,7 @@ export default function FAQ() {
                     isOpen ? "max-h-[300px] border-t border-stone-100" : "max-h-0"
                   }`}
                 >
-                  <div className="p-6 sm:p-8 text-stone-600 text-sm leading-relaxed text-left">
+                  <div className="p-6 sm:p-8 text-stone-700 text-sm leading-relaxed text-left">
                     {faq.answer}
                   </div>
                 </div>
@@ -64,10 +64,10 @@ export default function FAQ() {
 
         {/* Contact CTA */}
         <div className="mt-12 text-center bg-white p-6 sm:p-8 rounded-2xl border border-stone-200/50 max-w-xl mx-auto">
-          <p className="text-sm text-stone-600">
+          <p className="text-sm text-stone-700">
             Ainda tem alguma pergunta que não está respondida aqui?
           </p>
-          <p className="text-xs font-mono text-stone-400 mt-1">
+          <p className="text-xs font-mono text-stone-700 mt-1">
             Fale conosco diretamente via WhatsApp a qualquer momento!
           </p>
         </div>

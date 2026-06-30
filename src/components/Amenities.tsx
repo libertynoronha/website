@@ -29,7 +29,7 @@ export default function Amenities() {
             Comodidades Projetadas para o seu Descanso
           </h2>
           <div className="h-1 w-12 bg-brand-green mx-auto mt-4 rounded"></div>
-          <p className="text-stone-500 text-sm sm:text-base mt-4 leading-relaxed">
+          <p className="text-stone-700 text-sm sm:text-base mt-4 leading-relaxed">
             Oferecemos uma curadoria de services pensados milimetricamente para que sua única preocupação seja aproveitar a brisa e as ondas do mar.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function Amenities() {
                     {amenity.name}
                   </h3>
                 </div>
-                <p className="text-stone-500 text-sm leading-relaxed group-hover:text-stone-600 transition-colors">
+                <p className="text-stone-700 text-sm leading-relaxed group-hover:text-stone-800 transition-colors">
                   {amenity.description}
                 </p>
               </motion.div>
@@ -66,10 +66,10 @@ export default function Amenities() {
 
         {/* Bonus visual note */}
         <div className="mt-12 text-center">
-          <p className="text-xs font-mono text-stone-400 italic">
+          <p className="text-xs font-mono text-stone-600 italic">
             * Todas as comodidades acima estão 100% inclusas no valor da diária regular. Sem taxas ocultas.
           </p>
-          <p className="text-xs font-mono text-stone-400 italic">
+          <p className="text-xs font-mono text-stone-600 italic">
             * O Apoio a Passeios atua exclusivamente na indicação de parceiros. Valores, reservas e condições são definidos diretamente com os prestadores de serviço.
           </p>
         </div>

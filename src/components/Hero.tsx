@@ -153,7 +153,7 @@ export default function Hero({
                     <Star className="w-3.5 h-3.5 fill-brand-yellow text-brand-yellow" />
                     <Star className="w-3.5 h-3.5 fill-brand-yellow text-brand-yellow" />
                   </div>
-                  <span className="text-[11px] font-mono font-medium text-stone-500 block">
+                  <span className="text-[11px] font-mono font-medium text-stone-700 block">
                     Avaliação Fantástico na Booking
                   </span>
                 </div>
@@ -205,14 +205,14 @@ export default function Hero({
               {/* Navigation controls */}
               <button
                 onClick={handlePrevHero}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-stone-950/50 hover:bg-stone-950/75 text-white p-2 rounded-full shadow-lg transition-all active:scale-90 opacity-0 group-hover:opacity-100 duration-300 cursor-pointer"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-stone-950/50 hover:bg-stone-950/75 text-white p-3 min-w-[44px] min-h-[44px] rounded-full shadow-lg transition-all active:scale-90 opacity-0 group-hover:opacity-100 duration-300 cursor-pointer"
                 aria-label="Anterior"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={handleNextHero}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-stone-950/50 hover:bg-stone-950/75 text-white p-2 rounded-full shadow-lg transition-all active:scale-90 opacity-0 group-hover:opacity-100 duration-300 cursor-pointer"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-stone-950/50 hover:bg-stone-950/75 text-white p-3 min-w-[44px] min-h-[44px] rounded-full shadow-lg transition-all active:scale-90 opacity-0 group-hover:opacity-100 duration-300 cursor-pointer"
                 aria-label="Próximo"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -224,11 +224,13 @@ export default function Hero({
                   <button
                     key={index}
                     onClick={() => setCurrentHeroIndex(index)}
-                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      index === currentHeroIndex ? "w-6 bg-brand-yellow" : "w-2 bg-white/55 hover:bg-white"
+                    className={`min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full transition-all duration-300 cursor-pointer ${
+                      index === currentHeroIndex ? "bg-brand-yellow" : "bg-white/55 hover:bg-white"
                     }`}
                     aria-label={`Ir para slide ${index + 1}`}
-                  />
+                  >
+                    <span className={`h-2 rounded-full ${index === currentHeroIndex ? "w-2 bg-stone-950" : "w-2 bg-brand-blue/80"}`} />
+                  </button>
                 ))}
               </div>
 

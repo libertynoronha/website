@@ -42,7 +42,7 @@ export default function WhatsAppFAB({ onClick }: WhatsAppFABProps) {
                 e.stopPropagation();
                 setShowTooltip(false);
               }}
-              className="text-stone-400 hover:text-stone-200 focus:outline-none"
+              className="text-stone-300 hover:text-stone-100 focus:outline-none"
               aria-label="Fechar dica"
             >
               <X className="w-3 h-3" />

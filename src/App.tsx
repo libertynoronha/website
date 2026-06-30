@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import RoomGallery from "./components/RoomGallery";
-import Amenities from "./components/Amenities";
-import Testimonials from "./components/Testimonials";
-import LocationAndContact from "./components/LocationAndContact";
-import FAQ from "./components/FAQ";
-import Footer from "./components/Footer";
+const RoomGallery = lazy(() => import("./components/RoomGallery"));
+const Amenities = lazy(() => import("./components/Amenities"));
+const Testimonials = lazy(() => import("./components/Testimonials"));
+const LocationAndContact = lazy(() => import("./components/LocationAndContact"));
+const FAQ = lazy(() => import("./components/FAQ"));
+const Footer = lazy(() => import("./components/Footer"));
+const WhatsAppModal = lazy(() => import("./components/WhatsAppModal"));
 import WhatsAppFAB from "./components/WhatsAppFAB";
-import WhatsAppModal from "./components/WhatsAppModal";
 import { BookingSimulation } from "./types";
 
 export default function App() {
@@ -122,37 +122,43 @@ export default function App() {
           onClearSimulation={handleClearSimulation}
         />
 
-        {/* Dynamic Accommodations & Pricing Gallery */}
-        <RoomGallery
-          bookingSimulation={bookingSimulation}
-          onOpenWhatsApp={handleOpenWhatsApp}
-        />
+        <Suspense fallback={<div className="min-h-[300px] bg-stone-50" />}>
+          {/* Dynamic Accommodations & Pricing Gallery */}
+          <RoomGallery
+            bookingSimulation={bookingSimulation}
+            onOpenWhatsApp={handleOpenWhatsApp}
+          />
 
-        {/* Curated Luxury Amenities */}
-        <Amenities />
+          {/* Curated Luxury Amenities */}
+          <Amenities />
 
-        {/* Real Guest Testimonials & Reviews */}
-        <Testimonials />
+          {/* Real Guest Testimonials & Reviews */}
+          <Testimonials />
 
-        {/* Physical Locations & Email Contact Form */}
-        <LocationAndContact onOpenWhatsApp={handleOpenWhatsApp} />
+          {/* Physical Locations & Email Contact Form */}
+          <LocationAndContact onOpenWhatsApp={handleOpenWhatsApp} />
 
-        {/* FAQ Accordion Policies */}
-        <FAQ />
+          {/* FAQ Accordion Policies */}
+          <FAQ />
+        </Suspense>
       </main>
 
-      {/* Footer Branding & Social Media Links */}
-      <Footer />
+      <Suspense fallback={null}>
+        {/* Footer Branding & Social Media Links */}
+        <Footer />
+      </Suspense>
 
       {/* TIMED FLOAT FAB: Green WhatsApp button */}
       <WhatsAppFAB onClick={handleTriggerDefaultWhatsApp} />
 
-      {/* FAIL-SAFE MODAL: WhatsApp Live Chat Assistant */}
-      <WhatsAppModal
-        isOpen={isWhatsAppOpen}
-        onClose={() => setIsWhatsAppOpen(false)}
-        defaultMessage={whatsAppMsg}
-      />
+      <Suspense fallback={null}>
+        {/* FAIL-SAFE MODAL: WhatsApp Live Chat Assistant */}
+        <WhatsAppModal
+          isOpen={isWhatsAppOpen}
+          onClose={() => setIsWhatsAppOpen(false)}
+          defaultMessage={whatsAppMsg}
+        />
+      </Suspense>
     </div>
   );
 }

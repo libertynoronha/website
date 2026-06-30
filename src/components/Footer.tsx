@@ -41,21 +41,21 @@ export default function Footer() {
                 <span className="font-serif text-lg font-bold text-stone-100 tracking-wide">
                   Liberty Noronha Sueste
                 </span>
-                <span className="block text-[9px] text-stone-500 tracking-[0.2em] uppercase -mt-1">
+                <span className="block text-[9px] text-stone-300 tracking-[0.2em] uppercase -mt-1">
                   Fernando de Noronha - Brasil
                 </span>
               </div>
             </button>
-            <p className="text-xs text-stone-400 leading-relaxed mt-2 max-w-xs">
+            <p className="text-xs text-stone-300 leading-relaxed mt-2 max-w-xs">
               Conforto e autenticidade em Fernando de Noronha. O seu ponto de partida ideal para viver toda a beleza e a tranquilidade da ilha, a poucos metros da Praia do Sueste.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs font-mono font-bold uppercase text-stone-100 tracking-wider mb-4">
+            <h3 className="text-xs font-mono font-bold uppercase text-stone-100 tracking-wider mb-4">
               Links Rápidos
-            </h4>
+            </h3>
             <ul className="space-y-2 text-xs">
               {[
                 { name: "Início", id: "hero" },
@@ -75,7 +75,7 @@ export default function Footer() {
                         window.scrollTo({ top: pos, behavior: "smooth" });
                       }
                     }}
-                    className="hover:text-brand-yellow transition-colors text-stone-400 focus:outline-none cursor-pointer"
+                    className="hover:text-brand-yellow transition-colors text-stone-300 focus:outline-none cursor-pointer"
                   >
                     {link.name}
                   </button>
@@ -86,9 +86,9 @@ export default function Footer() {
 
           {/* Contact & Info */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-xs font-mono font-bold uppercase text-stone-100 tracking-wider mb-1">
+            <h3 className="text-xs font-mono font-bold uppercase text-stone-100 tracking-wider mb-1">
               Contato & Reservas
-            </h4>
+            </h3>
             <ul className="space-y-3 text-xs">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-brand-yellow flex-shrink-0 mt-0.5" />
@@ -117,9 +117,9 @@ export default function Footer() {
 
           {/* Social Links & Newsletter */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-xs font-mono font-bold uppercase text-stone-100 tracking-wider mb-1">
+            <h3 className="text-xs font-mono font-bold uppercase text-stone-100 tracking-wider mb-1">
               Redes Sociais
-            </h4>
+            </h3>
             <div className="flex items-center gap-3.5 mb-4">
               <a
                 href={POUSADA_INFO.instagram}
@@ -153,7 +153,7 @@ export default function Footer() {
         </div>
 
         {/* Footer bottom */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-300 gap-4">
           <p>
             &copy; {currentYear} {POUSADA_INFO.name}. Todos os direitos reservados. CNPJ 43.796.811/0001-53.
           </p>
@@ -161,7 +161,7 @@ export default function Footer() {
             <button
               id="btn-open-privacy-policy"
               onClick={() => setIsPrivacyOpen(true)}
-              className="hover:text-stone-400 transition-colors cursor-pointer focus:outline-none"
+              className="hover:text-brand-yellow transition-colors cursor-pointer focus:outline-none"
             >
               Políticas de Privacidade
             </button>
@@ -169,7 +169,7 @@ export default function Footer() {
             <button
               id="btn-open-terms-of-use"
               onClick={() => setIsTermsOpen(true)}
-              className="hover:text-stone-400 transition-colors cursor-pointer focus:outline-none"
+              className="hover:text-brand-yellow transition-colors cursor-pointer focus:outline-none"
             >
               Termos de Uso
             </button>

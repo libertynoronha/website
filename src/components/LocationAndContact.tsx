@@ -55,7 +55,7 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
                 Onde a Natureza Encontra o Mar
               </h2>
               <div className="h-1 w-12 bg-brand-green mt-4 rounded"></div>
-              <p className="text-stone-500 text-sm sm:text-base mt-4 leading-relaxed">
+              <p className="text-stone-700 text-sm sm:text-base mt-4 leading-relaxed">
                 Em uma localização privilegiada e tranquila de Fernando de Noronha, próxima à Praia do Sueste e ao aeroporto, a pousada combina conforto, sossego e praticidade para você explorar a ilha com facilidade.
               </p>
             </div>
@@ -65,8 +65,8 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
               <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200/50 flex gap-4">
                 <MapPin className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-serif font-bold text-stone-800 text-sm sm:text-base">Endereço Físico</h4>
-                  <p className="text-stone-500 text-xs mt-1 leading-relaxed">
+                  <h3 className="font-serif font-bold text-stone-800 text-sm sm:text-base">Endereço Físico</h3>
+                  <p className="text-stone-700 text-xs mt-1 leading-relaxed">
                     {POUSADA_INFO.address}, CEP {POUSADA_INFO.cep}
                   </p>
                 </div>
@@ -75,8 +75,8 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
               <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200/50 flex gap-4">
                 <Clock className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-serif font-bold text-stone-800 text-sm sm:text-base">Check-In & Out</h4>
-                  <p className="text-stone-500 text-xs mt-1 leading-relaxed">
+                  <h3 className="font-serif font-bold text-stone-800 text-sm sm:text-base">Check-In & Out</h3>
+                  <p className="text-stone-700 text-xs mt-1 leading-relaxed">
                     Entrada a partir das {POUSADA_INFO.checkInTime}h<br />
                     Saída até as {POUSADA_INFO.checkOutTime}h
                   </p>
@@ -122,7 +122,7 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
               <h3 className="text-2xl font-serif font-bold text-stone-900">
                 Envie uma Mensagem
               </h3>
-              <p className="text-xs text-stone-500 mt-1 leading-relaxed">
+              <p className="text-xs text-stone-700 mt-1 leading-relaxed">
                 Preencha o formulário e nossa recepção responderá o mais rápido possível por e-mail, ou envie diretamente ao nosso WhatsApp.
               </p>
             </div>
@@ -153,7 +153,7 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
                   <button
                     id="btn-form-reset"
                     onClick={() => setIsSubmitted(false)}
-                    className="text-stone-400 hover:text-stone-600 text-xs font-mono mt-4 block mx-auto underline focus:outline-none"
+                    className="text-stone-800 hover:text-stone-950 text-xs font-mono mt-4 block mx-auto underline focus:outline-none"
                   >
                     Escrever nova mensagem
                   </button>
@@ -195,7 +195,7 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono font-bold text-stone-600 uppercase mb-2">
+                  <label htmlFor="contact-subject" className="block text-xs font-mono font-bold text-stone-700 uppercase mb-2">
                     Assunto do Contato
                   </label>
                   <select
@@ -212,7 +212,7 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono font-bold text-stone-600 uppercase mb-2">
+                  <label htmlFor="contact-message" className="block text-xs font-mono font-bold text-stone-700 uppercase mb-2">
                     Mensagem / Dúvida *
                   </label>
                   <textarea

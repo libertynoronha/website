@@ -41,7 +41,7 @@ export default function RoomGallery({
               Suas Noites de Sono no Melhor Conforto
             </h2>
             <div className="h-1 w-12 bg-brand-green mt-4 rounded"></div>
-            <p className="text-stone-500 text-sm sm:text-base mt-4 leading-relaxed">
+            <p className="text-stone-700 text-sm sm:text-base mt-4 leading-relaxed">
               Conforto, simplicidade e hospitalidade se unem para proporcionar uma experiência agradável e memorável em cada hospedagem.
             </p>
           </div>
@@ -110,7 +110,7 @@ export default function RoomGallery({
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
                     {/* Header Details */}
-                    <div className="flex items-center gap-1.5 text-stone-400 font-mono text-[10px] uppercase tracking-wider mb-2.5">
+                    <div className="flex items-center gap-1.5 text-stone-700 font-mono text-[10px] uppercase tracking-wider mb-2.5">
                       <span className="flex items-center gap-1">
                         <Expand className="w-3 h-3 text-brand-blue" /> {room.size}
                       </span>
@@ -127,7 +127,7 @@ export default function RoomGallery({
                     <h3 className="text-xl font-serif font-bold text-stone-900 tracking-wide leading-snug group-hover:text-brand-blue transition-colors">
                       {room.name}
                     </h3>
-                    <p className="text-stone-500 text-xs sm:text-sm mt-2.5 leading-relaxed">
+                    <p className="text-stone-600 text-xs sm:text-sm mt-2.5 leading-relaxed">
                       {room.description}
                     </p>
                   </div>
@@ -142,7 +142,7 @@ export default function RoomGallery({
                       ) : (
                         <div className="flex items-center justify-between mb-4">
                           <div className="text-left">
-                            <span className="block text-[9px] font-mono text-stone-400 uppercase tracking-widest leading-none">
+                            <span className="block text-[9px] font-mono text-stone-600 uppercase tracking-widest leading-none">
                               Estimativa p/ {stayCalculation.nights} {stayCalculation.nights === 1 ? "noite" : "noites"}
                             </span>
                             <span className="text-lg font-serif font-bold text-brand-blue block mt-0.5">

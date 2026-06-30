@@ -33,7 +33,7 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
           <button
             id="btn-close-terms"
             onClick={onClose}
-            className="p-1.5 rounded-full bg-stone-100 text-stone-500 hover:bg-stone-200 hover:text-stone-800 transition-colors"
+            className="p-3 min-w-[44px] min-h-[44px] rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 hover:text-stone-800 transition-colors"
             aria-label="Fechar"
           >
             <X className="w-4 h-4" />
@@ -41,7 +41,7 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
         </div>
 
         {/* Content */}
-        <div className="p-6 sm:p-8 text-left text-stone-600 text-sm leading-relaxed max-h-[70vh] overflow-y-auto font-sans">
+        <div className="p-6 sm:p-8 text-left text-stone-700 text-sm leading-relaxed max-h-[70vh] overflow-y-auto font-sans">
           <h4 className="font-serif font-bold text-stone-900 text-lg mb-6 pb-2 border-b border-stone-100">
             📄 TERMOS DE USO
           </h4>

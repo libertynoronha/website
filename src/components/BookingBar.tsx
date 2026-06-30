@@ -77,7 +77,7 @@ export default function BookingBar({
       {!inline && (
         <div className="flex items-center gap-2 mb-4">
           <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
-          <p className="text-xs font-mono font-medium tracking-widest text-stone-500 uppercase flex items-center gap-1.5">
+          <p className="text-xs font-mono font-medium tracking-widest text-stone-700 uppercase flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-brand-yellow fill-brand-yellow/30" /> Planejar sua Estadia (Orçamento por WhatsApp)
           </p>
         </div>
@@ -86,8 +86,8 @@ export default function BookingBar({
       <form onSubmit={handleSubmit} className="flex flex-col lg:flex-row gap-4 lg:items-end">
         {/* Check In */}
         <div className="flex-1 min-w-[150px]">
-          <label className="block text-xs font-mono font-semibold text-stone-600 uppercase mb-2 flex items-center gap-1.5">
-            <Calendar className="w-3.5 h-3.5 text-stone-400" /> Entrada
+          <label htmlFor="booking-check-in-input" className="block text-xs font-mono font-semibold text-stone-700 uppercase mb-2 flex items-center gap-1.5">
+            <Calendar className="w-3.5 h-3.5 text-stone-600" /> Entrada
           </label>
           <div className="relative">
             <input
@@ -113,8 +113,8 @@ export default function BookingBar({
 
         {/* Check Out */}
         <div className="flex-1 min-w-[150px]">
-          <label className="block text-xs font-mono font-semibold text-stone-600 uppercase mb-2 flex items-center gap-1.5">
-            <Calendar className="w-3.5 h-3.5 text-stone-400" /> Saída
+          <label htmlFor="booking-check-out-input" className="block text-xs font-mono font-semibold text-stone-700 uppercase mb-2 flex items-center gap-1.5">
+            <Calendar className="w-3.5 h-3.5 text-stone-600" /> Saída
           </label>
           <div className="relative">
             <input
@@ -130,15 +130,15 @@ export default function BookingBar({
 
         {/* Guests */}
         <div className="w-full lg:w-[160px]">
-          <label className="block text-xs font-mono font-semibold text-stone-600 uppercase mb-2 flex items-center gap-1.5">
-            <Users className="w-3.5 h-3.5 text-stone-400" /> Hóspedes
+          <label htmlFor="booking-guests-display" className="block text-xs font-mono font-semibold text-stone-700 uppercase mb-2 flex items-center gap-1.5">
+            <Users className="w-3.5 h-3.5 text-stone-600" /> Hóspedes
           </label>
           <div className="relative flex items-center">
             <button
               id="booking-guests-dec-btn"
               type="button"
               onClick={() => setGuests((g) => Math.max(1, g - 1))}
-              className="absolute left-1 flex items-center justify-center w-8 h-8 rounded-lg bg-stone-200 hover:bg-stone-300 text-stone-700 transition-colors focus:outline-none text-sm font-bold"
+              className="absolute left-1 flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-lg bg-stone-200 hover:bg-stone-300 text-stone-700 transition-colors focus:outline-none text-sm font-bold"
             >
               -
             </button>
@@ -153,7 +153,7 @@ export default function BookingBar({
               id="booking-guests-inc-btn"
               type="button"
               onClick={() => setGuests((g) => Math.min(4, g + 1))}
-              className="absolute right-1 flex items-center justify-center w-8 h-8 rounded-lg bg-stone-200 hover:bg-stone-300 text-stone-700 transition-colors focus:outline-none text-sm font-bold"
+              className="absolute right-1 flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] rounded-lg bg-stone-200 hover:bg-stone-300 text-stone-700 transition-colors focus:outline-none text-sm font-bold"
             >
               +
             </button>
@@ -175,7 +175,7 @@ export default function BookingBar({
               id="btn-simulate-clear"
               type="button"
               onClick={onClear}
-              className="p-3 bg-stone-100 hover:bg-stone-200 text-stone-500 hover:text-stone-700 rounded-xl transition-colors focus:outline-none"
+              className="flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] bg-stone-100 hover:bg-stone-200 text-stone-700 hover:text-stone-900 rounded-xl transition-colors focus:outline-none"
               title="Limpar simulação"
             >
               <X className="w-5 h-5" />
@@ -186,7 +186,7 @@ export default function BookingBar({
 
       {/* Nights Indicator */}
       {nights > 0 && !errorMsg && (
-        <p className="text-xs font-mono text-stone-500 mt-3 flex items-center gap-1.5">
+        <p className="text-xs font-mono text-stone-700 mt-3 flex items-center gap-1.5">
           Período simulado: <strong className="text-brand-blue font-semibold">{nights} {nights === 1 ? "diária" : "diárias"}</strong> de estadia.
         </p>
       )}

@@ -79,7 +79,7 @@ export default function WhatsAppModal({
           <button
             id="btn-close-wa-simulator"
             onClick={onClose}
-            className="p-1.5 hover:bg-emerald-700/60 text-white rounded-full transition-colors focus:outline-none"
+            className="flex items-center justify-center p-3 min-w-[44px] min-h-[44px] hover:bg-emerald-700/60 text-white rounded-full transition-colors focus:outline-none"
             aria-label="Fechar"
           >
             <X className="w-5 h-5" />
@@ -89,7 +89,7 @@ export default function WhatsAppModal({
         {/* Info Disclaimer */}
         <div className="bg-brand-green/10 border-b border-brand-green/20 px-4 py-2.5 text-left flex gap-2 items-start">
           <ShieldCheck className="w-4.5 h-4.5 text-brand-green flex-shrink-0 mt-0.5" />
-          <p className="text-[10px] text-stone-600 leading-normal">
+          <p className="text-[10px] text-stone-700 leading-normal">
             Você está simulando o contato com nossa equipe. Abaixo está a mensagem gerada com base em suas escolhas. Clique em <strong>Enviar</strong> para abrir seu WhatsApp.
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function WhatsAppModal({
             <p className="leading-relaxed">
               Olá! Seja bem-vindo ao atendimento da <strong>Pousada Liberty Noronha Sueste</strong>. Como podemos te ajudar hoje?
             </p>
-            <span className="block text-[8px] text-stone-400 text-right mt-1">
+            <span className="block text-[8px] text-stone-700 text-right mt-1">
               Atendimento Automático
             </span>
           </div>
@@ -109,7 +109,7 @@ export default function WhatsAppModal({
           {/* User prefilled inquiry message */}
           <div className="bg-emerald-100 text-stone-800 text-xs py-2.5 px-3.5 rounded-2xl rounded-tr-none max-w-[85%] self-end shadow-sm border border-emerald-200/40 text-left">
             <p className="whitespace-pre-line leading-relaxed">{userMsg}</p>
-            <span className="block text-[8px] text-stone-400 text-right mt-1">
+            <span className="block text-[8px] text-stone-700 text-right mt-1">
               Sua mensagem gerada
             </span>
           </div>
@@ -118,7 +118,7 @@ export default function WhatsAppModal({
         {/* Custom Input Editor */}
         <div className="bg-white p-3 border-t border-stone-200 flex flex-col gap-2.5">
           <div className="text-left">
-            <label className="block text-[9px] font-mono font-bold text-stone-400 uppercase tracking-widest mb-1">
+            <label htmlFor="wa-textarea-msg" className="block text-[9px] font-mono font-bold text-stone-700 uppercase tracking-widest mb-1">
               Editar Mensagem (Opcional):
             </label>
             <textarea
@@ -135,7 +135,7 @@ export default function WhatsAppModal({
             <button
               id="btn-wa-copy"
               onClick={handleCopyText}
-              className="flex-1 bg-stone-100 hover:bg-stone-200 text-stone-600 hover:text-stone-800 text-[11px] font-semibold tracking-wider uppercase py-3 rounded-xl transition-all flex items-center justify-center gap-1.5 border border-stone-200"
+              className="flex-1 bg-stone-100 hover:bg-stone-200 text-stone-800 hover:text-stone-950 text-[11px] font-semibold tracking-wider uppercase py-3 rounded-xl transition-all flex items-center justify-center gap-1.5 border border-stone-200"
             >
               {copied ? (
                 <>

@@ -114,14 +114,14 @@ export default function RoomModal({
               <>
                 <button
                   onClick={handlePrevImage}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-stone-900/65 hover:bg-stone-900/85 text-white p-1.5 rounded-full shadow-md transition-all active:scale-90"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-stone-900/65 hover:bg-stone-900/85 text-white p-3 min-w-[44px] min-h-[44px] rounded-full shadow-md transition-all active:scale-90"
                   aria-label="Imagem anterior"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={handleNextImage}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-stone-900/65 hover:bg-stone-900/85 text-white p-1.5 rounded-full shadow-md transition-all active:scale-90"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-stone-900/65 hover:bg-stone-900/85 text-white p-3 min-w-[44px] min-h-[44px] rounded-full shadow-md transition-all active:scale-90"
                   aria-label="Próxima imagem"
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -150,13 +150,13 @@ export default function RoomModal({
           {/* Quick Info Bar on Desktop */}
           <div className="hidden md:grid grid-cols-2 gap-px bg-stone-100 border-t border-stone-200">
             <div className="bg-white p-4 text-center">
-              <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-wider mb-1">Área útil</span>
+              <span className="block text-[10px] font-mono text-stone-600 uppercase tracking-wider mb-1">Área útil</span>
               <span className="text-sm font-serif font-bold text-stone-800 flex items-center justify-center gap-1.5">
                 <Expand className="w-4 h-4 text-brand-blue" /> {room.size}
               </span>
             </div>
             <div className="bg-white p-4 text-center">
-              <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-wider mb-1">Vista da Janela</span>
+              <span className="block text-[10px] font-mono text-stone-600 uppercase tracking-wider mb-1">Vista da Janela</span>
               <span className="text-sm font-serif font-bold text-stone-800 flex items-center justify-center gap-1.5">
                 <Eye className="w-4 h-4 text-brand-blue" /> {room.view}
               </span>
@@ -176,19 +176,19 @@ export default function RoomModal({
 
             {/* Micro specs on mobile */}
             <div className="flex flex-wrap items-center gap-4 mt-3 py-2 border-y border-stone-100 md:hidden">
-              <span className="text-xs font-mono text-stone-500 flex items-center gap-1">
+              <span className="text-xs font-mono text-stone-700 flex items-center gap-1">
                 <Expand className="w-3.5 h-3.5 text-brand-blue" /> {room.size}
               </span>
-              <span className="text-xs font-mono text-stone-500 flex items-center gap-1">
+              <span className="text-xs font-mono text-stone-700 flex items-center gap-1">
                 <BedDouble className="w-3.5 h-3.5 text-brand-blue" /> {room.beds}
               </span>
-              <span className="text-xs font-mono text-stone-500 flex items-center gap-1">
+              <span className="text-xs font-mono text-stone-700 flex items-center gap-1">
                 <Users className="w-3.5 h-3.5 text-brand-blue" /> Max: {room.capacity}
               </span>
             </div>
 
             {/* Description */}
-            <p className="text-stone-600 text-sm leading-relaxed mt-4">
+            <p className="text-stone-700 text-sm leading-relaxed mt-4">
               {room.longDescription}
             </p>
 
@@ -199,7 +199,7 @@ export default function RoomModal({
               </h4>
               <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                 {room.amenities.map((amenityName, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-xs text-stone-600">
+                  <div key={idx} className="flex items-center gap-2 text-xs text-stone-700">
                     <Check className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
                     <span className="truncate">{amenityName}</span>
                   </div>
@@ -214,12 +214,12 @@ export default function RoomModal({
               /* Simulation view */
               <div className="bg-stone-50 p-4 rounded-xl border border-stone-200/50 mb-4 flex justify-between items-center">
                 <div className="text-left">
-                  <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-widest">
+                  <span className="block text-[10px] font-mono text-stone-600 uppercase tracking-widest">
                     Estimativa para {details.nights} {details.nights === 1 ? "noite" : "noites"}
                   </span>
                   <div className="flex items-baseline gap-1.5 mt-0.5">
                     <span className="text-2xl font-serif font-bold text-brand-blue">R$ {details.totalPrice}*</span>
-                    <span className="text-xs text-stone-500 font-mono">({details.nights}x R$ {room.pricePerNight})</span>
+                    <span className="text-xs text-stone-600 font-mono">({details.nights}x R$ {room.pricePerNight})</span>
                   </div>
                 </div>
                 <div className="text-right">
@@ -232,13 +232,13 @@ export default function RoomModal({
               /* Regular pricing view */
               <div className="flex items-baseline gap-2 mb-4 justify-between">
                 <div>
-                  <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-widest">Diária média regular</span>
+                  <span className="block text-[10px] font-mono text-stone-600 uppercase tracking-widest">Diária média regular</span>
                   <div className="flex items-baseline gap-1 mt-0.5">
                     <span className="text-2xl font-serif font-bold text-stone-900">R$ {room.pricePerNight}</span>
-                    <span className="text-xs text-stone-500 font-mono">/ noite</span>
+                    <span className="text-xs text-stone-600 font-mono">/ noite</span>
                   </div>
                 </div>
-                <span className="text-[10px] font-mono text-stone-400 italic">Preço base sob consulta</span>
+                <span className="text-[10px] font-mono text-stone-600 italic">Preço base sob consulta</span>
               </div>
             )}
 

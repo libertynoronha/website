@@ -69,7 +69,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             </span>
             <span
               className={`block text-[10px] tracking-[0.2em] uppercase -mt-1 ${
-                isScrolled ? "text-stone-500" : "text-stone-300"
+                isScrolled ? "text-stone-600" : "text-stone-300"
               }`}
             >
               Fernando de Noronha - Brasil
@@ -105,7 +105,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             id="link-phone-header"
             href={`tel:${POUSADA_INFO.phoneNumeric}`}
             className={`flex items-center gap-2 text-xs font-mono tracking-wider transition-colors hover:text-brand-blue ${
-              isScrolled ? "text-stone-500" : "text-stone-200"
+              isScrolled ? "text-stone-600" : "text-stone-200"
             }`}
           >
             <Phone className="w-3.5 h-3.5" />
@@ -184,7 +184,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               <a
                 id="mobile-nav-phone"
                 href={`tel:${POUSADA_INFO.phoneNumeric}`}
-                className="flex items-center gap-3 text-sm font-mono text-stone-500 py-2 px-2"
+                className="flex items-center gap-3 text-sm font-mono text-stone-600 py-2 px-2"
               >
                 <Phone className="w-4 h-4 text-brand-blue" />
                 {POUSADA_INFO.phone}

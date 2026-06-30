@@ -14,7 +14,7 @@ export default function Testimonials() {
             O que Dizem Quem Já Se Hospedou
           </h2>
           <div className="h-1 w-12 bg-brand-green mx-auto mt-4 rounded"></div>
-          <p className="text-stone-500 text-sm sm:text-base mt-4 leading-relaxed">
+          <p className="text-stone-700 text-sm sm:text-base mt-4 leading-relaxed">
             Nada nos deixa mais realizados do que saber que pudemos proporcionar momentos de paz e recarga para as energias de nossos clientes.
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function Testimonials() {
                   ))}
                 </div>
 
-                <p className="text-stone-600 text-sm sm:text-base leading-relaxed italic">
+                <p className="text-stone-700 text-sm sm:text-base leading-relaxed italic">
                   "{testimonial.text}"
                 </p>
               </div>
@@ -51,7 +51,7 @@ export default function Testimonials() {
                   <p className="font-serif font-bold text-stone-800 text-sm sm:text-base">
                     {testimonial.author}
                   </p>
-                  <p className="text-[11px] font-mono text-stone-400 mt-0.5">
+                  <p className="text-[11px] font-mono text-stone-600 mt-0.5">
                     {testimonial.city}
                   </p>
                 </div>
