@@ -6,9 +6,9 @@ import BookingBar from "./BookingBar";
 import { BookingSimulation } from "../types";
 import heroPousadaImg from "../assets/images/hero_pousada.jpg";
 import deckImg from "../assets/images/deck.jpg";
-import breakfastImg from "../assets/images/breakfast.jpg";
+import breakfastImg from "../assets/images/breakfast_03.jpeg";
 import breakfast2Img from "../assets/images/breakfast_2.jpg";
-import logoImage from "../assets/images/logo_2025.jpg";
+import externa from "../assets/images/externa.jpeg";
 
 interface HeroProps {
   onSimulate: (simulation: BookingSimulation) => void;
@@ -33,6 +33,11 @@ export default function Hero({
       src: deckImg,
       alt: "Deck elegante com espreguiçadeiras e paisagem tropical",
       description: "Relaxar no deck com vista para o jardim e o clima tropical de Noronha.",
+    },
+    {
+      src: externa,
+      alt: "Área externa da pousada com paisagem tropical",
+      description: "Desfrute da beleza natural de Noronha em nossa área externa, ideal para relaxar e se conectar com a natureza.",
     },
     {
       src: breakfastImg,
@@ -195,9 +200,6 @@ export default function Hero({
                 referrerPolicy="no-referrer"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 sm:p-6 backdrop-blur-md">
-                <p className="text-xs uppercase tracking-[0.24em] text-brand-yellow font-bold mb-1">
-                  Imagem {currentHeroIndex + 1} de {heroImages.length}
-                </p>
                 <p className="text-sm sm:text-base leading-relaxed">
                   {currentHero.description}
                 </p>

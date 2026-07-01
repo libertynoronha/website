@@ -3,6 +3,8 @@ import suiteDoubleImg from "./assets/images/suite_double.jpg";
 import suiteDouble2Img from "./assets/images/suite_double_2.jpg";
 import suiteDouble3Img from "./assets/images/suite_double_3.jpg";
 import suiteDouble4Img from "./assets/images/suite_double_4.jpg";
+import suiteDouble8Img from "./assets/images/suite_double_8.jpg";
+import suiteSingle from "./assets/images/suite_single.jpg";
 import suiteTripleImg from "./assets/images/suite_triple.jpg";
 import suiteTriple2Img from "./assets/images/suite_triple_2.jpg";
 import suiteTriple3Img from "./assets/images/suite_triple_3.jpg";
@@ -40,10 +42,12 @@ export const ROOMS_DATA: Room[] = [
     amenities: ["Ar-condicionado Split", "Cama King Size ou solteiros", "Wi-Fi Starlink", "Smart TV 32\"", "Frigobar", "Secador de Cabelo", "Armário", "Chuveiro com Aquecimento Solar", "Roupões de Banho"],
     imageUrl: suiteDoubleImg,
     images: [
+      suiteDouble8Img,
       suiteDoubleImg,
       suiteDouble2Img,
       suiteDouble3Img,
       suiteDouble4Img,
+      suiteSingle,
     ],
     tag: "Mais Reservada",
   },
