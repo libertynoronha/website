@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BedDouble, Expand, Users, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { ROOMS_DATA } from "../data";
 import { Room, BookingSimulation } from "../types";
 import RoomModal from "./RoomModal";
@@ -13,6 +14,7 @@ export default function RoomGallery({
   bookingSimulation,
   onOpenWhatsApp,
 }: RoomGalleryProps) {
+  const { t } = useTranslation();
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
 
   // Helper to calculate total stay price based on dates
@@ -35,14 +37,14 @@ export default function RoomGallery({
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
           <div className="text-left max-w-2xl">
             <p className="text-xs font-mono tracking-[0.25em] text-brand-blue uppercase font-bold">
-              Hospedagem Design
+              {t('rooms.subtitle')}
             </p>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 mt-2">
-              Suas Noites de Sono no Melhor Conforto
+              {t('rooms.title')}
             </h2>
             <div className="h-1 w-12 bg-brand-green mt-4 rounded"></div>
             <p className="text-stone-700 text-sm sm:text-base mt-4 leading-relaxed">
-              Conforto, simplicidade e hospitalidade se unem para proporcionar uma experiência agradável e memorável em cada hospedagem.
+              {t('rooms.description')}
             </p>
           </div>
 
@@ -52,10 +54,10 @@ export default function RoomGallery({
               <span className="w-2.5 h-2.5 rounded-full bg-brand-green animate-pulse flex-shrink-0"></span>
               <div className="text-left">
                 <span className="block text-xs font-bold text-emerald-800 uppercase tracking-wide">
-                  Período Selecionado
+                  {t('booking.selectedPeriod')}
                 </span>
                 <span className="block text-[11px] font-mono text-emerald-700">
-                  Planeje suas datas para solicitar cotação via WhatsApp.
+                  {t('booking.planDates')}
                 </span>
               </div>
             </div>

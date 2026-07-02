@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { POUSADA_INFO } from "../data";
 import logoImage from "../assets/images/logo_2025.jpg";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 interface HeaderProps {
   onOpenBooking: () => void;
 }
 
 export default function Header({ onOpenBooking }: HeaderProps) {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -86,11 +89,11 @@ export default function Header({ onOpenBooking }: HeaderProps) {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {[
-            { label: "Início", id: "hero" },
-            { label: "Acomodações", id: "acomodacoes" },
-            { label: "Comodidades", id: "comodidades" },
-            { label: "Depoimentos", id: "depoimentos" },
-            { label: "FAQ", id: "faq" },
+            { label: "home", id: "hero" },
+            { label: "accommodations", id: "acomodacoes" },
+            { label: "amenities", id: "comodidades" },
+            { label: "testimonials", id: "depoimentos" },
+            { label: "faq", id: "faq" },
           ].map((item) => (
             <button
               id={`nav-link-${item.id}`}
@@ -100,7 +103,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                 isScrolled ? "text-stone-600" : "text-stone-200 hover:text-white after:bg-white"
               }`}
             >
-              {item.label}
+              {t(`header.${item.label}`)}
             </button>
           ))}
         </nav>
@@ -117,6 +120,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             <Phone className="w-3.5 h-3.5" />
             {POUSADA_INFO.phone}
           </a>
+          <LanguageSwitcher />
           <button
             id="btn-header-reserve"
             onClick={onOpenBooking}
@@ -126,12 +130,15 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                 : "bg-white/10 border-white/20 text-white hover:bg-white hover:text-stone-950"
             }`}
           >
-            Consultar Tarifas
+            {t('header.contact')}
           </button>
         </div>
 
         {/* Mobile Toggle */}
         <div className="flex md:hidden items-center gap-3">
+          <div className="md:hidden">
+            <LanguageSwitcher />
+          </div>
           <button
             id="btn-mobile-reserve-top"
             onClick={onOpenBooking}
@@ -141,7 +148,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                 : "bg-white/15 border-white/20 text-white hover:bg-white hover:text-stone-900"
             }`}
           >
-            Consultar
+            {t('header.contact')}
           </button>
           <button
             id="btn-mobile-menu-toggle"
@@ -169,11 +176,11 @@ export default function Header({ onOpenBooking }: HeaderProps) {
           >
             <div className="flex flex-col gap-1">
               {[
-                { label: "Início", id: "hero" },
-                { label: "Acomodações", id: "acomodacoes" },
-                { label: "Comodidades", id: "comodidades" },
-                { label: "Depoimentos", id: "depoimentos" },
-                { label: "FAQ", id: "faq" },
+                { label: "home", id: "hero" },
+                { label: "accommodations", id: "acomodacoes" },
+                { label: "amenities", id: "comodidades" },
+                { label: "testimonials", id: "depoimentos" },
+                { label: "faq", id: "faq" },
               ].map((item) => (
                 <button
                   id={`mobile-nav-link-${item.id}`}
@@ -181,7 +188,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                   onClick={() => scrollToSection(item.id)}
                   className="w-full text-left font-serif text-lg py-3 px-2 border-b border-stone-100 text-stone-700 hover:text-brand-blue transition-colors"
                 >
-                  {item.label}
+                  {t(`header.${item.label}`)}
                 </button>
               ))}
             </div>
@@ -203,7 +210,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                 }}
                 className="w-full text-center text-sm font-semibold tracking-wider uppercase bg-brand-blue text-white py-3 rounded-xl hover:bg-brand-blue/90 active:scale-[0.98] transition-all cursor-pointer"
               >
-                Consultar Disponibilidade
+                {t('header.contact')}
               </button>
             </div>
           </div>

@@ -1,21 +1,23 @@
 import { Star, MessageSquareQuote } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { TESTIMONIALS_DATA } from "../data";
 
 export default function Testimonials() {
+  const { t } = useTranslation();
   return (
     <section id="depoimentos" className="py-24 bg-stone-50 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-xs font-mono tracking-[0.25em] text-brand-blue uppercase font-bold">
-            Opinião dos Hóspedes
+            {t('testimonials.subtitle')}
           </p>
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 mt-3">
-            O que Dizem Quem Já Se Hospedou
+            {t('testimonials.title')}
           </h2>
           <div className="h-1 w-12 bg-brand-green mx-auto mt-4 rounded"></div>
           <p className="text-stone-700 text-sm sm:text-base mt-4 leading-relaxed">
-            Nada nos deixa mais realizados do que saber que pudemos proporcionar momentos de paz e recarga para as energias de nossos clientes.
+            {t('testimonials.description')}
           </p>
         </div>
 

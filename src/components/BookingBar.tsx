@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Calendar, Users, Sparkles, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { BookingSimulation } from "../types";
 
 interface BookingBarProps {
@@ -15,6 +16,7 @@ export default function BookingBar({
   onClear,
   inline = false,
 }: BookingBarProps) {
+  const { t } = useTranslation();
   // Set default dates if none exist
   const getTodayStr = (offsetDays = 0) => {
     const d = new Date();
@@ -36,7 +38,7 @@ export default function BookingBar({
     setErrorMsg("");
 
     if (!checkIn || !checkOut) {
-      setErrorMsg("Por favor, selecione as datas de entrada e saída.");
+      setErrorMsg(t('booking.errorDates'));
       return;
     }
 
@@ -44,7 +46,7 @@ export default function BookingBar({
     const dOut = new Date(checkOut);
 
     if (dIn >= dOut) {
-      setErrorMsg("A data de saída deve ser após a data de entrada.");
+      setErrorMsg(t('booking.errorCheckOut'));
       return;
     }
 
@@ -78,7 +80,7 @@ export default function BookingBar({
         <div className="flex items-center gap-2 mb-4">
           <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
           <p className="text-xs font-mono font-medium tracking-widest text-stone-700 uppercase flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-brand-yellow fill-brand-yellow/30" /> Planejar sua Estadia (Orçamento por WhatsApp)
+            <Sparkles className="w-3.5 h-3.5 text-brand-yellow fill-brand-yellow/30" /> {t('booking.liveSimulation')}
           </p>
         </div>
       )}
@@ -87,7 +89,7 @@ export default function BookingBar({
         {/* Check In */}
         <div className="flex-1 min-w-[150px]">
           <label htmlFor="booking-check-in-input" className="block text-xs font-mono font-semibold text-stone-700 uppercase mb-2 flex items-center gap-1.5">
-            <Calendar className="w-3.5 h-3.5 text-stone-600" /> Entrada
+            <Calendar className="w-3.5 h-3.5 text-stone-600" /> {t('booking.checkIn')}
           </label>
           <div className="relative">
             <input
@@ -114,7 +116,7 @@ export default function BookingBar({
         {/* Check Out */}
         <div className="flex-1 min-w-[150px]">
           <label htmlFor="booking-check-out-input" className="block text-xs font-mono font-semibold text-stone-700 uppercase mb-2 flex items-center gap-1.5">
-            <Calendar className="w-3.5 h-3.5 text-stone-600" /> Saída
+            <Calendar className="w-3.5 h-3.5 text-stone-600" /> {t('booking.checkOut')}
           </label>
           <div className="relative">
             <input
@@ -131,7 +133,7 @@ export default function BookingBar({
         {/* Guests */}
         <div className="w-full lg:w-[160px]">
           <label htmlFor="booking-guests-display" className="block text-xs font-mono font-semibold text-stone-700 uppercase mb-2 flex items-center gap-1.5">
-            <Users className="w-3.5 h-3.5 text-stone-600" /> Hóspedes
+            <Users className="w-3.5 h-3.5 text-stone-600" /> {t('booking.guests')}
           </label>
           <div className="relative flex items-center">
             <button
@@ -167,7 +169,7 @@ export default function BookingBar({
             type="submit"
             className="flex-1 lg:flex-none text-center bg-brand-blue hover:bg-brand-blue/90 text-stone-50 text-xs font-bold tracking-wider uppercase px-8 py-4 rounded-xl transition-all shadow-md active:scale-[0.98] cursor-pointer min-w-[140px]"
           >
-            {initialSimulation ? "Atualizar" : "Ver Opções"}
+            {t('booking.simulate')}
           </button>
 
           {initialSimulation && onClear && (
@@ -187,7 +189,7 @@ export default function BookingBar({
       {/* Nights Indicator */}
       {nights > 0 && !errorMsg && (
         <p className="text-xs font-mono text-stone-700 mt-3 flex items-center gap-1.5">
-          Período simulado: <strong className="text-brand-blue font-semibold">{nights} {nights === 1 ? "diária" : "diárias"}</strong> de estadia.
+          {`Período simulado: `}<strong className="text-brand-blue font-semibold">{nights} {t('booking.nights')}</strong> de estadia.
         </p>
       )}
 

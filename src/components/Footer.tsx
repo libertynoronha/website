@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Instagram, Facebook, Compass, Mail, Phone, MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { POUSADA_INFO } from "../data";
 import PrivacyModal from "./PrivacyModal";
 import TermsModal from "./TermsModal";
 import logoImage from "../assets/images/logo_2025.jpg";
 
 export default function Footer() {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
   const [isTermsOpen, setIsTermsOpen] = useState(false);
@@ -47,23 +49,23 @@ export default function Footer() {
               </div>
             </button>
             <p className="text-xs text-stone-300 leading-relaxed mt-2 max-w-xs">
-              Conforto e autenticidade em Fernando de Noronha. O seu ponto de partida ideal para viver toda a beleza e a tranquilidade da ilha, a poucos metros da Praia do Sueste.
+              {t('footer.manifesto')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="text-xs font-mono font-bold uppercase text-stone-100 tracking-wider mb-4">
-              Links Rápidos
+              {t('footer.quickLinks')}
             </h3>
             <ul className="space-y-2 text-xs">
               {[
-                { name: "Início", id: "hero" },
-                { name: "Acomodações", id: "acomodacoes" },
-                { name: "Comodidades", id: "comodidades" },
-                { name: "Depoimentos", id: "depoimentos" },
-                { name: "Localização", id: "localizacao" },
-                { name: "FAQ", id: "faq" },
+                { label: "home", id: "hero" },
+                { label: "accommodations", id: "acomodacoes" },
+                { label: "amenities", id: "comodidades" },
+                { label: "testimonials", id: "depoimentos" },
+                { label: "location", id: "localizacao" },
+                { label: "faq", id: "faq" },
               ].map((link) => (
                 <li key={link.id}>
                   <button
@@ -81,7 +83,7 @@ export default function Footer() {
                     }}
                     className="hover:text-brand-yellow transition-colors text-stone-300 focus:outline-none cursor-pointer"
                   >
-                    {link.name}
+                    {t(`header.${link.label}`)}
                   </button>
                 </li>
               ))}
@@ -91,7 +93,7 @@ export default function Footer() {
           {/* Contact & Info */}
           <div className="flex flex-col gap-4">
             <h3 className="text-xs font-mono font-bold uppercase text-stone-100 tracking-wider mb-1">
-              Contato & Reservas
+              {t('footer.contact')}
             </h3>
             <ul className="space-y-3 text-xs">
               <li className="flex items-start gap-2.5">
@@ -159,7 +161,7 @@ export default function Footer() {
         {/* Footer bottom */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-300 gap-4">
           <p>
-            &copy; {currentYear} {POUSADA_INFO.name}. Todos os direitos reservados. CNPJ 43.796.811/0001-53.
+            &copy; {currentYear} {POUSADA_INFO.name}. {t('footer.rights')}. CNPJ 43.796.811/0001-53.
           </p>
           <div className="flex gap-4">
             <button
@@ -167,7 +169,7 @@ export default function Footer() {
               onClick={() => setIsPrivacyOpen(true)}
               className="hover:text-brand-yellow transition-colors cursor-pointer focus:outline-none"
             >
-              Políticas de Privacidade
+              {t('footer.privacy')}
             </button>
             <span>•</span>
             <button
@@ -175,7 +177,7 @@ export default function Footer() {
               onClick={() => setIsTermsOpen(true)}
               className="hover:text-brand-yellow transition-colors cursor-pointer focus:outline-none"
             >
-              Termos de Uso
+              {t('footer.terms')}
             </button>
           </div>
         </div>

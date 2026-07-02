@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Plus, Minus, HelpCircle } from "lucide-react";
-import { FAQS_DATA } from "../data";
+import { Plus, Minus } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function FAQ() {
+  const { t } = useTranslation();
+  const faqs = t('faq.items', { returnObjects: true }) as Array<{id: string, question: string, answer: string}>;
   const [openId, setOpenId] = useState<string | null>("faq-1");
 
   const toggleFAQ = (id: string) => {
@@ -19,17 +21,17 @@ export default function FAQ() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="text-xs font-mono tracking-[0.25em] text-brand-blue uppercase font-bold">
-            Dúvidas Frequentes
+            {t('faq.subtitle')}
           </p>
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 mt-3">
-            Informações Úteis para sua Estadia
+            {t('faq.title')}
           </h2>
           <div className="h-1 w-12 bg-brand-green mx-auto mt-4 rounded"></div>
         </div>
 
         {/* Accordion list */}
         <div className="space-y-4">
-          {FAQS_DATA.map((faq) => {
+          {faqs.map((faq) => {
             const isOpen = openId === faq.id;
             return (
               <div
@@ -65,7 +67,7 @@ export default function FAQ() {
         {/* Contact CTA */}
         <div className="mt-12 text-center bg-white p-6 sm:p-8 rounded-2xl border border-stone-200/50 max-w-xl mx-auto">
           <p className="text-sm text-stone-700">
-            Ainda tem alguma pergunta que não está respondida aqui?
+            {t('faq.items')?.[0]?.id ? 'Ainda tem alguma pergunta que não está respondida aqui?' : 'Ainda tem alguma pergunta que não está respondida aqui?'}
           </p>
           <p className="text-xs font-mono text-stone-700 mt-1">
             Fale conosco diretamente via WhatsApp a qualquer momento!

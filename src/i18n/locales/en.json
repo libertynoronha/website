@@ -1,0 +1,161 @@
+{
+  "common": {
+    "language": "English",
+    "loading": "Loading..."
+  },
+  "header": {
+    "home": "Home",
+    "accommodations": "Accommodations",
+    "amenities": "Amenities",
+    "testimonials": "Testimonials",
+    "faq": "FAQ",
+    "location": "Location",
+    "contact": "Contact"
+  },
+  "hero": {
+    "welcome": "Welcome to Pousada Liberty Noronha Sueste: charm, comfort and nature all around you.",
+    "description1": "Relax on the deck overlooking the garden and tropical climate of Noronha.",
+    "description2": "Enjoy the natural beauty of Noronha in our outdoor area, ideal for relaxing and connecting with nature.",
+    "description3": "Artisanal breakfast included, prepared with seasonal fruits and local flavors.",
+    "description4": "Start your day with a light and delicious meal, specially prepared for you."
+  },
+  "booking": {
+    "liveSimulation": "Live Simulation",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "guests": "Guests",
+    "simulate": "Simulate Price",
+    "errorDates": "Please select check-in and check-out dates.",
+    "errorCheckOut": "Check-out date must be after check-in date.",
+    "nights": "night(s)",
+    "total": "Total",
+    "selectedPeriod": "Selected Period",
+    "planDates": "Plan your dates to request a quote via WhatsApp."
+  },
+  "rooms": {
+    "title": "Your Nights of Sleep in Ultimate Comfort",
+    "subtitle": "Design Accommodation",
+    "description": "Comfort, simplicity and hospitality come together to provide a pleasant and memorable experience with every stay.",
+    "rooms": {
+      "double": {
+        "name": "Double Suite",
+        "shortDescription": "Comfortable suite with king-size bed or two single beds, equipped with TV, mini-fridge and everything you need for a pleasant stay.",
+        "longDescription": "Ideal for couples or friends, our Double Suite offers a cozy and functional environment, with the option of a king-size bed or two single beds. Equipped with TV, mini-fridge and welcoming decoration, it's perfect for relaxing after a day exploring Fernando de Noronha, providing comfort and practicality throughout your stay.",
+        "tag": "Most Booked",
+        "beds": "1 King-size bed or 2 single beds",
+        "size": "9 m²",
+        "view": "Garden",
+        "capacity": "2 guests"
+      },
+      "triple": {
+        "name": "Triple Suite",
+        "shortDescription": "Spacious and comfortable suite for up to 3 guests, equipped with TV, mini-fridge and welcoming environment for a peaceful stay.",
+        "longDescription": "Perfect for small families or groups of friends, the Triple Suite combines space, comfort and practicality. Accommodating up to three people, with TV and mini-fridge, it offers a pleasant environment to relax after a day of sightseeing. Its layout was designed to provide well-being and a comfortable accommodation experience.",
+        "tag": "For Friends",
+        "beds": "1 Queen bed + 1 Single bed",
+        "size": "11 m²",
+        "view": "Garden and Pool",
+        "capacity": "3 guests"
+      },
+      "quadruple": {
+        "name": "Family Suite",
+        "shortDescription": "Spacious suite for up to 4 guests, with TV, mini-fridge and all the comfort for families and groups.",
+        "longDescription": "Our Quadruple Suite is ideal for families or groups of friends who want to share special moments in comfort. With capacity for up to four guests, it features TV, mini-fridge and a spacious and welcoming environment, ensuring practicality and a pleasant stay in a space designed for rest and coexistence.",
+        "tag": "Spacious",
+        "beds": "2 Queen beds",
+        "size": "15 m²",
+        "view": "Pool and Garden",
+        "capacity": "4 guests"
+      }
+    },
+    "amenities": [
+      "Split air conditioning",
+      "King-size or single beds",
+      "Starlink Wi-Fi",
+      "32\" Smart TV",
+      "Mini-fridge",
+      "Hair dryer",
+      "Closet",
+      "Solar-heated shower",
+      "Bathrobe"
+    ]
+  },
+  "amenities": {
+    "title": "Amenities Designed for Your Rest",
+    "subtitle": "Exclusive Services",
+    "description": "We offer a curated selection of services carefully designed so your only concern is enjoying the sea breeze and waves.",
+    "wifi": {
+      "name": "High-Speed Wi-Fi",
+      "description": "Starlink internet covering all suites and outdoor areas, ideal for working from the beach."
+    },
+    "breakfast": {
+      "name": "Breakfast Included",
+      "description": "Served artisanally with homemade breads, seasonal fruits, fresh juices and freshly made tapiocas."
+    },
+    "pool": {
+      "name": "Adult and children's pools",
+      "description": "Two pools with direct view of the mountain, surrounded by noble wood deck and loungers."
+    },
+    "parking": {
+      "name": "Parking",
+      "description": "Parking in front of the pousada and free for all guests."
+    },
+    "concierge": {
+      "name": "Tour Support",
+      "description": "Partnerships with the best guides and experiences in Noronha, with access to boat tours, guided trails, surf lessons and exclusive local food tips."
+    },
+    "disclaimer1": "* All amenities above are 100% included in the regular daily rate. No hidden fees.",
+    "disclaimer2": "* Tour Support acts exclusively in the referral of partners. Prices, reservations and conditions are set directly with service providers."
+  },
+  "testimonials": {
+    "title": "What Those Who Have Stayed Say",
+    "subtitle": "Guest Reviews",
+    "description": "Nothing makes us more fulfilled than knowing we could provide moments of peace and renewed energy for our clients."
+  },
+  "faq": {
+    "title": "Useful Information for Your Stay",
+    "subtitle": "Frequently Asked Questions",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "What are the check-in and check-out times?",
+        "answer": "Our check-in starts at 2:00 PM and check-out must be done by 12:00 PM. If you need early check-in or late check-out, please contact us in advance to check availability and additional fees."
+      },
+      {
+        "id": "faq-2",
+        "question": "Does the pousada accept pets?",
+        "answer": "We accept small pets (up to 10kg) upon prior consultation and acceptance of the pet policy. We charge a one-time cleaning fee of R$ 120 per stay. Pets should not be left alone in rooms and are not allowed in the pool area for health reasons."
+      },
+      {
+        "id": "faq-3",
+        "question": "Is breakfast included in the daily rate?",
+        "answer": "Yes, our artisanal breakfast and cold cuts and fruit buffet is fully included in all daily rates. It is served daily from 8:00 AM to 11:00 AM in our open dining room with a view of the garden and sea."
+      },
+      {
+        "id": "faq-4",
+        "question": "How does the cancellation policy work?",
+        "answer": "Cancellations made up to 45 days before the check-in date are eligible for full refund of the deposit or credit for future stays. Cancellations within 45 days or no-show result in forfeiture of the full deposit amount."
+      },
+      {
+        "id": "faq-5",
+        "question": "Do you offer transfer or tour services?",
+        "answer": "We do not have our own transfer service, but we have partnerships with trusted licensed drivers and rental companies. We also assist in booking tours and guides."
+      }
+    ]
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contact": "Contact & Reservations",
+    "manifesto": "Comfort and authenticity in Fernando de Noronha. Your ideal starting point to experience all the beauty and tranquility of the island, just a few meters from Sueste Beach.",
+    "rights": "All rights reserved",
+    "privacy": "Privacy",
+    "terms": "Terms of Service"
+  },
+  "pousadaInfo": {
+    "name": "Pousada Liberty Noronha Sueste",
+    "tagline": "Unforgettable experiences begin with a welcoming stay in Noronha",
+    "description": "At Pousada Liberty Noronha Sueste, every detail has been thought out to provide comfortable and authentic accommodation. With cozy suites, pool, breakfast and welcoming service, we are the ideal starting point to experience all the beauty and tranquility of Fernando de Noronha, just steps away from Sueste Beach.",
+    "checkInTime": "2:00 PM",
+    "checkOutTime": "12:00 PM"
+  }
+}
