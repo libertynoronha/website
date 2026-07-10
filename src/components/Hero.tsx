@@ -5,10 +5,11 @@ import { POUSADA_INFO } from "../data";
 import BookingBar from "./BookingBar";
 import { BookingSimulation } from "../types";
 import heroPousadaImg from "../assets/images/hero_pousada.jpg";
-import deckImg from "../assets/images/deck.jpg";
+import piscina3Img from "../assets/images/Piscina_03.jpeg";
+import pergolaImg from "../assets/images/Pergola.jpeg";
 import breakfastImg from "../assets/images/breakfast_03.jpeg";
 import breakfast2Img from "../assets/images/breakfast_2.jpg";
-import externa from "../assets/images/externa.jpeg";
+import externa from "../assets/images/Entrada.jpeg";
 
 interface HeroProps {
   onSimulate: (simulation: BookingSimulation) => void;
@@ -30,9 +31,14 @@ export default function Hero({
       description: "Bem-vindo à Pousada Liberty Noronha Sueste: charme, conforto e natureza ao seu redor.",
     },
     {
-      src: deckImg,
+      src: piscina3Img,
       alt: "Deck elegante com espreguiçadeiras e paisagem tropical",
       description: "Relaxar no deck com vista para o jardim e o clima tropical de Noronha.",
+    },
+    {
+      src: pergolaImg,
+      alt: "Espaço charmoso para refeições, conversas e momentos inesquecíveis.",
+      description: "REspaço charmoso para refeições, conversas e momentos inesquecíveis.",
     },
     {
       src: externa,
