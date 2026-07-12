@@ -108,7 +108,7 @@ export default function RoomGallery({
                       }}
                       className="bg-brand-yellow hover:bg-white text-stone-900 text-xs font-bold tracking-wider uppercase py-2.5 px-4 rounded-xl shadow-md transition-all duration-300 active:scale-95 flex items-center gap-1.5 cursor-pointer border border-transparent hover:border-stone-200"
                     >
-                      Consultar Diária
+                      {t('rooms.checkDailyRate')}
                     </button>
                   </div>
                 </div>
@@ -144,16 +144,16 @@ export default function RoomGallery({
                     {bookingSimulation && stayCalculation ? (
                       isOverCapacity ? (
                         <div className="bg-red-50 text-red-800 text-[11px] font-bold uppercase tracking-wide py-2 px-3 rounded-xl border border-red-200/50 text-center">
-                          Capacidade Excedida ({room.capacity} hóspedes máx)
+                          {t('rooms.capacityExceeded', { capacity: room.capacity })}
                         </div>
                       ) : (
                         <div className="flex items-center justify-between mb-4">
                           <div className="text-left">
                             <span className="block text-[9px] font-mono text-stone-400 uppercase tracking-widest leading-none">
-                              Período selecionado
+                              {t('rooms.selectedPeriod')}
                             </span>
                             <span className="text-sm font-serif font-bold text-brand-blue block mt-0.5">
-                              {stayCalculation.nights} {stayCalculation.nights === 1 ? "diária" : "diárias"}
+                              {stayCalculation.nights} {stayCalculation.nights === 1 ? t('booking.nights') : t('booking.nights_plural')}
                             </span>
                           </div>
                           <button
@@ -163,12 +163,12 @@ export default function RoomGallery({
                                 const parts = dateStr.split("-");
                                 return `${parts[2]}/${parts[1]}/${parts[0]}`;
                               };
-                              const msg = `Olá! Gostaria de consultar os valores e disponibilidade para a *${room.name}* de ${formatDate(bookingSimulation.checkIn)} a ${formatDate(bookingSimulation.checkOut)} (${stayCalculation.nights} noites) para ${bookingSimulation.guests} ${bookingSimulation.guests === 1 ? "pessoa" : "pessoas"}.`;
+                              const msg = `Olá! Gostaria de consultar os valores e disponibilidade para a *${room.name}* de ${formatDate(bookingSimulation.checkIn)} a ${formatDate(bookingSimulation.checkOut)} (${stayCalculation.nights} noites) para ${bookingSimulation.guests} ${bookingSimulation.guests === 1 ? t('booking.guest_one') : t('booking.guest_other')}.`;
                               onOpenWhatsApp(msg);
                             }}
                             className="bg-brand-blue/10 hover:bg-brand-blue text-brand-blue hover:text-white border border-brand-blue/20 text-[10px] font-mono font-bold uppercase py-1.5 px-3 rounded-full transition-all duration-300 cursor-pointer"
                           >
-                            Consultar Valores
+                            {t('rooms.checkRates')}
                           </button>
                         </div>
                       )
@@ -180,7 +180,7 @@ export default function RoomGallery({
                       onClick={() => setSelectedRoom(room)}
                       className="w-full text-center bg-stone-900 hover:bg-brand-blue text-stone-100 text-xs font-bold tracking-wider uppercase py-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:shadow group/btn"
                     >
-                      Ver Detalhes e Fotos
+                      {t('rooms.viewDetailsAndPhotos')}
                       <ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                     </button>
                   </div>

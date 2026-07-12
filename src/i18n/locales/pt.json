@@ -10,8 +10,10 @@
   },
   "hero": {
     "location": "Praia do Sueste, Fernando de Noronha",
-    "knowSuites": "Conchar Suítes",
+    "knowSuites": "Conhecer Suítes",
     "reviewText": "Avaliação Fantástico na Booking",
+    "tagline": "Experiências inesquecíveis começam com uma hospedagem acolhedora em Noronha",
+    "description": "Na Pousada Liberty Noronha Sueste, cada detalhe foi pensado para proporcionar uma hospedagem confortável e autêntica. Com suítes aconchegantes, piscina, café da manhã e atendimento acolhedor, somos o ponto de partida ideal para viver toda a beleza e a tranquilidade de Fernando de Noronha, a poucos passos da Praia do Sueste.",
     "slides": {
       "slide1": "Bem-vindo à Pousada Liberty Noronha Sueste: charme, conforto e natureza ao seu redor.",
       "slide2": "Relaxar no deck com vista para o jardim e o clima tropical de Noronha.",
@@ -36,7 +38,8 @@
     "errorDates": "Por favor, selecione as datas de entrada e saída.",
     "errorCheckOut": "A data de saída deve ser após a data de entrada.",
     "periodSimulated": "Período simulado",
-    "daysOfStay": "de estadia."
+    "daysOfStay": "de estadia.",
+    "clearSimulation": "Limpar simulação"
   },
   "rooms": {
     "subtitle": "Hospedagem Design",
@@ -50,6 +53,11 @@
     "bySeason": "De acordo com a temporada",
     "checkAvailability": "Consultar Disponibilidade no WhatsApp",
     "close": "Fechar",
+    "checkDailyRate": "Consultar Diária",
+    "checkRates": "Consultar Valores",
+    "viewDetailsAndPhotos": "Ver Detalhes e Fotos",
+    "capacityExceeded": "Capacidade Excedida (máx {{capacity}} hóspedes)",
+    "selectedPeriod": "Período Selecionado",
     "suite-double": {
       "name": "Suíte Dupla",
       "description": "Suíte confortável com opção de cama king-size ou duas camas de solteiro, equipada com TV, frigobar e tudo o que você precisa para uma estadia agradável.",
@@ -240,6 +248,8 @@
   "whatsapp": {
     "fabTooltip": "Olá! Como podemos ajudar em sua estadia? 🌊",
     "fabAria": "Falar conosco no WhatsApp",
+    "closeTooltip": "Fechar dica",
+    "talkToUs": "Falar conosco no WhatsApp",
     "onlineStatus": "Online • Geralmente responde em minutos",
     "disclaimer": "Você está simulando o contato com nossa equipe. Abaixo está a mensagem gerada com base em suas escolhas. Clique em Enviar para abrir seu WhatsApp.",
     "welcomeMsg": "Olá! Seja bem-vindo ao atendimento da Pousada Liberty Noronha Sueste. Como podemos te ajudar hoje?",

@@ -141,7 +141,7 @@ export default function BookingBar({
               id="booking-guests-display"
               type="text"
               readOnly
-              value={`${guests} ${guests === 1 ? "Pessoa" : "Pessoas"}`}
+              value={`${guests} ${guests === 1 ? t('booking.guest_one') : t('booking.guest_other')}`}
               className="w-full bg-stone-50 text-center text-stone-800 text-sm border border-stone-200 rounded-xl py-3 px-10 font-semibold"
             />
             <button
@@ -171,7 +171,7 @@ export default function BookingBar({
               type="button"
               onClick={onClear}
               className="flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] bg-stone-100 hover:bg-stone-200 text-stone-700 hover:text-stone-900 rounded-xl transition-colors focus:outline-none"
-              title="Limpar simulação"
+              title={t('booking.clearSimulation')}
             >
               <X className="w-5 h-5" />
             </button>
@@ -182,7 +182,7 @@ export default function BookingBar({
       {/* Nights Indicator */}
       {nights > 0 && !errorMsg && (
         <p className="text-xs font-mono text-stone-700 mt-3 flex items-center gap-1.5">
-          {`Período simulado: `}<strong className="text-brand-blue font-semibold">{nights} {t('booking.nights')}</strong> de estadia.
+          {t('booking.periodSimulated')}: <strong className="text-brand-blue font-semibold">{nights} {nights === 1 ? t('booking.nights') : t('booking.nights_plural')}</strong> {t('booking.daysOfStay')}
         </p>
       )}
 

@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { MessageSquare, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface WhatsAppFABProps {
   onClick: () => void;
 }
 
 export default function WhatsAppFAB({ onClick }: WhatsAppFABProps) {
+  const { t } = useTranslation();
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
@@ -33,7 +35,7 @@ export default function WhatsAppFAB({ onClick }: WhatsAppFABProps) {
             <div className="absolute bottom-[-6px] right-[22px] w-3 h-3 bg-stone-900 rotate-45 border-r border-b border-stone-800"></div>
 
             <p className="leading-relaxed font-serif font-medium">
-              Olá! Como podemos ajudar em sua estadia? 🌊
+              {t("whatsapp.fabTooltip", { defaultValue: "Olá! Como podemos ajudar em sua estadia? 🌊" })}
             </p>
 
             <button
@@ -43,7 +45,7 @@ export default function WhatsAppFAB({ onClick }: WhatsAppFABProps) {
                 setShowTooltip(false);
               }}
               className="text-stone-300 hover:text-stone-100 focus:outline-none"
-              aria-label="Fechar dica"
+              aria-label={t("whatsapp.closeTooltip", { defaultValue: "Fechar dica" })}
             >
               <X className="w-3 h-3" />
             </button>
@@ -59,7 +61,7 @@ export default function WhatsAppFAB({ onClick }: WhatsAppFABProps) {
           onClick();
         }}
         className="relative bg-emerald-500 hover:bg-emerald-600 text-stone-50 p-4 rounded-full shadow-2xl transition-transform duration-300 hover:scale-108 active:scale-[0.96] cursor-pointer focus:outline-none group focus:ring-4 focus:ring-emerald-400/30"
-        aria-label="Falar conosco no WhatsApp"
+        aria-label={t("whatsapp.fabAria", { defaultValue: "Falar conosco no WhatsApp" })}
       >
         {/* Animated breathing ripple effect */}
         <span className="absolute inset-0 rounded-full bg-emerald-500/40 animate-ping opacity-65 scale-110 pointer-events-none group-hover:animate-none"></span>

@@ -12,6 +12,8 @@
     "location": "Sueste Beach, Fernando de Noronha",
     "knowSuites": "Explore Suites",
     "reviewText": "Fantastic Rating on Booking",
+    "tagline": "Unforgettable experiences begin with a warm stay in Noronha",
+    "description": "At Pousada Liberty Noronha Sueste, every detail is designed to provide a comfortable and authentic stay. With cozy suites, a swimming pool, breakfast, and warm service, we are the ideal starting point to experience all the beauty and tranquility of Fernando de Noronha, just steps from Sueste Beach.",
     "slides": {
       "slide1": "Welcome to Pousada Liberty Noronha Sueste: charm, comfort, and nature all around you.",
       "slide2": "Relax on our deck overlooking the garden and Noronha's tropical climate.",
@@ -36,7 +38,8 @@
     "errorDates": "Please select both check-in and check-out dates.",
     "errorCheckOut": "Check-out date must be after the check-in date.",
     "periodSimulated": "Simulated period",
-    "daysOfStay": "of stay."
+    "daysOfStay": "of stay.",
+    "clearSimulation": "Clear simulation"
   },
   "rooms": {
     "subtitle": "Design Lodging",
@@ -50,6 +53,11 @@
     "bySeason": "According to the season",
     "checkAvailability": "Check Availability on WhatsApp",
     "close": "Close",
+    "checkDailyRate": "Check Daily Rate",
+    "checkRates": "Check Rates",
+    "viewDetailsAndPhotos": "View Details & Photos",
+    "capacityExceeded": "Capacity Exceeded ({{capacity}} guests max)",
+    "selectedPeriod": "Selected Period",
     "suite-double": {
       "name": "Double Suite",
       "description": "Comfortable suite with option of a king-size bed or two twin beds, equipped with TV, minibar, and everything you need for a pleasant stay.",
@@ -240,6 +248,8 @@
   "whatsapp": {
     "fabTooltip": "Hi there! How can we help you plan your stay? 🌊",
     "fabAria": "Contact us on WhatsApp",
+    "closeTooltip": "Close tooltip",
+    "talkToUs": "Talk to us on WhatsApp",
     "onlineStatus": "Online • Usually replies in minutes",
     "disclaimer": "You are simulating contact with our team. Below is the message generated based on your choices. Click Send to open your WhatsApp.",
     "welcomeMsg": "Hello! Welcome to Pousada Liberty Noronha Sueste customer service. How can we help you today?",

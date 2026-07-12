@@ -31,32 +31,32 @@ export default function Hero({
     {
       src: heroPousadaImg,
       alt: "Vista aérea da pousada Liberty com área externa e entrada",
-      description: t("hero.slide1", { defaultValue: "Bem-vindo à Pousada Liberty Noronha Sueste: charme, conforto e natureza ao seu redor." }),
+      description: t("hero.slides.slide1", { defaultValue: "Bem-vindo à Pousada Liberty Noronha Sueste: charme, conforto e natureza ao seu redor." }),
     },
     {
       src: piscina3Img,
       alt: "Deck elegante com espreguiçadeiras e paisagem tropical",
-      description: t("hero.slide2", { defaultValue: "Relaxar no deck com vista para o jardim e o clima tropical de Noronha." }),
+      description: t("hero.slides.slide2", { defaultValue: "Relaxar no deck com vista para o jardim e o clima tropical de Noronha." }),
     },
     {
       src: pergolaImg,
       alt: "Espaço charmoso para refeições, conversas e momentos inesquecíveis.",
-      description: t("hero.slide3", { defaultValue: "Espaço charmoso para refeições, conversas e momentos inesquecíveis." }),
+      description: t("hero.slides.slide3", { defaultValue: "Espaço charmoso para refeições, conversas e momentos inesquecíveis." }),
     },
     {
       src: externa,
       alt: "Área externa da pousada com paisagem tropical",
-      description: t("hero.slide4", { defaultValue: "Desfrute da beleza natural de Noronha em nossa área externa, ideal para relaxar e se conectar com a natureza." }),
+      description: t("hero.slides.slide4", { defaultValue: "Desfrute da beleza natural de Noronha em nossa área externa, ideal para relaxar e se conectar com a natureza." }),
     },
     {
       src: breakfastImg,
       alt: "Café da manhã servido com frutas, pães e bebidas naturais",
-      description: t("hero.slide5", { defaultValue: "Café da manhã artesanal incluso, preparado com frutas da estação e sabores locais." }),
+      description: t("hero.slides.slide5", { defaultValue: "Café da manhã artesanal incluso, preparado com frutas da estação e sabores locais." }),
     },
     {
       src: breakfast2Img,
       alt: "Mesa de café da manhã com croissants, sucos e frutas",
-      description: t("hero.slide6", { defaultValue: "Comece o dia com uma refeição leve e deliciosa, pensada especialmente para você." }),
+      description: t("hero.slides.slide6", { defaultValue: "Comece o dia com uma refeição leve e deliciosa, pensada especialmente para você." }),
     },
   ];
 
@@ -138,7 +138,7 @@ export default function Hero({
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-brand-blue/90 font-mono text-xs sm:text-sm uppercase tracking-[0.25em] font-bold mt-3"
             >
-              {POUSADA_INFO.tagline}
+              {t("hero.tagline", { defaultValue: POUSADA_INFO.tagline })}
             </motion.p>
 
             <motion.p
@@ -147,7 +147,7 @@ export default function Hero({
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-stone-600 text-sm sm:text-base leading-relaxed mt-6 max-w-lg"
             >
-              {POUSADA_INFO.description}
+              {t("hero.description", { defaultValue: POUSADA_INFO.description })}
             </motion.p>
 
             {/* Micro Details & CTAs */}
@@ -162,7 +162,7 @@ export default function Hero({
                 onClick={scrollToAcomodacoes}
                 className="bg-brand-blue hover:bg-brand-blue/90 text-stone-50 text-xs font-bold uppercase tracking-wider px-7 py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2.5 group cursor-pointer"
               >
-                Conhecer Suítes
+                {t('hero.knowSuites')}
                 <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
               </button>
 
@@ -181,7 +181,7 @@ export default function Hero({
                     <Star className="w-3.5 h-3.5 fill-brand-yellow text-brand-yellow" />
                   </div>
                   <span className="text-[11px] font-mono font-medium text-stone-700 block">
-                    Avaliação Fantástico na Booking
+                    {t('hero.reviewText')}
                   </span>
                 </div>
               </div>
@@ -219,14 +219,14 @@ export default function Hero({
               <button
                 onClick={handlePrevHero}
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-stone-950/50 hover:bg-stone-950/75 text-white p-3 min-w-[44px] min-h-[44px] rounded-full shadow-lg transition-all active:scale-90 opacity-0 group-hover:opacity-100 duration-300 cursor-pointer"
-                aria-label="Anterior"
+                aria-label={t('rooms.prevImage', { defaultValue: 'Anterior' })}
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={handleNextHero}
                 className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-stone-950/50 hover:bg-stone-950/75 text-white p-3 min-w-[44px] min-h-[44px] rounded-full shadow-lg transition-all active:scale-90 opacity-0 group-hover:opacity-100 duration-300 cursor-pointer"
-                aria-label="Próximo"
+                aria-label={t('rooms.nextImage', { defaultValue: 'Próximo' })}
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
