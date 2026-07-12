@@ -38,7 +38,7 @@ export default function Hero({
     {
       src: pergolaImg,
       alt: "Espaço charmoso para refeições, conversas e momentos inesquecíveis.",
-      description: "REspaço charmoso para refeições, conversas e momentos inesquecíveis.",
+      description: "Espaço charmoso para refeições, conversas e momentos inesquecíveis.",
     },
     {
       src: externa,

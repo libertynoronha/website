@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { X, Check, BedDouble, Expand, Eye, Users, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, Check, BedDouble, Expand, Eye, Users, Calendar, HelpCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { Room, BookingSimulation } from "../types";
+import { POUSADA_INFO } from "../data";
 
 interface RoomModalProps {
   room: Room;
@@ -40,7 +41,7 @@ export default function RoomModal({
   };
 
   const details = calculateDetails();
-
+  
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -101,14 +102,23 @@ export default function RoomModal({
         {/* Left: Image & Quick Specs */}
         <div className="w-full md:w-1/2 relative h-[280px] md:h-auto bg-stone-100 flex flex-col">
           <div className="relative flex-1 h-full min-h-[240px] overflow-hidden group">
-            <img
-              src={images[currentImgIdx]}
-              alt={`${room.name} - Imagem ${currentImgIdx + 1}`}
-              loading="eager"
-              decoding="async"
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
+            {images.map((imgUrl, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
+                  index === currentImgIdx ? "opacity-100 z-10" : "opacity-0 z-0"
+                }`}
+              >
+                <img
+                  src={imgUrl}
+                  alt={`${room.name} - Imagem ${index + 1}`}
+                  loading="eager"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            ))}
 
             {room.tag && (
               <span className="absolute top-4 left-4 bg-brand-blue text-stone-50 text-[10px] font-bold tracking-widest uppercase py-1 px-3.5 rounded-full shadow-sm z-20">
@@ -121,14 +131,14 @@ export default function RoomModal({
               <>
                 <button
                   onClick={handlePrevImage}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-stone-900/65 hover:bg-stone-900/85 text-white p-3 min-w-[44px] min-h-[44px] rounded-full shadow-md transition-all active:scale-90"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-stone-900/65 hover:bg-stone-900/85 text-white p-1.5 rounded-full shadow-md transition-all active:scale-90"
                   aria-label="Imagem anterior"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={handleNextImage}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-stone-900/65 hover:bg-stone-900/85 text-white p-3 min-w-[44px] min-h-[44px] rounded-full shadow-md transition-all active:scale-90"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-stone-900/65 hover:bg-stone-900/85 text-white p-1.5 rounded-full shadow-md transition-all active:scale-90"
                   aria-label="Próxima imagem"
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -157,13 +167,13 @@ export default function RoomModal({
           {/* Quick Info Bar on Desktop */}
           <div className="hidden md:grid grid-cols-2 gap-px bg-stone-100 border-t border-stone-200">
             <div className="bg-white p-4 text-center">
-              <span className="block text-[10px] font-mono text-stone-600 uppercase tracking-wider mb-1">Área útil</span>
+              <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-wider mb-1">Área útil</span>
               <span className="text-sm font-serif font-bold text-stone-800 flex items-center justify-center gap-1.5">
                 <Expand className="w-4 h-4 text-brand-blue" /> {room.size}
               </span>
             </div>
             <div className="bg-white p-4 text-center">
-              <span className="block text-[10px] font-mono text-stone-600 uppercase tracking-wider mb-1">Vista da Janela</span>
+              <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-wider mb-1">Vista da Janela</span>
               <span className="text-sm font-serif font-bold text-stone-800 flex items-center justify-center gap-1.5">
                 <Eye className="w-4 h-4 text-brand-blue" /> {room.view}
               </span>
@@ -221,31 +231,31 @@ export default function RoomModal({
               /* Simulation view */
               <div className="bg-stone-50 p-4 rounded-xl border border-stone-200/50 mb-4 flex justify-between items-center">
                 <div className="text-left">
-                  <span className="block text-[10px] font-mono text-stone-600 uppercase tracking-widest">
-                    Estimativa para {details.nights} {details.nights === 1 ? "noite" : "noites"}
+                  <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-widest">
+                    Período da Estadia
                   </span>
                   <div className="flex items-baseline gap-1.5 mt-0.5">
-                    <span className="text-2xl font-serif font-bold text-brand-blue">R$ {details.totalPrice}*</span>
-                    <span className="text-xs text-stone-600 font-mono">({details.nights}x R$ {room.pricePerNight})</span>
+                    <span className="text-lg font-serif font-bold text-brand-blue">
+                      {details.nights} {details.nights === 1 ? "diária" : "diárias"} selecionada{details.nights === 1 ? "" : "s"}
+                    </span>
                   </div>
                 </div>
                 <div className="text-right">
                   <span className="inline-flex items-center gap-1 bg-brand-blue/10 text-brand-blue text-[10px] font-mono font-bold uppercase py-1 px-2.5 rounded-full">
-                    Sob Consulta
+                    Consultar Valores
                   </span>
                 </div>
               </div>
             ) : (
               /* Regular pricing view */
-              <div className="flex items-baseline gap-2 mb-4 justify-between">
-                <div>
-                  <span className="block text-[10px] font-mono text-stone-600 uppercase tracking-widest">Diária média regular</span>
+              <div className="bg-stone-50 p-4 rounded-xl border border-stone-200/50 mb-4 flex justify-between items-center">
+                <div className="text-left">
+                  <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-widest">Preço da Diária</span>
                   <div className="flex items-baseline gap-1 mt-0.5">
-                    <span className="text-2xl font-serif font-bold text-stone-900">R$ {room.pricePerNight}</span>
-                    <span className="text-xs text-stone-600 font-mono">/ noite</span>
+                    <span className="text-sm font-serif font-bold text-stone-800">Sob Consulta</span>
                   </div>
                 </div>
-                <span className="text-[10px] font-mono text-stone-600 italic">Preço base sob consulta</span>
+                <span className="text-[10px] font-mono text-stone-400 italic">De acordo com a temporada</span>
               </div>
             )}
 
@@ -261,7 +271,7 @@ export default function RoomModal({
               </svg>
               Consultar Disponibilidade no WhatsApp
             </button>
-
+            
             <button
               onClick={onClose}
               className="mt-3 md:hidden w-full text-center bg-stone-200 hover:bg-stone-300 text-stone-900 text-xs font-bold tracking-wider uppercase py-4 rounded-xl transition-all shadow-sm hover:shadow active:scale-[0.98]"

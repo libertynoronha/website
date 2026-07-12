@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BedDouble, Expand, Users, ChevronRight } from "lucide-react";
+import { BedDouble, Expand, Users, Sparkles, Star, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { ROOMS_DATA } from "../data";
 import { Room, BookingSimulation } from "../types";
@@ -43,7 +43,7 @@ export default function RoomGallery({
               {t('rooms.title')}
             </h2>
             <div className="h-1 w-12 bg-brand-green mt-4 rounded"></div>
-            <p className="text-stone-700 text-sm sm:text-base mt-4 leading-relaxed">
+            <p className="text-stone-500 text-sm sm:text-base mt-4 leading-relaxed">
               {t('rooms.description')}
             </p>
           </div>
@@ -98,15 +98,18 @@ export default function RoomGallery({
                     </span>
                   )}
 
-                  {/* Pricing Badge (Daily rate) */}
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <p className="text-[10px] font-mono tracking-widest text-stone-200 uppercase leading-none mb-1">
-                      Tarifa média
-                    </p>
-                    <div className="flex items-baseline gap-0.5">
-                      <span className="text-xl font-serif font-bold">R$ {room.pricePerNight}</span>
-                      <span className="text-xs text-stone-200 font-mono">/ noite</span>
-                    </div>
+                  {/* Consult Button instead of Pricing Badge */}
+                  <div className="absolute bottom-4 left-4 z-20">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        const msg = `Olá! Gostaria de consultar as tarifas e disponibilidade para a *${room.name}*.`;
+                        onOpenWhatsApp(msg);
+                      }}
+                      className="bg-brand-yellow hover:bg-white text-stone-900 text-xs font-bold tracking-wider uppercase py-2.5 px-4 rounded-xl shadow-md transition-all duration-300 active:scale-95 flex items-center gap-1.5 cursor-pointer border border-transparent hover:border-stone-200"
+                    >
+                      Consultar Diária
+                    </button>
                   </div>
                 </div>
 
@@ -114,7 +117,7 @@ export default function RoomGallery({
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
                     {/* Header Details */}
-                    <div className="flex items-center gap-1.5 text-stone-700 font-mono text-[10px] uppercase tracking-wider mb-2.5">
+                    <div className="flex items-center gap-1.5 text-stone-400 font-mono text-[10px] uppercase tracking-wider mb-2.5">
                       <span className="flex items-center gap-1">
                         <Expand className="w-3 h-3 text-brand-blue" /> {room.size}
                       </span>
@@ -131,7 +134,7 @@ export default function RoomGallery({
                     <h3 className="text-xl font-serif font-bold text-stone-900 tracking-wide leading-snug group-hover:text-brand-blue transition-colors">
                       {room.name}
                     </h3>
-                    <p className="text-stone-600 text-xs sm:text-sm mt-2.5 leading-relaxed">
+                    <p className="text-stone-500 text-xs sm:text-sm mt-2.5 leading-relaxed">
                       {room.description}
                     </p>
                   </div>
@@ -146,16 +149,27 @@ export default function RoomGallery({
                       ) : (
                         <div className="flex items-center justify-between mb-4">
                           <div className="text-left">
-                            <span className="block text-[9px] font-mono text-stone-600 uppercase tracking-widest leading-none">
-                              Estimativa p/ {stayCalculation.nights} {stayCalculation.nights === 1 ? "noite" : "noites"}
+                            <span className="block text-[9px] font-mono text-stone-400 uppercase tracking-widest leading-none">
+                              Período selecionado
                             </span>
-                            <span className="text-lg font-serif font-bold text-brand-blue block mt-0.5">
-                              R$ {stayCalculation.totalPrice}*
+                            <span className="text-sm font-serif font-bold text-brand-blue block mt-0.5">
+                              {stayCalculation.nights} {stayCalculation.nights === 1 ? "diária" : "diárias"}
                             </span>
                           </div>
-                          <span className="inline-flex items-center gap-1 bg-brand-blue/10 text-brand-blue text-[10px] font-mono font-bold uppercase py-1 px-2.5 rounded-full">
-                            Sob Consulta
-                          </span>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              const formatDate = (dateStr: string) => {
+                                const parts = dateStr.split("-");
+                                return `${parts[2]}/${parts[1]}/${parts[0]}`;
+                              };
+                              const msg = `Olá! Gostaria de consultar os valores e disponibilidade para a *${room.name}* de ${formatDate(bookingSimulation.checkIn)} a ${formatDate(bookingSimulation.checkOut)} (${stayCalculation.nights} noites) para ${bookingSimulation.guests} ${bookingSimulation.guests === 1 ? "pessoa" : "pessoas"}.`;
+                              onOpenWhatsApp(msg);
+                            }}
+                            className="bg-brand-blue/10 hover:bg-brand-blue text-brand-blue hover:text-white border border-brand-blue/20 text-[10px] font-mono font-bold uppercase py-1.5 px-3 rounded-full transition-all duration-300 cursor-pointer"
+                          >
+                            Consultar Valores
+                          </button>
                         </div>
                       )
                     ) : null}
