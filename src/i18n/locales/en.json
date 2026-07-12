@@ -63,6 +63,7 @@
       "description": "Comfortable suite with option of a king-size bed or two twin beds, equipped with TV, minibar, and everything you need for a pleasant stay.",
       "longDescription": "Ideal for couples or friends, our Double Suite offers a cozy and functional setting, with the option of a king-size bed or two twin beds. Equipped with a TV, minibar, and warm decor, it is perfect for resting after a day exploring Fernando de Noronha, providing comfort and practicality throughout your stay.",
       "beds": "1 King Size Bed or 2 Single beds",
+      "bedsShort": "King or Twin Beds",
       "view": "Garden",
       "tag": "Most Booked"
     },
@@ -71,6 +72,7 @@
       "description": "Spacious and comfortable suite for up to 3 guests, equipped with TV, minibar, and a cozy atmosphere for a peaceful stay.",
       "longDescription": "Perfect for small families or groups of friends, the Triple Suite combines space, comfort, and convenience. Accommodating up to three people, with TV and minibar, it offers an inviting space to relax after a day of sightseeing. Its layout was designed to provide well-being and a highly comfortable stay.",
       "beds": "1 Queen Size Bed + 1 Single Bed",
+      "bedsShort": "Queen + Twin",
       "view": "Garden and Pool",
       "tag": "Friends"
     },
@@ -79,6 +81,7 @@
       "description": "Spacious suite for up to 4 guests, with TV, minibar, and all comfort for families and groups.",
       "longDescription": "Our Family Suite is ideal for families or groups of friends who wish to share special moments in total comfort. Accommodating up to four guests, it features a TV, minibar, and a wide, welcoming space, ensuring practicality and an extremely pleasant stay designed for rest and bonding.",
       "beds": "2 Queen Size Beds",
+      "bedsShort": "2 Queen Beds",
       "view": "Pool and Garden",
       "tag": "Spacious"
     }

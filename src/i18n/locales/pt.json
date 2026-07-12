@@ -63,6 +63,7 @@
       "description": "Suíte confortável com opção de cama king-size ou duas camas de solteiro, equipada com TV, frigobar e tudo o que você precisa para uma estadia agradável.",
       "longDescription": "Ideal para casais ou amigos, nossa Suíte Dupla oferece um ambiente aconchegante e funcional, com opção de uma cama king-size ou duas camas de solteiro. Equipada com TV, frigobar e uma decoração acolhedora, é perfeita para descansar após um dia explorando Fernando de Noronha, proporcionando conforto e praticidade durante toda a hospedagem.",
       "beds": "1 Cama de Casal King Size ou 2 camas de solteiro",
+      "bedsShort": "Cama King ou Solteiro",
       "view": "Jardim",
       "tag": "Mais Reservada"
     },
@@ -71,6 +72,7 @@
       "description": "Suíte ampla e confortável para até 3 hóspedes, equipada com TV, frigobar e ambiente acolhedor para uma estadia tranquila.",
       "longDescription": "Perfeita para famílias pequenas ou grupos de amigos, a Suíte Tripla combina espaço, conforto e praticidade. Com acomodações para até três pessoas, TV e frigobar, oferece um ambiente agradável para relaxar após um dia de passeios. Seu layout foi pensado para proporcionar bem-estar e uma experiência de hospedagem confortável.",
       "beds": "1 Cama Queen Size + 1 Cama de Solteiro",
+      "bedsShort": "Queen + Solteiro",
       "view": "Jardim e Piscina",
       "tag": "Amigos"
     },
@@ -79,6 +81,7 @@
       "description": "Suíte espaçosa para até 4 hóspedes, com TV, frigobar e todo o conforto para famílias e grupos.",
       "longDescription": "Nossa Suíte Quádrupla é ideal para famílias ou grupos de amigos que desejam compartilhar momentos especiais com conforto. Com capacidade para até quatro hóspedes, dispõe de TV, frigobar e um ambiente amplo e acolhedor, garantindo praticidade e uma estadia agradável em um espaço pensado para o descanso e a convivência.",
       "beds": "2 Cama Queen Size",
+      "bedsShort": "2 Camas Queen",
       "view": "Piscina e Jardim",
       "tag": "Espaçosa"
     }

@@ -130,7 +130,7 @@ export default function RoomModal({
               >
                 <img
                   src={imgUrl}
-                  alt={`${translatedName} - Imagem ${index + 1}`}
+                  alt={`${translatedName} - ${t("rooms.imageLabel", { defaultValue: "Imagem" })} ${index + 1}`}
                   loading="eager"
                   decoding="async"
                   className="w-full h-full object-cover"
@@ -175,7 +175,7 @@ export default function RoomModal({
                       className={`h-2 rounded-full transition-all duration-300 ${
                         index === currentImgIdx ? "w-5 bg-brand-yellow" : "w-2 bg-white/60 hover:bg-white"
                       }`}
-                      aria-label={`Ir para imagem ${index + 1}`}
+                      aria-label={t("rooms.goToImage", { number: index + 1, defaultValue: `Ir para imagem ${index + 1}` })}
                     />
                   ))}
                 </div>
@@ -219,7 +219,7 @@ export default function RoomModal({
                 <BedDouble className="w-3.5 h-3.5 text-brand-blue" /> {translatedBeds}
               </span>
               <span className="text-xs font-mono text-stone-700 flex items-center gap-1">
-                <Users className="w-3.5 h-3.5 text-brand-blue" /> Max: {room.capacity}
+                <Users className="w-3.5 h-3.5 text-brand-blue" /> {t("rooms.maxLabel", { defaultValue: "Max:" })} {room.capacity}
               </span>
             </div>
 

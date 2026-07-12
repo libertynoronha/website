@@ -71,6 +71,12 @@ export default function RoomGallery({
             // Hide or flag if capacity exceeded
             const isOverCapacity = bookingSimulation && bookingSimulation.guests > room.capacity;
 
+            const translatedName = t(`rooms.${room.id}.name`, { defaultValue: room.name });
+            const translatedDescription = t(`rooms.${room.id}.description`, { defaultValue: room.description });
+            const translatedBeds = t(`rooms.${room.id}.beds`, { defaultValue: room.beds });
+            const translatedBedsShort = t(`rooms.${room.id}.bedsShort`, { defaultValue: translatedBeds });
+            const translatedTag = room.tag ? t(`rooms.${room.id}.tag`, { defaultValue: room.tag }) : undefined;
+
             return (
               <div
                 id={`room-card-${room.id}`}
@@ -83,7 +89,7 @@ export default function RoomGallery({
                 <div className="relative h-[220px] sm:h-[260px] overflow-hidden bg-stone-200">
                   <img
                     src={room.imageUrl}
-                    alt={room.name}
+                    alt={translatedName}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-104"
@@ -92,9 +98,9 @@ export default function RoomGallery({
                   <div className="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-transparent"></div>
 
                   {/* Standard top tag */}
-                  {room.tag && (
+                  {translatedTag && (
                     <span className="absolute top-4 left-4 bg-brand-blue/90 backdrop-blur-sm text-stone-100 text-[10px] font-bold tracking-widest uppercase py-1 px-3.5 rounded-full shadow-sm">
-                      {room.tag}
+                      {translatedTag}
                     </span>
                   )}
 
@@ -103,7 +109,10 @@ export default function RoomGallery({
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        const msg = `Olá! Gostaria de consultar as tarifas e disponibilidade para a *${room.name}*.`;
+                        const msg = t("app.quoteRequest", {
+                          roomName: translatedName,
+                          defaultValue: `Olá! Gostaria de consultar as tarifas e disponibilidade para a *${translatedName}*.`
+                        });
                         onOpenWhatsApp(msg);
                       }}
                       className="bg-brand-yellow hover:bg-white text-stone-900 text-xs font-bold tracking-wider uppercase py-2.5 px-4 rounded-xl shadow-md transition-all duration-300 active:scale-95 flex items-center gap-1.5 cursor-pointer border border-transparent hover:border-stone-200"
@@ -123,7 +132,7 @@ export default function RoomGallery({
                       </span>
                       <span>•</span>
                       <span className="flex items-center gap-1">
-                        <BedDouble className="w-3 h-3 text-brand-blue" /> {room.beds.split(" ")[2] || "Cama"}
+                        <BedDouble className="w-3 h-3 text-brand-blue" /> {translatedBedsShort}
                       </span>
                       <span>•</span>
                       <span className="flex items-center gap-1">
@@ -132,10 +141,10 @@ export default function RoomGallery({
                     </div>
 
                     <h3 className="text-xl font-serif font-bold text-stone-900 tracking-wide leading-snug group-hover:text-brand-blue transition-colors">
-                      {room.name}
+                      {translatedName}
                     </h3>
                     <p className="text-stone-500 text-xs sm:text-sm mt-2.5 leading-relaxed">
-                      {room.description}
+                      {translatedDescription}
                     </p>
                   </div>
 
@@ -163,8 +172,29 @@ export default function RoomGallery({
                                 const parts = dateStr.split("-");
                                 return `${parts[2]}/${parts[1]}/${parts[0]}`;
                               };
-                              const msg = `Olá! Gostaria de consultar os valores e disponibilidade para a *${room.name}* de ${formatDate(bookingSimulation.checkIn)} a ${formatDate(bookingSimulation.checkOut)} (${stayCalculation.nights} noites) para ${bookingSimulation.guests} ${bookingSimulation.guests === 1 ? t('booking.guest_one') : t('booking.guest_other')}.`;
-                              onOpenWhatsApp(msg);
+
+                              const nightsUnit = stayCalculation.nights === 1 ? t("booking.nights") : t("booking.nights_plural");
+                              const nightsStr = `${stayCalculation.nights} ${nightsUnit}`;
+                              const checkInLabel = t("booking.checkIn");
+                              const checkOutLabel = t("booking.checkOut");
+                              const stayLabel = t("app.waMsgStay", { defaultValue: "Estadia" });
+                              const guestsLabel = t("booking.guests");
+                              const guestTypeLabel = bookingSimulation.guests === 1 ? t("booking.guest_one") : t("booking.guest_other");
+                              const headerInquiry = t("app.waMsgHeaderInquiry", { defaultValue: "Poderiam me informar a disponibilidade e os valores para este período? Obrigado!" });
+
+                              const quoteRequestTemplate = t("app.quoteRequest", {
+                                roomName: translatedName,
+                                defaultValue: `Olá! Gostaria de solicitar uma cotação para a *${translatedName}*.`
+                              });
+
+                              const customMessage = quoteRequestTemplate + `\n\n` +
+                                `• *${checkInLabel}:* ${formatDate(bookingSimulation.checkIn)}\n` +
+                                `• *${checkOutLabel}:* ${formatDate(bookingSimulation.checkOut)}\n` +
+                                `• *${stayLabel}:* ${nightsStr}\n` +
+                                `• *${guestsLabel}:* ${bookingSimulation.guests} ${guestTypeLabel}\n\n` +
+                                headerInquiry;
+
+                              onOpenWhatsApp(customMessage);
                             }}
                             className="bg-brand-blue/10 hover:bg-brand-blue text-brand-blue hover:text-white border border-brand-blue/20 text-[10px] font-mono font-bold uppercase py-1.5 px-3 rounded-full transition-all duration-300 cursor-pointer"
                           >

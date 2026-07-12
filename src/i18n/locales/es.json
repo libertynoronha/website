@@ -63,6 +63,7 @@
       "description": "Suite cómoda con opción de cama king-size o dos camas individuales, equipada con TV, minibar y todo lo necesario para una estadia agradable.",
       "longDescription": "Ideal para parejas o amigos, nuestra Suite Doble ofrece un ambiente acogedor y funcional, con la opción de una cama king-size o dos camas individuales. Equipada con TV, minibar y una decoración acogedora, es perfecta para descansar después de un día explorando Fernando de Noronha, brindando comodidad y practicidad durante toda su estadía.",
       "beds": "1 Cama de Matrimonio King Size o 2 camas individuales",
+      "bedsShort": "Cama King o Individual",
       "view": "Jardín",
       "tag": "Más Reservada"
     },
@@ -71,6 +72,7 @@
       "description": "Suite amplia y cómoda para hasta 3 huéspedes, equipada con TV, minibar y un ambiente acogedor para una estadía tranquila.",
       "longDescription": "Perfecta para familias pequeñas o grupos de amigos, la Suite Triple combina espacio, confort y practicidad. Con alojamiento para hasta tres personas, TV y minibar, ofrece un espacio acogedor para relajarse después de un día de excursiones. Su diseño fue pensado para brindar bienestar y una estadía confortable.",
       "beds": "1 Cama Queen Size + 1 Cama Individual",
+      "bedsShort": "Queen + Individual",
       "view": "Jardín y Piscina",
       "tag": "Amigos"
     },
@@ -79,6 +81,7 @@
       "description": "Suite espacosa para hasta 4 huéspedes, con TV, minibar y todo el confort para familias y grupos.",
       "longDescription": "Nuestra Suite Cuádruple es ideal para familias o grupos de amigos que desean compartir momentos especiales con comodidad. Con capacidad para hasta cuatro huéspedes, dispone de TV, minibar y un ambiente amplio y acogedor, garantizando practicidad y una estadía placentera diseñada para el descanso y la convivencia.",
       "beds": "2 Camas Queen Size",
+      "bedsShort": "2 Camas Queen",
       "view": "Piscina y Jardín",
       "tag": "Espaciosa"
     }
