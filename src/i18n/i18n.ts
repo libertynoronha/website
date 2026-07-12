@@ -7,7 +7,7 @@ import esJSON from './locales/es.json';
 
 // Get language from localStorage or detect from browser
 const getInitialLanguage = () => {
-  const saved = localStorage.getItem('i18nLanguage');
+  const saved = localStorage.getItem('i18nLanguage') || 'pt';
   if (saved) return saved;
 
   // Detect browser language

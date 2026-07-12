@@ -1,4 +1,5 @@
 import { X, FileText } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { POUSADA_INFO } from "../data";
 
 interface TermsModalProps {
@@ -7,6 +8,8 @@ interface TermsModalProps {
 }
 
 export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
+  const { t } = useTranslation();
+
   if (!isOpen) return null;
 
   return (
@@ -27,14 +30,14 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
               <FileText className="w-5 h-5 text-brand-blue" />
             </div>
             <h3 className="font-serif font-bold text-stone-900 text-lg">
-              Termos de Uso
+              {t("terms.modalTitle", { defaultValue: "Termos de Uso" })}
             </h3>
           </div>
           <button
             id="btn-close-terms"
             onClick={onClose}
             className="p-3 min-w-[44px] min-h-[44px] rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 hover:text-stone-800 transition-colors"
-            aria-label="Fechar"
+            aria-label={t("rooms.close")}
           >
             <X className="w-4 h-4" />
           </button>
@@ -163,7 +166,7 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
             onClick={onClose}
             className="bg-brand-blue hover:bg-brand-blue/90 text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-xl transition-all cursor-pointer shadow-sm hover:shadow"
           >
-            Entendido
+            {t("privacy.understood", { defaultValue: "Entendido" })}
           </button>
         </div>
       </div>

@@ -1,92 +1,105 @@
 {
-  "common": {
-    "language": "Português",
-    "loading": "Carregando..."
-  },
   "header": {
     "home": "Início",
     "accommodations": "Acomodações",
     "amenities": "Comodidades",
     "testimonials": "Depoimentos",
     "faq": "FAQ",
-    "location": "Localização",
-    "contact": "Contato"
+    "contact": "Consultar Tarifas",
+    "location": "Localização"
   },
   "hero": {
-    "welcome": "Bem-vindo à Pousada Liberty Noronha Sueste: charme, conforto e natureza ao seu redor.",
-    "description1": "Relaxar no deck com vista para o jardim e o clima tropical de Noronha.",
-    "description2": "Desfrute da beleza natural de Noronha em nossa área externa, ideal para relaxar e se conectar com a natureza.",
-    "description3": "Café da manhã artesanal incluso, preparado com frutas da estação e sabores locais.",
-    "description4": "Comece o dia com uma refeição leve e deliciosa, pensada especialmente para você."
+    "location": "Praia do Sueste, Fernando de Noronha",
+    "knowSuites": "Conchar Suítes",
+    "reviewText": "Avaliação Fantástico na Booking",
+    "slides": {
+      "slide1": "Bem-vindo à Pousada Liberty Noronha Sueste: charme, conforto e natureza ao seu redor.",
+      "slide2": "Relaxar no deck com vista para o jardim e o clima tropical de Noronha.",
+      "slide3": "Espaço charmoso para refeições, conversas e momentos inesquecíveis.",
+      "slide4": "Desfrute da beleza natural de Noronha em nossa área externa, ideal para relaxar e se conectar com a natureza.",
+      "slide5": "Café da manhã artesanal incluso, preparado com frutas da estação e sabores locais.",
+      "slide6": "Comece o dia com uma refeição leve e deliciosa, pensada especialmente para você."
+    }
   },
   "booking": {
-    "liveSimulation": "Simulação em Tempo Real",
-    "checkIn": "Check-in",
-    "checkOut": "Check-out",
+    "liveSimulation": "Planejar sua Estadia (Orçamento por WhatsApp)",
+    "checkIn": "Entrada",
+    "checkOut": "Saída",
     "guests": "Hóspedes",
-    "simulate": "Simular Preço",
+    "guest_one": "pessoa",
+    "guest_other": "pessoas",
+    "simulate": "Ver Opções",
+    "nights": "diária",
+    "nights_plural": "diárias",
+    "selectedPeriod": "Período Selecionado",
+    "planDates": "Planeje suas datas para solicitar cotação via WhatsApp.",
     "errorDates": "Por favor, selecione as datas de entrada e saída.",
     "errorCheckOut": "A data de saída deve ser após a data de entrada.",
-    "nights": "noite(s)",
-    "total": "Total",
-    "selectedPeriod": "Período Selecionado",
-    "planDates": "Planeje suas datas para solicitar cotação via WhatsApp."
+    "periodSimulated": "Período simulado",
+    "daysOfStay": "de estadia."
   },
   "rooms": {
-    "title": "Suas Noites de Sono no Melhor Conforto",
     "subtitle": "Hospedagem Design",
+    "title": "Suas Noites de Sono no Melhor Conforto",
     "description": "Conforto, simplicidade e hospitalidade se unem para proporcionar uma experiência agradável e memorável em cada hospedagem.",
-    "rooms": {
-      "double": {
-        "name": "Suíte Dupla",
-        "shortDescription": "Suíte confortável com opção de cama king-size ou duas camas de solteiro, equipada com TV, frigobar e tudo o que você precisa para uma estadia agradável.",
-        "longDescription": "Ideal para casais ou amigos, nossa Suíte Dupla oferece um ambiente aconchegante e funcional, com opção de uma cama king-size ou duas camas de solteiro. Equipada com TV, frigobar e uma decoração acolhedora, é perfeita para descansar após um dia explorando Fernando de Noronha, proporcionando conforto e praticidade durante toda a hospedagem.",
-        "tag": "Mais Reservada",
-        "beds": "1 Cama de Casal King Size ou 2 camas de solteiro",
-        "size": "9 m²",
-        "view": "Jardim",
-        "capacity": "2 hóspedes"
-      },
-      "triple": {
-        "name": "Suíte Tripla",
-        "shortDescription": "Suíte ampla e confortável para até 3 hóspedes, equipada com TV, frigobar e ambiente acolhedor para uma estadia tranquila.",
-        "longDescription": "Perfeita para famílias pequenas ou grupos de amigos, a Suíte Tripla combina espaço, conforto e praticidade. Com acomodações para até três pessoas, TV e frigobar, oferece um ambiente agradável para relaxar após um dia de passeios. Seu layout foi pensado para proporcionar bem-estar e uma experiência de hospedagem confortável.",
-        "tag": "Amigos",
-        "beds": "1 Cama Queen Size + 1 Cama de Solteiro",
-        "size": "11 m²",
-        "view": "Jardim e Piscina",
-        "capacity": "3 hóspedes"
-      },
-      "quadruple": {
-        "name": "Suíte Família",
-        "shortDescription": "Suíte espaçosa para até 4 hóspedes, com TV, frigobar e todo o conforto para famílias e grupos.",
-        "longDescription": "Nossa Suíte Quádrupla é ideal para famílias ou grupos de amigos que desejam compartilhar momentos especiais com conforto. Com capacidade para até quatro hóspedes, dispõe de TV, frigobar e um ambiente amplo e acolhedor, garantindo praticidade e uma estadia agradável em um espaço pensado para o descanso e a convivência.",
-        "tag": "Espaçosa",
-        "beds": "2 Cama Queen Size",
-        "size": "15 m²",
-        "view": "Piscina e Jardim",
-        "capacity": "4 hóspedes"
-      }
+    "exclusiveAccommodation": "Acomodação Exclusiva",
+    "includedInRoom": "Incluso nesta acomodação:",
+    "stayPeriod": "Período da Estadia",
+    "dailyRate": "Preço da Diária",
+    "onRequest": "Sob Consulta",
+    "bySeason": "De acordo com a temporada",
+    "checkAvailability": "Consultar Disponibilidade no WhatsApp",
+    "close": "Fechar",
+    "suite-double": {
+      "name": "Suíte Dupla",
+      "description": "Suíte confortável com opção de cama king-size ou duas camas de solteiro, equipada com TV, frigobar e tudo o que você precisa para uma estadia agradável.",
+      "longDescription": "Ideal para casais ou amigos, nossa Suíte Dupla oferece um ambiente aconchegante e funcional, com opção de uma cama king-size ou duas camas de solteiro. Equipada com TV, frigobar e uma decoração acolhedora, é perfeita para descansar após um dia explorando Fernando de Noronha, proporcionando conforto e praticidade durante toda a hospedagem.",
+      "beds": "1 Cama de Casal King Size ou 2 camas de solteiro",
+      "view": "Jardim",
+      "tag": "Mais Reservada"
     },
-    "amenities": [
-      "Ar-condicionado Split",
-      "Cama King Size ou solteiros",
-      "Wi-Fi Starlink",
-      "Smart TV 32\"",
-      "Frigobar",
-      "Secador de Cabelo",
-      "Armário",
-      "Chuveiro com Aquecimento Solar",
-      "Roupões de Banho"
-    ]
+    "suite-friends": {
+      "name": "Suíte Tripla",
+      "description": "Suíte ampla e confortável para até 3 hóspedes, equipada com TV, frigobar e ambiente acolhedor para uma estadia tranquila.",
+      "longDescription": "Perfeita para famílias pequenas ou grupos de amigos, a Suíte Tripla combina espaço, conforto e praticidade. Com acomodações para até três pessoas, TV e frigobar, oferece um ambiente agradável para relaxar após um dia de passeios. Seu layout foi pensado para proporcionar bem-estar e uma experiência de hospedagem confortável.",
+      "beds": "1 Cama Queen Size + 1 Cama de Solteiro",
+      "view": "Jardim e Piscina",
+      "tag": "Amigos"
+    },
+    "suite-family": {
+      "name": "Suíte Família",
+      "description": "Suíte espaçosa para até 4 hóspedes, com TV, frigobar e todo o conforto para famílias e grupos.",
+      "longDescription": "Nossa Suíte Quádrupla é ideal para famílias ou grupos de amigos que desejam compartilhar momentos especiais com conforto. Com capacidade para até quatro hóspedes, dispõe de TV, frigobar e um ambiente amplo e acolhedor, garantindo praticidade e uma estadia agradável em um espaço pensado para o descanso e a convivência.",
+      "beds": "2 Cama Queen Size",
+      "view": "Piscina e Jardim",
+      "tag": "Espaçosa"
+    }
+  },
+  "roomAmenities": {
+    "Ar-condicionado Split": "Ar-condicionado Split",
+    "Cama King Size": "Cama King Size",
+    "Wi-Fi Starlink": "Wi-Fi Starlink",
+    "Smart TV 43\"": "Smart TV 43\"",
+    "Frigobar": "Frigobar",
+    "Secador de Cabelo": "Secador de Cabelo",
+    "Armário": "Armário",
+    "Chuveiro com Aquecimento Solar": "Chuveiro com Aquecimento Solar",
+    "Roupões de Banho": "Roupões de Banho",
+    "Varanda com Rede": "Varanda com Rede",
+    "Acesso Direto à Piscina": "Acesso Direto à Piscina",
+    "Amenities de Capim-Limão": "Amenities de Capim-Limão"
+  },
+  "roomSpecs": {
+    "area": "Área útil",
+    "windowView": "Vista da Janela"
   },
   "amenities": {
-    "title": "Comodidades Projetadas para o seu Descanso",
     "subtitle": "Serviços Exclusivos",
-    "description": "Oferecemos uma curadoria de services pensados milimetricamente para que sua única preocupação seja aproveitar a brisa e as ondas do mar.",
+    "title": "Comodidades Projetadas para o seu Descanso",
+    "description": "Oferecemos uma curadoria de serviços pensados milimetricamente para que sua única preocupação seja aproveitar a brisa e as ondas do mar.",
     "wifi": {
       "name": "Wi-Fi de Alta Velocidade",
-      "description": "Internet da Starlink cobrindo todas as suítes e áreas externas, ideal para home-office pé na areia."
+      "description": "Internet da Starlink cobrindo todas as suítes e áreas externas, ideal for home-office pé na areia."
     },
     "breakfast": {
       "name": "Café da Manhã Incluso",
@@ -107,14 +120,85 @@
     "disclaimer1": "* Todas as comodidades acima estão 100% inclusas no valor da diária regular. Sem taxas ocultas.",
     "disclaimer2": "* O Apoio a Passeios atua exclusivamente na indicação de parceiros. Valores, reservas e condições são definidos diretamente com os prestadores de serviço."
   },
+  "experience": {
+    "essence": "Nossa Essência",
+    "title": "Sinta a Energia de Fernando de Noronha",
+    "description": "Sua jornada rumo ao paraíso começa antes mesmo de embarcar. Assista ao vídeo e sinta a brisa morna, as águas cristalinas do Sueste e o acolhimento exclusivo que preparamos carinhosamente para receber você.",
+    "sueste": {
+      "title": "Privilegiada Baía do Sueste",
+      "description": "Localização estratégica para observar as tartarugas marinhas e curtir o mar calmo do sul da ilha."
+    },
+    "sustainability": {
+      "title": "Sustentabilidade & Charme",
+      "description": "Uma arquitetura em harmonia com a APA de Noronha, preservando a fauna nativa e integrando conforto."
+    },
+    "exclusiveTour": "Tour Exclusivo",
+    "watchVideo": "Assistir ao vídeo",
+    "closeVideo": "Fechar vídeo"
+  },
   "testimonials": {
-    "title": "O que Dizem Quem Já Se Hospedou",
     "subtitle": "Opinião dos Hóspedes",
-    "description": "Nada nos deixa mais realizados do que saber que pudemos proporcionar momentos de paz e recarga para as energias de nossos clientes."
+    "title": "O que Dizem Quem Já Se Hospedou",
+    "description": "Nada nos deixa mais realizados do que saber que pudemos proporcionar momentos de paz e recarga para as energias de nossos clientes.",
+    "items": {
+      "1": {
+        "city": "São Paulo - SP",
+        "date": "Maio de 2026",
+        "text": "A pousada é uma delícia, área externa muito gostosa e quartos super confortáveis! Além disso, todos os funcionários são muito queridos."
+      },
+      "2": {
+        "city": "Goiás - GO",
+        "date": "Maio de 2026",
+        "text": "Minha estadia na pousada foi super confortável a Kátia, Maria, Gil e Jonas foram sempre muito atenciosos, prestativos. O café da manhã sempre fazendo o que a gente desejava deixando vontade de voltar e com certeza indicarei para meus amigos, família e clientes de Goiânia. E acima de tudo, são muito honestos e cuidadosos."
+      },
+      "3": {
+        "city": "São Paulo - SP",
+        "date": "Maio de 2026",
+        "text": "Quem faz a Pousada Liberty são os colaboradores, todos extremamente prestativos, atenciosos, simpáticos, alegres... o café da manhã sempre uma delícia com omeletes e tapiocas quentinhos e fresquinhos.. Cama super confortável e grande. Minha pequena amou a piscina e os gatinhos. Até eles são simpáticos. Um agradecimento super especial para a Gi, Katia, Maria e Jonas. Fica próximo ao aeroporto e a praia do Sueste. Tem ponto de ônibus que para quase em frente."
+      }
+    }
+  },
+  "location": {
+    "subtitle": "Nossa Localização",
+    "title": "Onde a Natureza Encontra o Mar",
+    "description": "Em uma localização privilegiada e tranquila de Fernando de Noronha, próxima à Praia do Sueste e ao aeroporto, a pousada combina conforto, sossego e praticidade para você explorar a ilha com facilidade.",
+    "addressTitle": "Endereço Físico",
+    "checkInOutTitle": "Check-In & Out",
+    "checkInFrom": "Entrada a partir das",
+    "checkOutUntil": "Saída até as",
+    "distSea": "Do Mar",
+    "distSeaVal": "30 Metros",
+    "distCenter": "Centro",
+    "distCenterVal": "5 min de Carro",
+    "distBistros": "Bistrôs",
+    "distBistrosVal": "Caminhada Leve",
+    "contactChannel": "Canal de Contato",
+    "formTitle": "Envie uma Mensagem",
+    "formDesc": "Preencha o formulário e nossa recepção responderá o mais rápido possível por e-mail, ou envie diretamente ao nosso WhatsApp.",
+    "formSuccess": "Contato Enviado com Sucesso!",
+    "formSuccessDesc": "Obrigado, {{name}}! Recebemos sua mensagem sobre \"{{subject}}\" e entraremos em contato em até 12 horas.",
+    "waNow": "Quer falar com a recepção agora?",
+    "waSend": "Enviar Mensagem ao WhatsApp",
+    "writeNew": "Escrever nova mensagem",
+    "formName": "Seu Nome *",
+    "formEmail": "Seu E-mail *",
+    "formSubject": "Assunto do Contato",
+    "formMessage": "Mensagem / Dúvida *",
+    "placeholderName": "Ex: Ana Clara",
+    "placeholderEmail": "Ex: ana@exemplo.com",
+    "placeholderMessage": "Escreva aqui como podemos ajudar você...",
+    "btnSend": "Enviar Mensagem por E-mail",
+    "errorForm": "Por favor, preencha todos os campos obrigatórios.",
+    "subjects": {
+      "Dúvida Geral": "Dúvida Geral / Informações",
+      "Cotação de Reservas": "Cotação de Reservas Especiais",
+      "Casamentos e Eventos": "Locação para Ensaios / Eventos",
+      "Parcerias": "Parcerias e Influenciadores"
+    }
   },
   "faq": {
-    "title": "Informações Úteis para sua Estadia",
     "subtitle": "Dúvidas Frequentes",
+    "title": "Informações Úteis para sua Estadia",
     "items": [
       {
         "id": "faq-1",
@@ -141,21 +225,40 @@
         "question": "Vocês oferecem serviço de transfer ou passeios?",
         "answer": "Não possuímos serviço de transfer próprio, mas temos parceria com motoristas credenciados de confiança e locadoras. Também auxiliamos no agendamento de passeios e guias."
       }
-    ]
+    ],
+    "unanswered": "Ainda tem alguma pergunta que não está respondida aqui?",
+    "faleConosco": "Fale conosco diretamente via WhatsApp a qualquer momento!"
   },
   "footer": {
+    "manifesto": "Conforto e autenticidade em Fernando de Noronha. O seu ponto de partida ideal para viver toda a beleza e a tranquilidade da ilha, a poucos metros da Praia do Sueste.",
     "quickLinks": "Links Rápidos",
     "contact": "Contato & Reservas",
-    "manifesto": "Conforto e autenticidade em Fernando de Noronha. O seu ponto de partida ideal para viver toda a beleza e a tranquilidade da ilha, a poucos metros da Praia do Sueste.",
     "rights": "Todos os direitos reservados",
-    "privacy": "Privacidade",
-    "terms": "Termos de Serviço"
+    "privacy": "Políticas de Privacidade",
+    "terms": "Termos de Uso"
   },
-  "pousadaInfo": {
-    "name": "Pousada Liberty Noronha Sueste",
-    "tagline": "Experiências inesquecíveis começam com uma hospedagem acolhedora em Noronha",
-    "description": "Na Pousada Liberty Noronha Sueste, cada detalhe foi pensado para proporcionar uma hospedagem confortável e autêntica. Com suítes aconchegantes, piscina, café da manhã e atendimento acolhedor, somos o ponto de partida ideal para viver toda a beleza e a tranquilidade de Fernando de Noronha, a poucos passos da Praia do Sueste.",
-    "checkInTime": "14:00",
-    "checkOutTime": "12:00"
+  "whatsapp": {
+    "fabTooltip": "Olá! Como podemos ajudar em sua estadia? 🌊",
+    "fabAria": "Falar conosco no WhatsApp",
+    "onlineStatus": "Online • Geralmente responde em minutos",
+    "disclaimer": "Você está simulando o contato com nossa equipe. Abaixo está a mensagem gerada com base em suas escolhas. Clique em Enviar para abrir seu WhatsApp.",
+    "welcomeMsg": "Olá! Seja bem-vindo ao atendimento da Pousada Liberty Noronha Sueste. Como podemos te ajudar hoje?",
+    "automatedReply": "Atendimento Automático",
+    "generatedMsgLabel": "Sua mensagem gerada",
+    "editMsgLabel": "Editar Mensagem (Opcional):",
+    "copyBtn": "Copiar Texto",
+    "copiedState": "Copiado!",
+    "sendBtn": "Enviar Agora",
+    "fallbackDefaultMsg": "Olá! Estou visitando o site de vocês e gostaria de tirar algumas dúvidas sobre tarifas e datas disponíveis."
+  },
+  "app": {
+    "defaultWhatsAppMsg": "Olá! Vi o site de vocês e gostaria de mais informações sobre reservas e tarifas.",
+    "quoteRequest": "Olá! Gostaria de solicitar uma cotação para a *{{roomName}}*.",
+    "generalInquiry": "Olá! Gostaria de consultar tarifas e disponibilidade de reservas na pousada.",
+    "waMsgIn": "Entrada",
+    "waMsgOut": "Saída",
+    "waMsgStay": "Estadia",
+    "waMsgGuests": "Hóspedes",
+    "waMsgHeaderInquiry": "Poderiam me informar a disponibilidade e os valores para este período? Obrigado!"
   }
 }

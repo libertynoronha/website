@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { X, Check, BedDouble, Expand, Eye, Users, Calendar, HelpCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Room, BookingSimulation } from "../types";
 import { POUSADA_INFO } from "../data";
 
@@ -17,6 +18,7 @@ export default function RoomModal({
   onOpenWhatsApp,
 }: RoomModalProps) {
   const [currentImgIdx, setCurrentImgIdx] = useState(0);
+  const { t } = useTranslation();
   const images = room.images && room.images.length > 0 ? room.images : [room.imageUrl];
 
   const handlePrevImage = (e: React.MouseEvent) => {
@@ -55,25 +57,42 @@ export default function RoomModal({
 
   const handleBookClick = () => {
     let customMessage = "";
+    const translatedName = t(`rooms.${room.id}.name`, { defaultValue: room.name });
+
     if (bookingSimulation) {
       const formatDate = (dateStr: string) => {
         const parts = dateStr.split("-");
         return `${parts[2]}/${parts[1]}/${parts[0]}`;
       };
 
-      const nightsStr = details ? `${details.nights} ${details.nights === 1 ? "noite" : "noites"}` : "";
-      customMessage = `Olá! Gostaria de solicitar uma cotação para a *${room.name}*.\n\n` +
-        `• *Entrada:* ${formatDate(bookingSimulation.checkIn)}\n` +
-        `• *Saída:* ${formatDate(bookingSimulation.checkOut)}\n` +
-        `• *Estadia:* ${nightsStr}\n` +
-        `• *Hóspedes:* ${bookingSimulation.guests} ${bookingSimulation.guests === 1 ? "pessoa" : "pessoas"}\n\n` +
-        `Poderiam me informar a disponibilidade e os valores para este período? Obrigado!`;
+      const nightsUnit = details?.nights === 1 ? t("booking.nights") : t("booking.nights_plural");
+      const nightsStr = details ? `${details.nights} ${nightsUnit}` : "";
+      const checkInLabel = t("booking.checkIn");
+      const checkOutLabel = t("booking.checkOut");
+      const stayLabel = t("app.waMsgStay", { defaultValue: "Estadia" });
+      const guestsLabel = t("booking.guests");
+      const guestTypeLabel = bookingSimulation.guests === 1 ? t("booking.guest_one") : t("booking.guest_other");
+      const headerInquiry = t("app.waMsgHeaderInquiry", { defaultValue: "Poderiam me informar a disponibilidade e os valores para este período? Obrigado!" });
+
+      customMessage = t("app.quoteRequest", { roomName: translatedName, defaultValue: `Olá! Gostaria de solicitar uma cotação para a *${translatedName}*.` }) + `\n\n` +
+        `• *${checkInLabel}:* ${formatDate(bookingSimulation.checkIn)}\n` +
+        `• *${checkOutLabel}:* ${formatDate(bookingSimulation.checkOut)}\n` +
+        `• *${stayLabel}:* ${nightsStr}\n` +
+        `• *${guestsLabel}:* ${bookingSimulation.guests} ${guestTypeLabel}\n\n` +
+        headerInquiry;
     } else {
-      customMessage = `Olá! Gostaria de saber mais informações sobre a disponibilidade e tarifas da *${room.name}*.`;
+      customMessage = t("app.quoteRequest", { roomName: translatedName, defaultValue: `Olá! Gostaria de saber mais informações sobre a disponibilidade e tarifas da *${translatedName}*.` });
     }
 
     onOpenWhatsApp(customMessage);
   };
+
+  const translatedName = t(`rooms.${room.id}.name`, { defaultValue: room.name });
+  const translatedLongDesc = t(`rooms.${room.id}.longDescription`, { defaultValue: room.longDescription });
+  const translatedBeds = t(`rooms.${room.id}.beds`, { defaultValue: room.beds });
+  const translatedView = t(`rooms.${room.id}.view`, { defaultValue: room.view });
+  const translatedTag = room.tag ? t(`rooms.${room.id}.tag`, { defaultValue: room.tag }) : undefined;
+  const translatedAmenities = room.amenities.map(name => t(`roomAmenities.${name}`, { defaultValue: name }));
 
   return (
     <div
@@ -94,7 +113,7 @@ export default function RoomModal({
           id="btn-close-room-modal"
           onClick={onClose}
           className="absolute top-4 right-4 z-10 bg-white/85 backdrop-blur hover:bg-white text-stone-700 hover:text-stone-950 p-2.5 rounded-full shadow transition-all focus:outline-none"
-          aria-label="Fechar modal"
+          aria-label={t("rooms.close")}
         >
           <X className="w-5 h-5" />
         </button>
@@ -111,7 +130,7 @@ export default function RoomModal({
               >
                 <img
                   src={imgUrl}
-                  alt={`${room.name} - Imagem ${index + 1}`}
+                  alt={`${translatedName} - Imagem ${index + 1}`}
                   loading="eager"
                   decoding="async"
                   className="w-full h-full object-cover"
@@ -120,9 +139,9 @@ export default function RoomModal({
               </div>
             ))}
 
-            {room.tag && (
+            {translatedTag && (
               <span className="absolute top-4 left-4 bg-brand-blue text-stone-50 text-[10px] font-bold tracking-widest uppercase py-1 px-3.5 rounded-full shadow-sm z-20">
-                {room.tag}
+                {translatedTag}
               </span>
             )}
 
@@ -132,14 +151,14 @@ export default function RoomModal({
                 <button
                   onClick={handlePrevImage}
                   className="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-stone-900/65 hover:bg-stone-900/85 text-white p-1.5 rounded-full shadow-md transition-all active:scale-90"
-                  aria-label="Imagem anterior"
+                  aria-label={t("rooms.prevImage", { defaultValue: "Imagem anterior" })}
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={handleNextImage}
                   className="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-stone-900/65 hover:bg-stone-900/85 text-white p-1.5 rounded-full shadow-md transition-all active:scale-90"
-                  aria-label="Próxima imagem"
+                  aria-label={t("rooms.nextImage", { defaultValue: "Próxima imagem" })}
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
@@ -167,15 +186,15 @@ export default function RoomModal({
           {/* Quick Info Bar on Desktop */}
           <div className="hidden md:grid grid-cols-2 gap-px bg-stone-100 border-t border-stone-200">
             <div className="bg-white p-4 text-center">
-              <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-wider mb-1">Área útil</span>
+              <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-wider mb-1">{t("roomSpecs.area")}</span>
               <span className="text-sm font-serif font-bold text-stone-800 flex items-center justify-center gap-1.5">
                 <Expand className="w-4 h-4 text-brand-blue" /> {room.size}
               </span>
             </div>
             <div className="bg-white p-4 text-center">
-              <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-wider mb-1">Vista da Janela</span>
+              <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-wider mb-1">{t("roomSpecs.windowView")}</span>
               <span className="text-sm font-serif font-bold text-stone-800 flex items-center justify-center gap-1.5">
-                <Eye className="w-4 h-4 text-brand-blue" /> {room.view}
+                <Eye className="w-4 h-4 text-brand-blue" /> {translatedView}
               </span>
             </div>
           </div>
@@ -185,10 +204,10 @@ export default function RoomModal({
         <div className="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto">
           <div>
             <span className="text-[10px] font-mono font-bold tracking-widest text-brand-blue uppercase block">
-              Acomodação Exclusiva
+              {t("rooms.exclusiveAccommodation")}
             </span>
             <h3 className="text-2xl font-serif font-bold text-stone-900 mt-1 leading-tight">
-              {room.name}
+              {translatedName}
             </h3>
 
             {/* Micro specs on mobile */}
@@ -197,7 +216,7 @@ export default function RoomModal({
                 <Expand className="w-3.5 h-3.5 text-brand-blue" /> {room.size}
               </span>
               <span className="text-xs font-mono text-stone-700 flex items-center gap-1">
-                <BedDouble className="w-3.5 h-3.5 text-brand-blue" /> {room.beds}
+                <BedDouble className="w-3.5 h-3.5 text-brand-blue" /> {translatedBeds}
               </span>
               <span className="text-xs font-mono text-stone-700 flex items-center gap-1">
                 <Users className="w-3.5 h-3.5 text-brand-blue" /> Max: {room.capacity}
@@ -206,16 +225,16 @@ export default function RoomModal({
 
             {/* Description */}
             <p className="text-stone-700 text-sm leading-relaxed mt-4">
-              {room.longDescription}
+              {translatedLongDesc}
             </p>
 
             {/* What is included in the room */}
             <div className="mt-6">
               <h4 className="text-xs font-mono font-bold text-stone-800 uppercase tracking-wider mb-3">
-                Incluso nesta acomodação:
+                {t("rooms.includedInRoom")}
               </h4>
               <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                {room.amenities.map((amenityName, idx) => (
+                {translatedAmenities.map((amenityName, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-xs text-stone-700">
                     <Check className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
                     <span className="truncate">{amenityName}</span>
@@ -232,17 +251,17 @@ export default function RoomModal({
               <div className="bg-stone-50 p-4 rounded-xl border border-stone-200/50 mb-4 flex justify-between items-center">
                 <div className="text-left">
                   <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-widest">
-                    Período da Estadia
+                    {t("rooms.stayPeriod")}
                   </span>
                   <div className="flex items-baseline gap-1.5 mt-0.5">
                     <span className="text-lg font-serif font-bold text-brand-blue">
-                      {details.nights} {details.nights === 1 ? "diária" : "diárias"} selecionada{details.nights === 1 ? "" : "s"}
+                      {details.nights} {details.nights === 1 ? t("booking.nights") : t("booking.nights_plural")}
                     </span>
                   </div>
                 </div>
                 <div className="text-right">
                   <span className="inline-flex items-center gap-1 bg-brand-blue/10 text-brand-blue text-[10px] font-mono font-bold uppercase py-1 px-2.5 rounded-full">
-                    Consultar Valores
+                    {t("rooms.onRequest")}
                   </span>
                 </div>
               </div>
@@ -250,12 +269,12 @@ export default function RoomModal({
               /* Regular pricing view */
               <div className="bg-stone-50 p-4 rounded-xl border border-stone-200/50 mb-4 flex justify-between items-center">
                 <div className="text-left">
-                  <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-widest">Preço da Diária</span>
+                  <span className="block text-[10px] font-mono text-stone-400 uppercase tracking-widest">{t("rooms.dailyRate")}</span>
                   <div className="flex items-baseline gap-1 mt-0.5">
-                    <span className="text-sm font-serif font-bold text-stone-800">Sob Consulta</span>
+                    <span className="text-sm font-serif font-bold text-stone-800">{t("rooms.onRequest")}</span>
                   </div>
                 </div>
-                <span className="text-[10px] font-mono text-stone-400 italic">De acordo com a temporada</span>
+                <span className="text-[10px] font-mono text-stone-400 italic">{t("rooms.bySeason")}</span>
               </div>
             )}
 
@@ -269,14 +288,14 @@ export default function RoomModal({
                 <path d="M12.031 6c-3.314 0-6 2.686-6 6 0 1.156.328 2.227.891 3.141l-.922 2.703 2.781-.906c.883.516 1.906.813 3.016.813 3.314 0 6-2.686 6-6s-2.686-6-6-6zm3.504 8.821c-.156.438-.797.813-1.219.859-.406.047-.938.063-1.531-.125-.609-.188-1.328-.484-1.922-.844-1.047-.641-1.781-1.563-2.188-2.156-.125-.172-.328-.5-.328-.844s.188-.516.25-.578c.078-.078.172-.125.266-.125.094 0 .188.016.266.016.078.016.156-.031.234.125.078.172.297.719.328.781.031.063.031.141-.016.219-.047.078-.078.141-.156.234-.078.078-.141.141-.219.234-.078.078-.047.156 0 .219.125.188.422.688.891 1.109.609.547 1.125.719 1.281.797.156.078.25.063.313-.016.063-.078.266-.313.344-.422.078-.109.156-.094.234-.063.094.031.578.281.672.328.094.047.156.078.188.125.031.047.031.281-.125.719z" />
                 <path d="M12 2C6.477 2 2 6.477 2 12c0 2.03.6 3.91 1.63 5.49L2 22l4.63-1.6c1.51.91 3.27 1.45 5.17 1.45 5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.63 0-3.15-.46-4.44-1.27l-.32-.19-2.61.9.91-2.67-.2-.32C4.48 15.22 4 13.67 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z" />
               </svg>
-              Consultar Disponibilidade no WhatsApp
+              {t("rooms.checkAvailability")}
             </button>
             
             <button
               onClick={onClose}
               className="mt-3 md:hidden w-full text-center bg-stone-200 hover:bg-stone-300 text-stone-900 text-xs font-bold tracking-wider uppercase py-4 rounded-xl transition-all shadow-sm hover:shadow active:scale-[0.98]"
             >
-              Fechar
+              {t("rooms.close")}
             </button>
           </div>
         </div>

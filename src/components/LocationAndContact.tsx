@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MapPin, Phone, Mail, Navigation, Clock, Check, Sparkles, Send } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { POUSADA_INFO, LOCAL_ACTIVITIES } from "../data";
 
 interface LocationAndContactProps {
@@ -12,12 +13,13 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
   const [subject, setSubject] = useState("Dúvida Geral");
   const [message, setMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { t } = useTranslation();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!name || !email || !message) {
-      alert("Por favor, preencha todos os campos obrigatórios.");
+      alert(t("location.errorForm", { defaultValue: "Por favor, preencha todos os campos obrigatórios." }));
       return;
     }
 
@@ -26,9 +28,10 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
   };
 
   const handleWhatsAppFollowUp = () => {
+    const translatedSubject = t(`location.subjects.${subject}`, { defaultValue: subject });
     const formattedMsg = `Olá! Meu nome é *${name}*.\n` +
       `• *E-mail:* ${email}\n` +
-      `• *Assunto:* ${subject}\n` +
+      `• *Assunto:* ${translatedSubject}\n` +
       `• *Mensagem:* ${message}\n\n` +
       `Enviei este formulário pelo site e gostaria de um retorno rápido. Obrigado!`;
 
@@ -49,14 +52,14 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
           <div className="lg:col-span-6 flex flex-col gap-8 text-left">
             <div>
               <p className="text-xs font-mono tracking-[0.25em] text-brand-blue uppercase font-bold">
-                Nossa Localização
+                {t("location.subtitle")}
               </p>
               <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 mt-2">
-                Onde a Natureza Encontra o Mar
+                {t("location.title")}
               </h2>
               <div className="h-1 w-12 bg-brand-green mt-4 rounded"></div>
               <p className="text-stone-700 text-sm sm:text-base mt-4 leading-relaxed">
-                Em uma localização privilegiada e tranquila de Fernando de Noronha, próxima à Praia do Sueste e ao aeroporto, a pousada combina conforto, sossego e praticidade para você explorar a ilha com facilidade.
+                {t("location.description")}
               </p>
             </div>
 
@@ -65,7 +68,7 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
               <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200/50 flex gap-4">
                 <MapPin className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
                 <div>
-                  <h3 className="font-serif font-bold text-stone-800 text-sm sm:text-base">Endereço Físico</h3>
+                  <h3 className="font-serif font-bold text-stone-800 text-sm sm:text-base">{t("location.addressTitle")}</h3>
                   <p className="text-stone-700 text-xs mt-1 leading-relaxed">
                     {POUSADA_INFO.address}, CEP {POUSADA_INFO.cep}
                   </p>
@@ -75,10 +78,10 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
               <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200/50 flex gap-4">
                 <Clock className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
                 <div>
-                  <h3 className="font-serif font-bold text-stone-800 text-sm sm:text-base">Check-In & Out</h3>
+                  <h3 className="font-serif font-bold text-stone-800 text-sm sm:text-base">{t("location.checkInOutTitle")}</h3>
                   <p className="text-stone-700 text-xs mt-1 leading-relaxed">
-                    Entrada a partir das {POUSADA_INFO.checkInTime}h<br />
-                    Saída até as {POUSADA_INFO.checkOutTime}h
+                    {t("location.checkInFrom")} {POUSADA_INFO.checkInTime}h<br />
+                    {t("location.checkOutUntil")} {POUSADA_INFO.checkOutTime}h
                   </p>
                 </div>
               </div>
@@ -99,16 +102,16 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
             {/* Distances and Location metrics */}
             <div className="grid grid-cols-3 gap-2 p-5 rounded-2xl bg-stone-50 border border-stone-200/50 text-center shadow-sm">
               <div className="flex flex-col justify-center py-1">
-                <span className="block text-[10px] font-mono font-bold text-brand-blue uppercase tracking-widest mb-1">Do Mar</span>
-                <span className="text-xs sm:text-sm font-semibold text-stone-800">30 Metros</span>
+                <span className="block text-[10px] font-mono font-bold text-brand-blue uppercase tracking-widest mb-1">{t("location.distSea")}</span>
+                <span className="text-xs sm:text-sm font-semibold text-stone-800">{t("location.distSeaVal")}</span>
               </div>
               <div className="flex flex-col justify-center border-x border-stone-200 py-1">
-                <span className="block text-[10px] font-mono font-bold text-brand-blue uppercase tracking-widest mb-1">Centro</span>
-                <span className="text-xs sm:text-sm font-semibold text-stone-800">5 min de Carro</span>
+                <span className="block text-[10px] font-mono font-bold text-brand-blue uppercase tracking-widest mb-1">{t("location.distCenter")}</span>
+                <span className="text-xs sm:text-sm font-semibold text-stone-800">{t("location.distCenterVal")}</span>
               </div>
               <div className="flex flex-col justify-center py-1">
-                <span className="block text-[10px] font-mono font-bold text-brand-blue uppercase tracking-widest mb-1">Bistrôs</span>
-                <span className="text-xs sm:text-sm font-semibold text-stone-800">Caminhada Leve</span>
+                <span className="block text-[10px] font-mono font-bold text-brand-blue uppercase tracking-widest mb-1">{t("location.distBistros")}</span>
+                <span className="text-xs sm:text-sm font-semibold text-stone-800">{t("location.distBistrosVal")}</span>
               </div>
             </div>
           </div>
@@ -117,13 +120,13 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
           <div className="lg:col-span-6 bg-stone-50 p-6 sm:p-10 rounded-3xl border border-stone-200/50 shadow-sm text-left">
             <div className="mb-6">
               <span className="inline-flex items-center gap-1 bg-brand-blue/10 text-brand-blue text-[10px] font-mono font-bold uppercase py-1 px-3 rounded-full mb-3">
-                <Mail className="w-3 h-3 text-brand-blue" /> Canal de Contato
+                <Mail className="w-3 h-3 text-brand-blue" /> {t("location.contactChannel")}
               </span>
               <h3 className="text-2xl font-serif font-bold text-stone-900">
-                Envie uma Mensagem
+                {t("location.formTitle")}
               </h3>
               <p className="text-xs text-stone-700 mt-1 leading-relaxed">
-                Preencha o formulário e nossa recepção responderá o mais rápido possível por e-mail, ou envie diretamente ao nosso WhatsApp.
+                {t("location.formDesc")}
               </p>
             </div>
 
@@ -133,29 +136,29 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
                 <div className="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center mb-4 shadow">
                   <Check className="w-6 h-6" />
                 </div>
-                <h4 className="font-serif font-bold text-lg text-stone-900">Contato Enviado com Sucesso!</h4>
+                <h4 className="font-serif font-bold text-lg text-stone-900">{t("location.formSuccess")}</h4>
                 <p className="text-sm text-stone-600 mt-2 max-w-sm">
-                  Obrigado, <strong>{name}</strong>! Recebemos sua mensagem sobre "{subject}" e entraremos em contato em até 12 horas.
+                  {t("location.formSuccessDesc", { name, subject: t(`location.subjects.${subject}`, { defaultValue: subject }) })}
                 </p>
 
                 {/* Option to trigger WhatsApp with this form data */}
                 <div className="mt-8 pt-6 border-t border-emerald-100 w-full">
                   <p className="text-xs font-mono text-emerald-800 mb-4 flex items-center justify-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-brand-yellow fill-brand-yellow/20" /> Quer falar com a recepção agora?
+                    <Sparkles className="w-3.5 h-3.5 text-brand-yellow fill-brand-yellow/20" /> {t("location.waNow")}
                   </p>
                   <button
                     id="btn-form-whatsapp-followup"
                     onClick={handleWhatsAppFollowUp}
                     className="w-full text-center bg-emerald-600 hover:bg-emerald-700 text-stone-50 text-xs font-bold tracking-wider uppercase py-3.5 rounded-xl transition-all shadow cursor-pointer"
                   >
-                    Enviar Mensagem ao WhatsApp
+                    {t("location.waSend")}
                   </button>
                   <button
                     id="btn-form-reset"
                     onClick={() => setIsSubmitted(false)}
                     className="text-stone-800 hover:text-stone-950 text-xs font-mono mt-4 block mx-auto underline focus:outline-none"
                   >
-                    Escrever nova mensagem
+                    {t("location.writeNew")}
                   </button>
                 </div>
               </div>
@@ -165,7 +168,7 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-mono font-bold text-stone-600 uppercase mb-2">
-                      Seu Nome *
+                      {t("location.formName")}
                     </label>
                     <input
                       id="contact-name"
@@ -173,14 +176,14 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      placeholder="Ex: Ana Clara"
+                      placeholder={t("location.placeholderName")}
                       className="w-full bg-white text-stone-800 text-sm border border-stone-200 focus:border-brand-blue rounded-xl py-3 px-4 transition-all focus:outline-none focus:ring-1 focus:ring-brand-blue/30"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-mono font-bold text-stone-600 uppercase mb-2">
-                      Seu E-mail *
+                      {t("location.formEmail")}
                     </label>
                     <input
                       id="contact-email"
@@ -188,7 +191,7 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Ex: ana@exemplo.com"
+                      placeholder={t("location.placeholderEmail")}
                       className="w-full bg-white text-stone-800 text-sm border border-stone-200 focus:border-brand-blue rounded-xl py-3 px-4 transition-all focus:outline-none focus:ring-1 focus:ring-brand-blue/30"
                     />
                   </div>
@@ -196,7 +199,7 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
 
                 <div>
                   <label htmlFor="contact-subject" className="block text-xs font-mono font-bold text-stone-700 uppercase mb-2">
-                    Assunto do Contato
+                    {t("location.formSubject")}
                   </label>
                   <select
                     id="contact-subject"
@@ -204,23 +207,23 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
                     onChange={(e) => setSubject(e.target.value)}
                     className="w-full bg-white text-stone-800 text-sm border border-stone-200 focus:border-brand-blue rounded-xl py-3 px-4 transition-all focus:outline-none focus:ring-1 focus:ring-brand-blue/30"
                   >
-                    <option value="Dúvida Geral">Dúvida Geral / Informações</option>
-                    <option value="Cotação de Reservas">Cotação de Reservas Especiais</option>
-                    <option value="Casamentos e Eventos">Locação para Ensaios / Eventos</option>
-                    <option value="Parcerias">Parcerias e Influenciadores</option>
+                    <option value="Dúvida Geral">{t("location.subjects.Dúvida Geral")}</option>
+                    <option value="Cotação de Reservas">{t("location.subjects.Cotação de Reservas")}</option>
+                    <option value="Casamentos e Eventos">{t("location.subjects.Casamentos e Eventos")}</option>
+                    <option value="Parcerias">{t("location.subjects.Parcerias")}</option>
                   </select>
                 </div>
 
                 <div>
                   <label htmlFor="contact-message" className="block text-xs font-mono font-bold text-stone-700 uppercase mb-2">
-                    Mensagem / Dúvida *
+                    {t("location.formMessage")}
                   </label>
                   <textarea
                     id="contact-message"
                     required
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Escreva aqui como podemos ajudar você..."
+                    placeholder={t("location.placeholderMessage")}
                     rows={4}
                     className="w-full bg-white text-stone-800 text-sm border border-stone-200 focus:border-brand-blue rounded-xl py-3 px-4 transition-all focus:outline-none focus:ring-1 focus:ring-brand-blue/30 leading-relaxed resize-none"
                   />
@@ -231,7 +234,7 @@ export default function LocationAndContact({ onOpenWhatsApp }: LocationAndContac
                   type="submit"
                   className="w-full text-center bg-stone-900 hover:bg-brand-blue text-stone-100 text-xs font-bold tracking-wider uppercase py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow"
                 >
-                  <Send className="w-4 h-4" /> Enviar Mensagem por E-mail
+                  <Send className="w-4 h-4" /> {t("location.btnSend")}
                 </button>
               </form>
             )}

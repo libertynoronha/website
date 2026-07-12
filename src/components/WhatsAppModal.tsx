@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { X, Send, Copy, Check, MessageSquare, ShieldCheck } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { POUSADA_INFO } from "../data";
 
 interface WhatsAppModalProps {
@@ -13,19 +14,18 @@ export default function WhatsAppModal({
   onClose,
   defaultMessage = "",
 }: WhatsAppModalProps) {
-  const [userMsg, setUserMsg] = useState(
-    defaultMessage ||
-      `Olá! Estou visitando o site de vocês e gostaria de tirar algumas dúvidas sobre tarifas e datas disponíveis.`
-  );
+  const { t } = useTranslation();
+  const fallbackMsg = t("whatsapp.fallbackDefaultMsg", {
+    defaultValue: "Olá! Estou visitando o site de vocês e gostaria de tirar algumas dúvidas sobre tarifas e datas disponíveis."
+  });
+
+  const [userMsg, setUserMsg] = useState(defaultMessage || fallbackMsg);
   const [copied, setCopied] = useState(false);
   const [sendingSimulated, setSendingSimulated] = useState(false);
 
   useEffect(() => {
-    setUserMsg(
-      defaultMessage ||
-        `Olá! Estou visitando o site de vocês e gostaria de tirar algumas dúvidas sobre tarifas e datas disponíveis.`
-    );
-  }, [defaultMessage, isOpen]);
+    setUserMsg(defaultMessage || fallbackMsg);
+  }, [defaultMessage, isOpen, fallbackMsg]);
 
   if (!isOpen) return null;
 
@@ -72,7 +72,7 @@ export default function WhatsAppModal({
             <div className="text-left">
               <h3 className="font-semibold text-sm leading-tight">Liberty Noronha Atendimento</h3>
               <span className="text-[10px] text-emerald-200 font-mono tracking-wide">
-                Online • Geralmente responde em minutos
+                {t("whatsapp.onlineStatus")}
               </span>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function WhatsAppModal({
             id="btn-close-wa-simulator"
             onClick={onClose}
             className="flex items-center justify-center p-3 min-w-[44px] min-h-[44px] hover:bg-emerald-700/60 text-white rounded-full transition-colors focus:outline-none"
-            aria-label="Fechar"
+            aria-label={t("rooms.close")}
           >
             <X className="w-5 h-5" />
           </button>
@@ -90,7 +90,7 @@ export default function WhatsAppModal({
         <div className="bg-brand-green/10 border-b border-brand-green/20 px-4 py-2.5 text-left flex gap-2 items-start">
           <ShieldCheck className="w-4.5 h-4.5 text-brand-green flex-shrink-0 mt-0.5" />
           <p className="text-[10px] text-stone-700 leading-normal">
-            Você está simulando o contato com nossa equipe. Abaixo está a mensagem gerada com base em suas escolhas. Clique em <strong>Enviar</strong> para abrir seu WhatsApp.
+            {t("whatsapp.disclaimer")}
           </p>
         </div>
 
@@ -99,10 +99,10 @@ export default function WhatsAppModal({
           {/* Welcome automated message */}
           <div className="bg-white text-stone-800 text-xs py-2 px-3.5 rounded-2xl rounded-tl-none max-w-[85%] self-start shadow-sm border border-stone-200/50 text-left">
             <p className="leading-relaxed">
-              Olá! Seja bem-vindo ao atendimento da <strong>Pousada Liberty Noronha Sueste</strong>. Como podemos te ajudar hoje?
+              {t("whatsapp.welcomeMsg")}
             </p>
             <span className="block text-[8px] text-stone-700 text-right mt-1">
-              Atendimento Automático
+              {t("whatsapp.automatedReply")}
             </span>
           </div>
 
@@ -110,7 +110,7 @@ export default function WhatsAppModal({
           <div className="bg-emerald-100 text-stone-800 text-xs py-2.5 px-3.5 rounded-2xl rounded-tr-none max-w-[85%] self-end shadow-sm border border-emerald-200/40 text-left">
             <p className="whitespace-pre-line leading-relaxed">{userMsg}</p>
             <span className="block text-[8px] text-stone-700 text-right mt-1">
-              Sua mensagem gerada
+              {t("whatsapp.generatedMsgLabel")}
             </span>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function WhatsAppModal({
         <div className="bg-white p-3 border-t border-stone-200 flex flex-col gap-2.5">
           <div className="text-left">
             <label htmlFor="wa-textarea-msg" className="block text-[9px] font-mono font-bold text-stone-700 uppercase tracking-widest mb-1">
-              Editar Mensagem (Opcional):
+              {t("whatsapp.editMsgLabel")}
             </label>
             <textarea
               id="wa-textarea-msg"
@@ -139,11 +139,11 @@ export default function WhatsAppModal({
             >
               {copied ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-emerald-600" /> Copiado!
+                  <Check className="w-3.5 h-3.5 text-emerald-600" /> {t("whatsapp.copiedState")}
                 </>
               ) : (
                 <>
-                  <Copy className="w-3.5 h-3.5" /> Copiar Texto
+                  <Copy className="w-3.5 h-3.5" /> {t("whatsapp.copyBtn")}
                 </>
               )}
             </button>
@@ -158,7 +158,7 @@ export default function WhatsAppModal({
                 <span className="w-4 h-4 border-2 border-stone-50 border-t-transparent rounded-full animate-spin"></span>
               ) : (
                 <>
-                  <Send className="w-3.5 h-3.5" /> Enviar Agora
+                  <Send className="w-3.5 h-3.5" /> {t("whatsapp.sendBtn")}
                 </>
               )}
             </button>

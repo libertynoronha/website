@@ -124,7 +124,7 @@ export default function Footer() {
           {/* Social Links & Newsletter */}
           <div className="flex flex-col gap-4">
             <h3 className="text-xs font-mono font-bold uppercase text-stone-100 tracking-wider mb-1">
-              Redes Sociais
+              {t("footer.socialMedia", { defaultValue: "Redes Sociais" })}
             </h3>
             <div className="flex items-center gap-3.5 mb-4">
               <a

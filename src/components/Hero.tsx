@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, MapPin, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { POUSADA_INFO } from "../data";
 import BookingBar from "./BookingBar";
 import { BookingSimulation } from "../types";
 import heroPousadaImg from "../assets/images/hero_pousada.jpg";
-import piscina3Img from "../assets/images/Piscina_03.jpeg";
-import pergolaImg from "../assets/images/Pergola.jpeg";
-import breakfastImg from "../assets/images/breakfast_03.jpeg";
-import breakfast2Img from "../assets/images/breakfast_2.jpg";
-import externa from "../assets/images/Entrada.jpeg";
+import heroPousadaImgAlt from "../assets/images/hero_pousada_1782743369577.jpg";
+import piscinaImg from "../assets/images/pousada_pool_1782743412492.jpg";
+import suiteMasterImg from "../assets/images/suite_master_1782743385717.jpg";
+import suiteDoubleImg from "../assets/images/suite_double.jpg";
+import suiteFamiliaImg from "../assets/images/suite_familia_1782743400126.jpg";
 
 interface HeroProps {
   onSimulate: (simulation: BookingSimulation) => void;
@@ -23,37 +24,38 @@ export default function Hero({
   onClearSimulation,
 }: HeroProps) {
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
+  const { t } = useTranslation();
 
   const heroImages = [
     {
       src: heroPousadaImg,
       alt: "Vista aérea da pousada Liberty com área externa e entrada",
-      description: "Bem-vindo à Pousada Liberty Noronha Sueste: charme, conforto e natureza ao seu redor.",
+      description: t("hero.slide1", { defaultValue: "Bem-vindo à Pousada Liberty Noronha Sueste: charme, conforto e natureza ao seu redor." }),
     },
     {
-      src: piscina3Img,
+      src: piscinaImg,
       alt: "Deck elegante com espreguiçadeiras e paisagem tropical",
-      description: "Relaxar no deck com vista para o jardim e o clima tropical de Noronha.",
+      description: t("hero.slide2", { defaultValue: "Relaxar no deck com vista para o jardim e o clima tropical de Noronha." }),
     },
     {
-      src: pergolaImg,
+      src: heroPousadaImgAlt,
       alt: "Espaço charmoso para refeições, conversas e momentos inesquecíveis.",
-      description: "Espaço charmoso para refeições, conversas e momentos inesquecíveis.",
+      description: t("hero.slide3", { defaultValue: "Espaço charmoso para refeições, conversas e momentos inesquecíveis." }),
     },
     {
-      src: externa,
-      alt: "Área externa da pousada com paisagem tropical",
-      description: "Desfrute da beleza natural de Noronha em nossa área externa, ideal para relaxar e se conectar com a natureza.",
+      src: suiteMasterImg,
+      alt: "Suíte Master com cama king e varanda com vista de tirar o fôlego.",
+      description: t("hero.slide4", { defaultValue: "Suítes exclusivas com camas aconchegantes e todo o conforto que você merece." }),
     },
     {
-      src: breakfastImg,
-      alt: "Café da manhã servido com frutas, pães e bebidas naturais",
-      description: "Café da manhã artesanal incluso, preparado com frutas da estação e sabores locais.",
+      src: suiteDoubleImg,
+      alt: "Acomodações aconchegantes decoradas com materiais locais.",
+      description: t("hero.slide5", { defaultValue: "Charme rústico-contemporâneo em harmonia perfeita com Fernando de Noronha." }),
     },
     {
-      src: breakfast2Img,
-      alt: "Mesa de café da manhã com croissants, sucos e frutas",
-      description: "Comece o dia com uma refeição leve e deliciosa, pensada especialmente para você.",
+      src: suiteFamiliaImg,
+      alt: "Acomodações confortáveis para toda a família desfrutar.",
+      description: t("hero.slide6", { defaultValue: "Ideal para viagens em família ou momentos a dois cercados pelo paraíso." }),
     },
   ];
 
@@ -101,7 +103,7 @@ export default function Hero({
   };
 
   return (
-    <section id="hero" className="relative bg-stone-50 overflow-hidden pt-28 pb-8 md:pt-36 md:pb-12">
+    <section id="hero" className="relative bg-stone-50 overflow-hidden pt-28 pb-4 md:pt-36 md:pb-4">
       {/* Background Accent Gradients */}
       <div className="absolute top-0 right-0 w-1/3 h-2/3 bg-brand-blue/5 rounded-bl-[100px] -z-10 blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-stone-100 -z-10 rounded-tr-[100px]"></div>
