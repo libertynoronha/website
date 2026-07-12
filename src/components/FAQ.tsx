@@ -67,10 +67,10 @@ export default function FAQ() {
         {/* Contact CTA */}
         <div className="mt-12 text-center bg-white p-6 sm:p-8 rounded-2xl border border-stone-200/50 max-w-xl mx-auto">
           <p className="text-sm text-stone-700">
-            {t('faq.contactQuestion', { defaultValue: 'Ainda tem alguma pergunta que não está respondida aqui?' })}
+            {t('faq.unanswered', { defaultValue: 'Ainda tem alguma pergunta que não está respondida aqui?' })}
           </p>
           <p className="text-xs font-mono text-stone-700 mt-1">
-            {t('faq.contactWhatsApp', { defaultValue: 'Fale conosco diretamente via WhatsApp a qualquer momento!' })}
+            {t('faq.faleConosco', { defaultValue: 'Fale conosco diretamente via WhatsApp a qualquer momento!' })}
           </p>
         </div>
       </div>
