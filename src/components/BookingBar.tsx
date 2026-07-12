@@ -76,14 +76,7 @@ export default function BookingBar({
           : "bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-stone-100 max-w-5xl mx-auto -mt-16 relative z-30"
       }`}
     >
-      {!inline && (
-        <div className="flex items-center gap-2 mb-4">
-          <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
-          <p className="text-xs font-mono font-medium tracking-widest text-stone-700 uppercase flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-brand-yellow fill-brand-yellow/30" /> {t('booking.liveSimulation')}
-          </p>
-        </div>
-      )}
+
 
       <form onSubmit={handleSubmit} className="flex flex-col lg:flex-row gap-4 lg:items-end">
         {/* Check In */}
