@@ -21,7 +21,7 @@ export default function WhatsAppFAB({ onClick }: WhatsAppFABProps) {
   }, []);
 
   return (
-    <div id="whatsapp-fab-container" className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2.5">
+    <div id="whatsapp-fab-container" className="fixed bottom-6 left-6 z-40 flex flex-col items-start gap-2.5">
       {/* Interactive Speech Balloon */}
       <AnimatePresence>
         {showTooltip && (
@@ -32,7 +32,7 @@ export default function WhatsAppFAB({ onClick }: WhatsAppFABProps) {
             className="bg-stone-900 text-stone-50 text-xs py-2.5 px-4 rounded-2xl shadow-xl border border-stone-800 text-left relative flex items-center gap-3.5 max-w-[240px]"
           >
             {/* Pointer arrow */}
-            <div className="absolute bottom-[-6px] right-[22px] w-3 h-3 bg-stone-900 rotate-45 border-r border-b border-stone-800"></div>
+            <div className="absolute bottom-[-6px] left-[22px] w-3 h-3 bg-stone-900 rotate-45 border-l border-b border-stone-800"></div>
 
             <p className="leading-relaxed font-serif font-medium">
               {t("whatsapp.fabTooltip", { defaultValue: "Olá! Como podemos ajudar em sua estadia? 🌊" })}
