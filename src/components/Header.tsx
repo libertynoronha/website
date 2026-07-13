@@ -117,7 +117,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               isScrolled ? "text-stone-950 font-bold" : "text-stone-100 font-bold"
             }`}
           >
-            <Phone className="w-3.5 h-3.5" />
+            {/* <Phone className="w-3.5 h-3.5" /> */}
             {POUSADA_INFO.phone}
           </a>
           <LanguageSwitcher isScrolled={isScrolled} />
@@ -199,7 +199,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                 href={`tel:${POUSADA_INFO.phoneNumeric}`}
                 className="flex items-center gap-3 text-sm font-mono text-stone-600 py-2 px-2"
               >
-                {/* <Phone className="w-4 h-4 text-brand-blue" /> */}
+                <Phone className="w-4 h-4 text-brand-blue" />
                 {POUSADA_INFO.phone}
               </a>
               <button
