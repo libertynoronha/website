@@ -33,7 +33,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
       return;
     }
 
-    const headerOffset = 80;
+    const headerOffset = 96;
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -49,10 +49,10 @@ export default function Header({ onOpenBooking }: HeaderProps) {
   return (
     <header
       id="header-navigation"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         isScrolled
-          ? "bg-stone-50/90 backdrop-blur-md border-b border-stone-200/50 py-4 shadow-sm"
-          : "bg-gradient-to-b from-stone-900/40 to-transparent py-6 text-white"
+          ? "bg-stone-50/90 backdrop-blur-md border-b border-stone-200/50 py-5 sm:py-6 shadow-sm"
+          : "bg-gradient-to-b from-stone-900/40 to-transparent py-7 sm:py-8 text-white"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -167,7 +167,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
       {isMobileMenuOpen && (
         <div
           id="mobile-navigation-drawer"
-          className="md:hidden fixed inset-0 top-[65px] bg-stone-950/50 backdrop-blur-sm z-40 transition-opacity"
+          className="md:hidden fixed inset-0 top-[80px] bg-stone-950/50 backdrop-blur-sm z-40 transition-opacity"
           onClick={() => setIsMobileMenuOpen(false)}
         >
           <div
