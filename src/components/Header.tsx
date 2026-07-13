@@ -51,8 +51,8 @@ export default function Header({ onOpenBooking }: HeaderProps) {
       id="header-navigation"
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         isScrolled
-          ? "bg-stone-50/90 backdrop-blur-md border-b border-stone-200/50 py-5 sm:py-6 shadow-sm"
-          : "bg-gradient-to-b from-stone-900/40 to-transparent py-7 sm:py-8 text-white"
+          ? "bg-stone-100/95 backdrop-blur-md border-b border-stone-300/80 py-5 sm:py-6 shadow-md"
+          : "bg-gradient-to-b from-stone-950/80 to-transparent py-7 sm:py-8 text-white"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -71,14 +71,14 @@ export default function Header({ onOpenBooking }: HeaderProps) {
           <div>
             <span
               className={`font-serif text-lg sm:text-xl font-bold tracking-wide transition-colors ${
-                isScrolled ? "text-brand-blue" : "text-white"
+                isScrolled ? "text-stone-950 font-extrabold" : "text-white"
               }`}
             >
               Liberty Noronha Sueste
             </span>
             <span
               className={`block text-[10px] tracking-[0.2em] uppercase -mt-1 ${
-                isScrolled ? "text-stone-600" : "text-stone-300"
+                isScrolled ? "text-stone-850 font-semibold" : "text-stone-100 font-medium"
               }`}
             >
               Fernando de Noronha - Brasil
@@ -99,8 +99,8 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               id={`nav-link-${item.id}`}
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`text-sm font-medium tracking-wide transition-colors duration-200 hover:text-brand-blue focus:outline-none relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-brand-blue hover:after:w-full after:transition-all ${
-                isScrolled ? "text-stone-600" : "text-stone-200 hover:text-white after:bg-white"
+              className={`text-sm font-semibold tracking-wide transition-colors duration-200 hover:text-brand-blue focus:outline-none relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-brand-blue hover:after:w-full after:transition-all ${
+                isScrolled ? "text-stone-950 hover:text-brand-blue" : "text-white hover:text-white after:bg-white"
               }`}
             >
               {t(`header.${item.label}`)}
@@ -114,7 +114,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             id="link-phone-header"
             href={`tel:${POUSADA_INFO.phoneNumeric}`}
             className={`flex items-center gap-2 text-xs font-mono tracking-wider transition-colors hover:text-brand-blue ${
-              isScrolled ? "text-stone-600" : "text-stone-200"
+              isScrolled ? "text-stone-950 font-bold" : "text-stone-100 font-bold"
             }`}
           >
             <Phone className="w-3.5 h-3.5" />
@@ -124,10 +124,10 @@ export default function Header({ onOpenBooking }: HeaderProps) {
           <button
             id="btn-header-reserve"
             onClick={onOpenBooking}
-            className={`text-xs font-semibold tracking-wider uppercase px-5 py-2.5 rounded-full border transition-all duration-300 cursor-pointer ${
+            className={`text-xs font-bold tracking-wider uppercase px-5 py-2.5 rounded-full border transition-all duration-300 cursor-pointer ${
               isScrolled
                 ? "bg-brand-blue text-stone-50 hover:bg-brand-blue/90 border-brand-blue hover:shadow-md"
-                : "bg-white/10 border-white/20 text-white hover:bg-white hover:text-stone-950"
+                : "bg-black/35 hover:bg-white border-white/30 text-white hover:text-stone-950"
             }`}
           >
             {t('header.contact')}
@@ -142,10 +142,10 @@ export default function Header({ onOpenBooking }: HeaderProps) {
           <button
             id="btn-mobile-reserve-top"
             onClick={onOpenBooking}
-            className={`text-[10px] font-bold tracking-wider uppercase px-3 py-1.5 rounded-full border transition-all ${
+            className={`text-[10px] font-extrabold tracking-wider uppercase px-3 py-1.5 rounded-full border transition-all ${
               isScrolled
                 ? "bg-brand-blue text-stone-50 hover:bg-brand-blue/90 border-brand-blue"
-                : "bg-white/15 border-white/20 text-white hover:bg-white hover:text-stone-900"
+                : "bg-black/35 border-white/30 text-white hover:bg-white hover:text-stone-900"
             }`}
           >
             {t('header.contact')}
@@ -154,7 +154,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             id="btn-mobile-menu-toggle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`p-2 rounded-lg transition-colors focus:outline-none ${
-              isScrolled ? "text-stone-700 hover:bg-stone-100" : "text-white hover:bg-white/10"
+              isScrolled ? "text-stone-950 hover:bg-stone-200/80" : "text-white hover:bg-black/30"
             }`}
             aria-label="Abrir Menu"
           >

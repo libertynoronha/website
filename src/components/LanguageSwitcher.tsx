@@ -46,8 +46,8 @@ export default function LanguageSwitcher({ isScrolled = false }: LanguageSwitche
         onClick={() => setIsOpen(!isOpen)}
         className={`flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 active:scale-95 cursor-pointer border ${
           isScrolled
-            ? 'bg-stone-100 hover:bg-stone-200/70 text-stone-700 border-stone-200/60 shadow-sm'
-            : 'bg-white/10 hover:bg-white/20 text-white border-white/10'
+            ? 'bg-stone-200/80 hover:bg-stone-300/80 text-stone-900 border-stone-300/60 shadow-sm'
+            : 'bg-black/35 hover:bg-black/50 text-white border-white/25'
         }`}
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -85,4 +85,3 @@ export default function LanguageSwitcher({ isScrolled = false }: LanguageSwitche
     </div>
   );
 }
-
