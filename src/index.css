@@ -17,7 +17,6 @@ html {
 /* 
  * Cloudbeds Booking Widget Custom Overrides
  * Ensures the widget sits below the fixed header (z-index: 100)
- * and is shifted down so it doesn't overlap the logo and pousada name.
  */
 iframe[src*="cloudbeds"],
 iframe[id*="cloudbeds"],
@@ -31,9 +30,11 @@ div[class*="cloudbeds"],
 #widget-container,
 .widget-float,
 #widget-float,
-iframe[src*="widget/load"] {
+iframe[src*="widget/load"],
+[id^="HT-"],
+[class^="HT-"],
+body > div:not(#root) {
   z-index: 45 !important;
-  margin-top: 105px !important; /* Shift down to clear the header area */
 }
 
 /* Custom layout helper to simulate pattern grids on WhatsApp */

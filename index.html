@@ -36,6 +36,67 @@
     <script type="module" src="/src/main.tsx"></script>
     <!-- Cloudbeds Booking Widget -->
     <script src="https://grupoholos.cloudbeds.com/widget/load/1TiQnO/float?newWindow=1"></script>
+    
+    <!-- Script to ensure Cloudbeds sits below the header (z-index < 100) -->
+    <script>
+      (function() {
+        function enforceZIndex() {
+          const selectors = [
+            'iframe[src*="cloudbeds"]',
+            'iframe[src*="widget/load"]',
+            '.HT-widget',
+            '#HT-widget',
+            '.widget-button',
+            '#widget-container',
+            '.widget-float',
+            '#widget-float',
+            '#HT-widget-iframe',
+            '.HT-widget-iframe',
+            '#HT-widget-container',
+            '.HT-widget-container',
+            '[id^="HT-"]',
+            '[class^="HT-"]',
+            '[id^="cloudbeds-"]',
+            '[class^="cloudbeds-"]'
+          ];
+
+          selectors.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(el => {
+              el.style.setProperty('z-index', '45', 'important');
+              
+              let parent = el.parentElement;
+              while (parent && parent !== document.body) {
+                const style = window.getComputedStyle(parent);
+                if (style.position === 'fixed' || style.position === 'absolute' || parent.style.position === 'fixed' || parent.style.position === 'absolute') {
+                  parent.style.setProperty('z-index', '45', 'important');
+                }
+                parent = parent.parentElement;
+              }
+            });
+          });
+
+          const bodyChildren = document.body.children;
+          for (let i = 0; i < bodyChildren.length; i++) {
+            const child = bodyChildren[i];
+            if (child.id !== 'root' && child.tagName !== 'SCRIPT') {
+              const hasCloudbeds = child.querySelector('iframe[src*="cloudbeds"], iframe[src*="widget/load"]');
+              if (hasCloudbeds) {
+                child.style.setProperty('z-index', '45', 'important');
+              }
+            }
+          }
+        }
+
+        enforceZIndex();
+
+        const observer = new MutationObserver(enforceZIndex);
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        window.addEventListener('load', enforceZIndex);
+        setInterval(enforceZIndex, 500);
+      })();
+    </script>
   </body>
 </html>
 
