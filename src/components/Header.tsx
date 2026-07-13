@@ -33,7 +33,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
       return;
     }
 
-    const headerOffset = 96;
+    const headerOffset = 196;
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
