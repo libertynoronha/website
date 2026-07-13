@@ -120,7 +120,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             <Phone className="w-3.5 h-3.5" />
             {POUSADA_INFO.phone}
           </a>
-          <LanguageSwitcher />
+          <LanguageSwitcher isScrolled={isScrolled} />
           <button
             id="btn-header-reserve"
             onClick={onOpenBooking}
@@ -137,7 +137,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
         {/* Mobile Toggle */}
         <div className="flex md:hidden items-center gap-3">
           <div className="md:hidden">
-            <LanguageSwitcher />
+            <LanguageSwitcher isScrolled={isScrolled} />
           </div>
           <button
             id="btn-mobile-reserve-top"
