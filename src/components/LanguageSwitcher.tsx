@@ -53,8 +53,8 @@ export default function LanguageSwitcher({ isScrolled = false }: LanguageSwitche
         aria-haspopup="true"
       >
         <Globe className="w-3.5 h-3.5" />
-        <span className="hidden sm:inline">{currentLang.name}</span>
-        <span className="sm:hidden">{currentLang.code.toUpperCase()}</span>
+        {/* <span className="hidden sm:inline">{currentLang.name}</span>
+        <span className="sm:hidden">{currentLang.code.toUpperCase()}</span> */}
         <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
