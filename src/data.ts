@@ -6,11 +6,12 @@ import suiteDouble4Img from "./assets/images/suite_double_4.jpg";
 import suiteDouble8Img from "./assets/images/suite_double_8.jpg";
 import suiteSingle from "./assets/images/suite_single.jpg";
 import suiteTripleImg from "./assets/images/suite_triple.jpg";
-import suiteTriple2Img from "./assets/images/suite_triple_2.jpg";
+import suiteTriple2Img from "./assets/images/Triplo_01.jpeg";
 import suiteTriple3Img from "./assets/images/suite_triple_3.jpg";
 import suiteQuadrupleImg from "./assets/images/suite_quadruple.jpg";
 import suiteQuadruple2Img from "./assets/images/suite_quadruple_2.jpg";
 import suiteQuadruple3Img from "./assets/images/suite_quadruple_3.jpg";
+import suiteQuadruple4Img from "./assets/images/Quadruplo_01.jpeg";
 
 export const POUSADA_INFO = {
   name: "Pousada Liberty Noronha Sueste",
@@ -86,6 +87,7 @@ export const ROOMS_DATA: Room[] = [
       suiteQuadrupleImg,
       suiteQuadruple2Img,
       suiteQuadruple3Img,
+      suiteQuadruple4Img,
     ],
     tag: "Espaçosa",
   }

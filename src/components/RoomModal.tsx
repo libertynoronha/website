@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { X, Check, BedDouble, Expand, Eye, Users, Calendar, HelpCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, Check, BedDouble, Expand, Eye, Users, ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Room, BookingSimulation } from "../types";
-import { POUSADA_INFO } from "../data";
 
 interface RoomModalProps {
   room: Room;

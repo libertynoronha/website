@@ -6,11 +6,13 @@ import { POUSADA_INFO } from "../data";
 import BookingBar from "./BookingBar";
 import { BookingSimulation } from "../types";
 
-import heroPousadaImg from "../assets/images/hero_pousada.jpg";
+import heroPousadaImg from "../assets/images/Piscina.jpg";
 import piscina3Img from "../assets/images/Piscina_03.jpeg";
+import externa01 from "../assets/images/Externa_01.jpeg";
 import pergolaImg from "../assets/images/Pergola.jpeg";
-import breakfastImg from "../assets/images/breakfast_03.jpeg";
-import breakfast2Img from "../assets/images/breakfast_2.jpg";
+import pergola2Img from "../assets/images/Pergola_01.jpeg";
+import breakfastImg from "../assets/images/Breakfast_05.jpeg";
+import breakfast2Img from "../assets/images/Breakfast_06.jpg";
 import externa from "../assets/images/Entrada.jpeg";
 
 interface HeroProps {
@@ -30,7 +32,7 @@ export default function Hero({
   const heroImages = [
     {
       src: heroPousadaImg,
-      alt: "Vista aérea da pousada Liberty com área externa e entrada",
+      alt: "Vista da pousada Liberty com área externa e entrada",
       description: t("hero.slides.slide1", { defaultValue: "Bem-vindo à Pousada Liberty Noronha Sueste: charme, conforto e natureza ao seu redor." }),
     },
     {
@@ -39,24 +41,34 @@ export default function Hero({
       description: t("hero.slides.slide2", { defaultValue: "Relaxar no deck com vista para o jardim e o clima tropical de Noronha." }),
     },
     {
+      src: externa01,
+      alt: "Vista externa da pousada com varanda e vegetação tropical",
+      description: t("hero.slides.slide3", { defaultValue: "Área externa tranquila da pousada, com jardins e espaços para relaxar ao ar livre." }),
+    },
+    {
       src: pergolaImg,
       alt: "Espaço charmoso para refeições, conversas e momentos inesquecíveis.",
-      description: t("hero.slides.slide3", { defaultValue: "Espaço charmoso para refeições, conversas e momentos inesquecíveis." }),
+      description: t("hero.slides.slide4", { defaultValue: "Espaço charmoso para refeições, conversas e momentos inesquecíveis." }),
+    },
+    {
+      src: pergola2Img,
+      alt: "Pérgola aconchegante para refeições ao ar livre",
+      description: t("hero.slides.slide5", { defaultValue: "Espaço coberto na área externa, perfeito para refeições e encontros sob a pérgola." }),
     },
     {
       src: externa,
       alt: "Área externa da pousada com paisagem tropical",
-      description: t("hero.slides.slide4", { defaultValue: "Desfrute da beleza natural de Noronha em nossa área externa, ideal para relaxar e se conectar com a natureza." }),
+      description: t("hero.slides.slide6", { defaultValue: "Desfrute da beleza natural de Noronha em nossa área externa, ideal para relaxar e se conectar com a natureza." }),
     },
     {
       src: breakfastImg,
       alt: "Café da manhã servido com frutas, pães e bebidas naturais",
-      description: t("hero.slides.slide5", { defaultValue: "Café da manhã artesanal incluso, preparado com frutas da estação e sabores locais." }),
+      description: t("hero.slides.slide7", { defaultValue: "Café da manhã artesanal incluso, preparado com frutas da estação e sabores locais." }),
     },
     {
       src: breakfast2Img,
       alt: "Mesa de café da manhã com croissants, sucos e frutas",
-      description: t("hero.slides.slide6", { defaultValue: "Comece o dia com uma refeição leve e deliciosa, pensada especialmente para você." }),
+      description: t("hero.slides.slide8", { defaultValue: "Comece o dia com uma refeição leve e deliciosa, pensada especialmente para você." }),
     },
   ];
 
