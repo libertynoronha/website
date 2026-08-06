@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { MapPin, Phone, Mail, Navigation, Clock, Check, Sparkles, Send } from "lucide-react";
+import { MapPin, Mail, Clock, Check, Sparkles, Send } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { POUSADA_INFO, LOCAL_ACTIVITIES } from "../data";
+import { POUSADA_INFO } from "../data";
 
 interface LocationAndContactProps {
   onOpenWhatsApp: (message: string) => void;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X, Send, Copy, Check, MessageSquare, ShieldCheck } from "lucide-react";
+import { X, Send, Copy, Check, ShieldCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { POUSADA_INFO } from "../data";
 

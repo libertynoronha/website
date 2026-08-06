@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MessageSquare, X } from "lucide-react";
+import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
