@@ -12,7 +12,7 @@ import externa01 from "../assets/images/Externa_01.jpeg";
 import pergolaImg from "../assets/images/Pergola.jpeg";
 import pergola2Img from "../assets/images/Pergola_01.jpeg";
 import breakfastImg from "../assets/images/Breakfast_05.jpeg";
-import breakfast2Img from "../assets/images/Breakfast_06.jpg";
+import breakfast2Img from "../assets/images/Breakfast_06.jpeg";
 import externa from "../assets/images/Entrada.jpeg";
 
 interface HeroProps {
