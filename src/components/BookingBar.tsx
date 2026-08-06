@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Calendar, Users, Sparkles, X } from "lucide-react";
+import { Calendar, Users, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { BookingSimulation } from "../types";
 
