@@ -6,7 +6,7 @@ import { POUSADA_INFO } from "../data";
 import BookingBar from "./BookingBar";
 import { BookingSimulation } from "../types";
 
-import heroPousadaImg from "../assets/images/Piscina.jpg";
+import heroPousadaImg from "../assets/images/Piscina.jpeg";
 import piscina3Img from "../assets/images/Piscina_03.jpeg";
 import externa01 from "../assets/images/Externa_01.jpeg";
 import pergolaImg from "../assets/images/Pergola.jpeg";
